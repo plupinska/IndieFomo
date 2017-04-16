@@ -1,75 +1,81 @@
-## Component Hierarchy
+# Component Hierarchy
 
-**Header**
+### Landing Page
 
-**Landing Page**
-  - NavBar
-  - Carousel
-  - CampaignIndex
-  - Categories
-
-**NavBar**
-  - Logo(link to home page)
+**NavBarComponent**
+  - Logo
   - Link to Github
   - Link to eventual Portfolio
-  - Search field
-  - Sign Up(button)
-  - Log in(button)
+  - SearchForm Container/Component
+  - Auth Form Container/Component
+    - Sign Up
+    - Sign In
+    - Demo Account
 
-**Carousel**
- - Image Component(Link to Campain)
+**HomePageComponent**
+  - Carousel Component
+    - Image Component(Link to Campaign)
+  -Campaign Index Slider Component
+    - Slider Menu
+      - Most Popular label
+      - button to Campaign Index Page
+    - CampaignIndexComponent
+      - CampaignTile
+  - Category Index Component
+    -Category Components(Link to Campaign Category Index page)
 
-**CategoryIndex**
- - Categories(Link to Category show page)
-  
-**TagContainer**
- - NotebookHeader
-  + NoteIndex
 
-**NoteIndex**
- - NoteIndexItem
-  + NoteDetail
-    + NoteTools
-    - NotebookSearch
-    - Tags
-      - Tag
-    * Note
+### UserProfileComponent
+  - Nav Bar
+  - Header, showing username
+  - Profile Component
+    - User Image Upload
+    - About me User Edit
+    - About me show Component
+  - Contributions Component
+    - table with campaign, contribution, and perk
 
-**NewNoteContainer**
- - NewNote
-  - RTETools
-  - NewNoteButton
+### Create A Campaign Component
+  - Tagline
+  - Campaign Form Component
 
-**Search**
+### Edit A Campaign Page
+  - Main Detail Label
+  - FormtoEditComponent
 
-**NewNotebook**
- - NewNotebook
+### Add A Reward
+  - Input Form Component to create rewards associated with campaigns
 
-**NewTag**
- - NewTag
+### User Contribution Index page
+  - Table Component listing Contributions
+  - Only accessible by user
 
-**NotebookSearch**
- + AutoSearch
- * AutoSearchResults
+### User Campaign Index Page
+  - All Campaign Tiles that belong to user
+  - Campaign Tiles link to Campaign Show page
 
-**TagsSearch**
- + AutoSearch
- * AutoSearchResults
+### Campaign Index Page
+  - All Campaign Tiles
+
+### Category Show Page
+  - All Campaign Tiles matching Category
+
+
 
 ## Routes
 
 |Path   | Component   |
 |-------|-------------|
-| "/sign-up" | "AuthFormContainer" |
-| "/sign-in" | "AuthFormContainer" |
-| "/home" | "HomeContainer" |
-| "/home/note/:noteId" | "NotesContainer" |
-| "/home/notebook/:notebookId/note/:noteId" | "NotebookContainer" |
-| "/home/tag/:tagId/note/:notedId" | "TagContainer" |
-| "/home/search-results" | "SearchResultsContainer"
-| "/new-note" | "NewNoteContainer" |
-| "/search" | "Search" |
-| "/new-notebook" | "NewNotebook" |
-| "/new-tag" | "NewTag" |
-| "/tag-search" | "TagSearch" |
-| "/notebook-search" | "NotebookSearch" |
+| "/sign-up" | "Auth Form Container" |
+| "/sign-in" | "Auth Form Container" |
+| "/home" | "Landing Page" |
+| "/home/profile/:id" | "UserProfile Container" |
+| "/home/profile/:id/contributions" | "User Contributions" |
+| "/home/profile/:id/campaigns" | "User Campaigns"
+| "/home/campaign/new" | "Create A Campaign Container" |
+| "/home/campaign/:id/edit" | "Edit A Campaign Container" |
+| "/home/campaign/:id/addrewards" | "Add A Reward Component"
+| "/home/search-results" | "SearchResultsContainer" |
+| "/home/campaigns" | "Campaign Index Page" |
+| "/home/campaign/:id" | "Campaign Show Page" |
+| "/home/categories/:id" | "Category Show Page"
