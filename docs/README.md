@@ -21,3 +21,31 @@ By the end of week 9, this app will have at minimum:
 * [Component-Hierarchy](http://github.com)
 * [Sample-State](http://github.com)
 * [Schema](http://github.com)
+
+## Implementation Timeline
+
+### Phase 1: Backend setup and Front End User Authentication (2 days)
+
+**Objective:** Functioning rails project with front-end Authentication. Work on Nav bar.
+
+### Phase 2: User Model, API, and components (2 days)
+
+**Objective:** User can sign up, log in, and view/edit their Profile.
+
+### Phase 3: Campaigns (2 days)
+
+**Objective:** Finish create and Edit forms for Campaigns. A Campaign can be created, user can navigate to its show page.
+
+### Phase 4:  Rewards (1 day)
+
+**Objective:** User is able to Add a Reward Component. Add Reward component to Campaign Show page and User Profile.
+
+### Phase 5: Work on Landing Page (2/3 days)
+
+**Objective:** Work on creating components for landing page. Work on Styling.
+
+
+
+### Bonus Features (TBD)
+- [ ] Search Component
+- [ ] Category
