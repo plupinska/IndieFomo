@@ -7,6 +7,9 @@ Column Name | Data Type | Details
 ------------ | ------------- | ------------
 id | integer | not null, primary key
 username  | string | not null, indexed, unique
+first_name | string| not null, indexed
+last_name | string | not null, indexed
+about me | text | not null
 email | string | not null, indexed, unique
 password_digest | string | not null
 session_token | string | not null, indexed, unique
@@ -20,7 +23,7 @@ Column Name | Data Type | Details
 id | integer | not null, primary key
 user_id | integer |  not null, indexed, unique, foreign key
 title | string | not null, indexed, unique
-description | string | not null, indexed, unique
+description | text | not null, indexed, unique
 tagline | string | not null, indexed, unique
 category_id | integer | not null
 image_url | integer | indexed
