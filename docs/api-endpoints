@@ -1,0 +1,40 @@
+# API Endpoints
+
+## HTML API
+
+### Root
+
+- `GET /` - loads React web app
+
+## JSON API
+
+### Users
+
+- `POST /api/profile/:id`
+- `PATCH /api/profile/:id`
+- `GET /api/profile/:id`
+
+### Session
+
+- `POST /api/session`
+- `DELETE /api/session`
+
+### Campaign
+
+- `GET /api/campaign/:id`
+- `GET /api/campaign/new`
+- `PATCH /api/campaign/:id`
+- `POST /api/campaign/:id`
+- `DELETE /api/campaign/:id`
+
+### Category
+- `GET /api/category/:id`
+
+### Contribution
+- `GET /api/contribution/:id`
+- `POST /api/constribution`
+
+### Reward
+- `GET api/reward/:id`
+- `POST /api/reward/:id`
+- `PATCH /api/reward/:id`
