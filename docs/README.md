@@ -17,10 +17,10 @@ By the end of week 9, this app will have at minimum:
 - [] Bonus: Search
 
 ## Design Docs
-* [Api-Endpoints](http://github.com)
-* [Component-Hierarchy](http://github.com)
-* [Sample-State](http://github.com)
-* [Schema](http://github.com)
+* [Api-Endpoints](https://github.com/plupinska/IndieFomo/blob/master/docs/api-endpoints)
+* [Component-Hierarchy](https://github.com/plupinska/IndieFomo/blob/master/docs/component-hierarchy)
+* [Sample-State](https://github.com/plupinska/IndieFomo/blob/master/docs/sample-state.md)
+* [Schema](https://github.com/plupinska/IndieFomo/blob/master/docs/schema.md)
 
 ## Implementation Timeline
 
