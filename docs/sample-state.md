@@ -1,6 +1,6 @@
 ```js
 
-// User Info
+
 {
   currentUser: {
     id: 1,
@@ -29,7 +29,7 @@
        }
     }
   },
-  
+
   forms: {
     signup: {errors: []},
     login: {errors: []},

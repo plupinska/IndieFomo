@@ -68,14 +68,14 @@
 |-------|-------------|
 | "/sign-up" | "Auth Form Container" |
 | "/sign-in" | "Auth Form Container" |
-| "/home" | "Landing Page" |
-| "/home/profile/:id" | "UserProfile Container" |
-| "/home/profile/:id/contributions" | "User Contributions" |
-| "/home/profile/:id/campaigns" | "User Campaigns"
-| "/home/campaign/new" | "Create A Campaign Container" |
-| "/home/campaign/:id/edit" | "Edit A Campaign Container" |
-| "/home/campaign/:id/addrewards" | "Add A Reward Component"
-| "/home/search-results" | "SearchResultsContainer" |
-| "/home/campaigns" | "Campaign Index Page" |
-| "/home/campaign/:id" | "Campaign Show Page" |
-| "/home/categories/:id" | "Category Show Page"
+| "/yolo" | "Landing Page" |
+| "/profile/:id" | "UserProfile Container" |
+| "/profile/:id/contributions" | "User Contributions" |
+| "/profile/:id/campaigns" | "User Campaigns"
+| "/campaign/new" | "Create A Campaign Container" |
+| "/campaign/:id/edit" | "Edit A Campaign Container" |
+| "/campaign/:id/addrewards" | "Add A Reward Component"
+| "/search-results" | "SearchResultsContainer" |
+| "/campaigns" | "Campaign Index Page" |
+| "/campaign/:id" | "Campaign Show Page" |
+| "/categories/:id" | "Category Show Page"
