@@ -18,8 +18,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: ProjectName_development
+  database: IndieFomo_test
 
 production:
   <<: *default
-  database: ProjectName_development
+  database: IndieFomo_production
