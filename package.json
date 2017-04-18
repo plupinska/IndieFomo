@@ -1,0 +1,24 @@
+{
+  "name": "IndieFomo",
+  "version": "1.0.0",
+  "description": "== README",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plupinska/IndieFomo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/plupinska/IndieFomo/issues"
+  },
+  "homepage": "https://github.com/plupinska/IndieFomo#readme"
+}

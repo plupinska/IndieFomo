@@ -10,7 +10,7 @@
 
 ### Users
 
-- `POST /api/profile/:id`
+- `POST /api/profile`
 - `PATCH /api/profile/:id`
 - `GET /api/profile/:id`
 
@@ -24,7 +24,7 @@
 - `GET /api/campaign/:id`
 - `GET /api/campaign/new`
 - `PATCH /api/campaign/:id`
-- `POST /api/campaign/:id`
+- `POST /api/campaign`
 - `DELETE /api/campaign/:id`
 
 ### Category
@@ -32,9 +32,9 @@
 
 ### Contribution
 - `GET /api/contribution/:id`
-- `POST /api/constribution`
+- `POST /api/contribution`
 
 ### Reward
-- `GET api/reward/:id`
-- `POST /api/reward/:id`
-- `PATCH /api/reward/:id`
+- `GET api/reward/:id/contributions`
+- `POST /api/reward/contributions`
+- `PATCH /api/reward/:id/contributions`

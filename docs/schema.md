@@ -22,9 +22,9 @@ Column Name | Data Type | Details
 ------------ | ------------- | ------------
 id | integer | not null, primary key
 user_id | integer |  not null, indexed, unique, foreign key
-title | string | not null, indexed, unique
-description | text | not null, indexed, unique
-tagline | string | not null, indexed, unique
+title | string | not null, indexed
+description | text | not null, indexed
+tagline | string | not null, indexed
 category_id | integer | not null
 image_url | integer | indexed
 end_date | date | not null, indexed
@@ -36,10 +36,9 @@ target_amount | integer | not null, indexed
 Column Name | Data Type | Details
 ------------ | ------------- | ------------
 id | integer | not null, primary key
-campaign_id | string | not null, indexed, unique, foreign key
 user_id | string | not null, indexed, unique, foreign key
 reward_id | integer | not null, foreign_key
-amount | integer | not null, indexed
+amount | float | not null, indexed
 
 ## reward
 
