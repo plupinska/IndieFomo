@@ -22,7 +22,7 @@ const userGreeting = (props) => (
 );
 
 const Greeting = (props) => {
-  //
+  debugger
   return(props.currentUser ? userGreeting(props) : sessionLinks());
 };
 

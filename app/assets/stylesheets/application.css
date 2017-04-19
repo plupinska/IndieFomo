@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.a {
+  text-decoration: none;
+}
+
+#app {
+  display: flex;
+  flex-direction: auto;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.auth-form-container > ul {
+  display: flex;
+  border: 1px solid black;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.logo {
+  color: #FC3468;
+  font-size: 24px;
+}
+.auth-form-container > ul > li {
+  border: 1px solid black;
+  justify-content: space-between;
+  padding: 20px;
+}

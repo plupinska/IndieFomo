@@ -1,0 +1,8 @@
+html, body, div, span, ul, li, a, section, main {
+	margin: 0;
+	padding: 0;
+	border: 0;
+  list-style-type: none;
+  font-family: sans-serif;
+  text-decoration: none;
+}

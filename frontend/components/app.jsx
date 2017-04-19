@@ -4,8 +4,8 @@ import GreetingContainer from './greeting/greeting_container';
 
 const App = ({children}) => {
   return(
-    <div>
-      <h1>Welcome To Indie Fomo</h1>
+    <div id="app">
+      <h1 className="logo">Welcome To Indie Fomo</h1>
       <GreetingContainer />
       {children}
     </div>

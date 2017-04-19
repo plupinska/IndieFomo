@@ -5,7 +5,6 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "Username",
       password: "Password",
       first_name: "First Name",
       last_name: "Last Name",
@@ -22,19 +21,17 @@ class SessionForm extends React.Component {
     }
   }
 
-  renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => {
-          return(
-            <li key={`error-${i}`}>
-              {error}
-            </li>
-          );
-        })}
-      </ul>
-    );
-  }
+  // renderErrors() {
+  //   if (!this.props.errors) {
+  //     return null;
+  //   } else {
+  //     return(
+  //       <ul>
+  //         {this.props.errors}
+  //       </ul>
+  //     );
+  //   }
+  // }
 
   componentWillReceiveProps() {
     this.redirectIfLoggedIn();
@@ -79,7 +76,7 @@ class SessionForm extends React.Component {
     return(
       <div className="auth-form">
         <form onSubmit={this.handleSubmit}>
-          {this.renderErrors()}
+
           {this.handleFormType(this.props.formType)}
 
           <input type="text"
@@ -104,5 +101,5 @@ class SessionForm extends React.Component {
     );
   }
 }
-
+// {this.renderErrors()}
 export default withRouter(SessionForm);

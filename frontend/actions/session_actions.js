@@ -33,11 +33,12 @@ export const signup = (user) => (dispatch) => {
 export const login = (user) => (dispatch) => {
 
   return SessionAPIUtil.signIn(user)
-    .then((user) => dispatch(receiveCurrentUser(user)),
+    .then((usr) => dispatch(receiveCurrentUser(usr)),
     (err) => dispatch(receiveErrors(err.responseJSON)));
 };
 
 export const logout = () => (dispatch) => {
+
   return SessionAPIUtil.signOut()
   .then(user => dispatch(receiveCurrentUser(null)));
 };
