@@ -1,4 +1,14 @@
 ```js
+// session slice
+{
+  session: {
+    currentUser: {
+      id: 1,
+      username: 'patrycja'
+    },
+    errors: []
+  }
+}
 
 
 {
