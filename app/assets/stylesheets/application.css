@@ -34,9 +34,9 @@
 
 .auth-form-container > ul {
   display: flex;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   justify-content: space-between;
-  padding: 10px;
+
 }
 
 .logo {
@@ -44,7 +44,7 @@
   font-size: 24px;
 }
 .auth-form-container > ul > li {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   justify-content: space-between;
   padding: 20px;
 }
