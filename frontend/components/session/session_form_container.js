@@ -6,7 +6,7 @@ let login1 = login;
 let signup1= signup;
 
 const mapStateToProps = ( { session }) => {
-  debugger
+
   return {
     loggedIn: Boolean(session.currentUser),
     errors: session.errors
@@ -14,7 +14,7 @@ const mapStateToProps = ( { session }) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  const formType = ownProps.location.pathname.slice(1);
+  const formType = ownProps.formType;
   const processForm = (formType === 'login') ? login : signup;
   debugger
   return {

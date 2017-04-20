@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import Modal from 'react-modal';
 import ModalStyle from '../../../app/assets/stylesheets/modal_style';
-import SessionForm from '../session/session_form';
+import SessionFormContainer from '../session/session_form_container';
 
 class Greeting extends React.Component {
   constructor(props) {
@@ -13,11 +13,15 @@ class Greeting extends React.Component {
     this.onModalClose = this.onModalClose.bind(this);
 
     this.state = {modalOpen: false,
-                  currentUser: this.props.currentUser };
+                  currentUser: this.props.currentUser,
+                  formType: ""
+                  };
   }
 
-  handleClick() {
-    this.setState({ modalOpen: true });
+  handleClick(str) {
+    return (e) => {
+      this.setState({ modalOpen: true, formType: str });
+    };
   }
 
   onModalClose() {
@@ -29,8 +33,8 @@ class Greeting extends React.Component {
     return(
       <div className="auth-form-container">
         <ul>
-          <li id="signup-link"><Link onClick={() => this.handleClick()} >Sign Up</Link></li>
-          <li id="signin-link"><Link onClick={() => this.handleClick()} >Sign In</Link></li>
+          <li id="signup-link"><Link onClick={this.handleClick("signup")} >Sign Up</Link></li>
+          <li id="signin-link"><Link onClick={this.handleClick("login")} >Sign In</Link></li>
         </ul>
       </div>
     );
@@ -61,7 +65,7 @@ class Greeting extends React.Component {
                  onRequestClose={this.onModalClose}
                  style={ModalStyle}>
             <button id="x" onClick={this.onModalClose}>x</button>
-          <SessionForm/>
+          <SessionFormContainer formType={this.state.formType} />
         </Modal>
       </div>
     );
