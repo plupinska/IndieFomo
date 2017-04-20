@@ -47,7 +47,7 @@
     addReward: {errors: []}
   },
 
-  campaign: {
+  {campaign: [
     owner: {username, name},
     title: "Taco Stand",
     description: "Veggie Tacos",
@@ -64,7 +64,8 @@
         image_url: url,
         price: price
       }
-    }
+  ] }
+
   },
 
 }
