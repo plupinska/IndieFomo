@@ -4,7 +4,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 import SessionFormContainer from './session/session_form_container';
 import CampaignIndexContainer from './campaign/campaign_index_container';
-
+import CampaignIndexItem from './campaign/campaign_index_item';
 
 const Root = ({store}) => {
 
@@ -19,7 +19,9 @@ const Root = ({store}) => {
     <Provider store={ store }>
       <Router history={ hashHistory }>
         <Route path="/" component={ App }/>
-        <Route path="/campaigns" component={CampaignIndexContainer} />
+        <Route path="/campaigns" component={CampaignIndexContainer} >
+          <Route path="/campaigns/:id" component={CampaignIndexItem}/>
+        </Route>
       </Router>
     </Provider>
   );

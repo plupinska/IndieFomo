@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router';
+import { Link, withRouter, hashHistory } from 'react-router';
+import CampaignIndexItem from './campaign_index_item';
+
 
 class CampaignIndex extends React.Component {
   constructor(props) {
@@ -12,11 +14,13 @@ class CampaignIndex extends React.Component {
   }
 
   render() {
-    debugger 
+
     const AllCampaigns = this.props.campaigns.map((campaign) => {
-      <li key={campaign.id}>
-      <CampaignIndexItem campaign={campaign} fetchCampaign={this.props.fetchCampaign}/>
-      </li>
+      return(
+        <li key={campaign.id}>
+          <CampaignIndexItem campaign={campaign} fetchCampaign={this.props.fetchCampaign}/>
+        </li>
+      );
     });
 
 

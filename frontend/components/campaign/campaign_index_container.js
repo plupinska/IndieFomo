@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchCampaigns, fetchCampaign } from '../../actions/campaign_actions';
 import CampaignIndex from './campaign_index';
-import {selectCampaigns} from '../../reducers/selectors';
+import { selectCampaigns } from '../../reducers/selectors';
 
 const mapStateToProps = (state) =>  {
 

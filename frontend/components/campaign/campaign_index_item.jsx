@@ -1,10 +1,10 @@
 import React from 'react';
-import {Link, hashHistory, withRouter} from 'react-modal';
+import {Link, hashHistory, withRouter} from 'react-router';
 
 class CampaignIndexItem extends React.Component {
 
   constructor(props) {
-     
+    debugger
     super(props);
   }
 

@@ -4,7 +4,7 @@ export const RECEIVE_CAMPAIGN = "RECEIVE_CAMPAIGN";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
 export const receiveCampaigns = (campaigns) => {
-  debugger
+
   return {
     type: RECEIVE_CAMPAIGNS,
     campaigns: campaigns
