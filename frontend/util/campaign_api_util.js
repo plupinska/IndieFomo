@@ -4,9 +4,9 @@ export const getCampaigns = () => {
   });
 };
 
-export const getCampaign = (campaign) => {
+export const getCampaign = (id) => {
   return $.ajax({
-    url: `/api/campaigns/${campaign.id}`
+    url: `/api/campaigns/${id}`
   });
 };
 

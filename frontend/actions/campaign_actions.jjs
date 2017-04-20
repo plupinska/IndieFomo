@@ -2,3 +2,48 @@ import * as CampaignApiUtil from '../util/campaign_api_util';
 export const RECEIVE_CAMPAIGNS = "RECEIVE_CAMPAIGNS";
 export const RECEIVE_CAMPAIGN = "RECEIVE_CAMPAIGN";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+
+export const receiveCampaigns = (campaigns) => {
+  return {
+    type: RECEIVE_CAMPAIGNS,
+    campaigns: campaigns
+  };
+};
+
+export const receiveCampaign = (campaign) => {
+  return {
+    type: RECEIVE_CAMPAIGN,
+    campaign: campaign
+  };
+};
+
+export const receiveErrors = (errors) => {
+  return {
+    type: RECEIVE_ERRORS,
+    errors: errors
+  };
+};
+
+export const fetchCampaigns = () => (dispatch) => {
+  return CampaignApiUtil.getCampaigns()
+    .then((campaigns) => dispatch(receiveCampaigns(campaigns)),
+    (err) => dispatch(receiveErrors(err)));
+};
+
+export const fetchCampaign = (campaign) => (dispatch) => {
+  return CampaignApiUtil.getCampaign(campaign)
+    .then((camp) => dispatch(receiveCampaign(camp)),
+    (err) => dispatch(receiveErrors(err)));
+};
+
+export const createCampaign = (campaign) => (dispatch) => {
+  return CampaignApiUtil.createCampaign(campaign)
+    .then((camp) => dispatch(receiveCampaign(camp)),
+    (err) => dispatch(receiveErrors(err)));
+};
+
+export const updateCampaign = (campaign) => (dispatch) => {
+  return CampaignApiUtil.updateCampaign(campaign)
+    .then((camp) => dispatch(receiveCampaign(camp)),
+    (err) => dispatch(receiveErrors(err)));
+};
