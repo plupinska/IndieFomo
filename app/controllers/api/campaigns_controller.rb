@@ -16,7 +16,6 @@ class Api::CampaignsController < ApplicationController
   end
 
   def show
-    debugger
     @campaign = Campaign.find(params[:id])
     render :show
   end
@@ -43,7 +42,6 @@ class Api::CampaignsController < ApplicationController
 
   private
   def campaign_params
-    debugger
     params.require(:campaigns).permit(:user_id, :title, :descriptions,
       :tagline, :category_id, :image_url, :end_date, :target_amount)
   end

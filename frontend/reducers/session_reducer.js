@@ -7,12 +7,11 @@ const _nullUser = Object.freeze({
 });
 
 const SessionReducer = (state = _nullUser, action) => {
-  debugger
+  
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-
       const currentUser = action.currentUser;
-        debugger
+
       if (currentUser) {
         return merge({}, _nullUser, {currentUser: currentUser} );
       } else {
@@ -20,7 +19,7 @@ const SessionReducer = (state = _nullUser, action) => {
       }
     case RECEIVE_ERRORS:
       const errors = action.errors;
-      debugger
+
       return merge({}, _nullUser, {errors: action.errors});
     default:
       return state;

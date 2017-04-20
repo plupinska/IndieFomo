@@ -14,7 +14,7 @@ class SessionForm extends React.Component {
   }
 
   redirectIfLoggedIn() {
-    debugger
+
     if (this.props.loggedIn) {
       this.props.router.push('/');
     }
@@ -39,8 +39,9 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    debugger
-    this.props.processForm(user);
+    this.props.processForm(user).then(() => {
+      return this.props.onModalClose();
+    });
   }
 
   update(field) {

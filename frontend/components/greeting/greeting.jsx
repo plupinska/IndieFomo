@@ -25,6 +25,7 @@ class Greeting extends React.Component {
   }
 
   onModalClose() {
+
     this.setState({ modalOpen: false});
   }
 
@@ -65,7 +66,7 @@ class Greeting extends React.Component {
                  onRequestClose={this.onModalClose}
                  style={ModalStyle}>
             <button id="x" onClick={this.onModalClose}>x</button>
-          <SessionFormContainer formType={this.state.formType} />
+          <SessionFormContainer modalClose={this.onModalClose} formType={this.state.formType} />
         </Modal>
       </div>
     );

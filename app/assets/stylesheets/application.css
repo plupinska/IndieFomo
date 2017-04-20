@@ -29,6 +29,7 @@
   justify-content: space-between;
   align-items: center;
   border: 1px solid black;
+  height: 60px;
 }
 
 .auth-form-container > ul {

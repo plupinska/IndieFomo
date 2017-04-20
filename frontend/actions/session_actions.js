@@ -18,7 +18,7 @@ export const receiveErrors = (errors) => {
 };
 
 export const signup = (user) => (dispatch) => {
-  debugger
+   
   return SessionAPIUtil.signUp(user)
     .then((usr) => {
 
@@ -31,14 +31,14 @@ export const signup = (user) => (dispatch) => {
 };
 
 export const login = (user) => (dispatch) => {
-  debugger
+   
   return SessionAPIUtil.signIn(user)
     .then((usr) => dispatch(receiveCurrentUser(usr)),
     (err) => dispatch(receiveErrors(err.responseJSON)));
 };
 
 export const logout = () => (dispatch) => {
-  debugger
+   
   return SessionAPIUtil.signOut()
   .then(user => dispatch(receiveCurrentUser(null)));
 };

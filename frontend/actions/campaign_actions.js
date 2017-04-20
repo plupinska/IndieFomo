@@ -4,6 +4,7 @@ export const RECEIVE_CAMPAIGN = "RECEIVE_CAMPAIGN";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
 export const receiveCampaigns = (campaigns) => {
+  debugger
   return {
     type: RECEIVE_CAMPAIGNS,
     campaigns: campaigns
@@ -25,13 +26,14 @@ export const receiveErrors = (errors) => {
 };
 
 export const fetchCampaigns = () => (dispatch) => {
+
   return CampaignApiUtil.getCampaigns()
     .then((campaigns) => dispatch(receiveCampaigns(campaigns)),
     (err) => dispatch(receiveErrors(err)));
 };
 
-export const fetchCampaign = (campaign) => (dispatch) => {
-  return CampaignApiUtil.getCampaign(campaign)
+export const fetchCampaign = (id) => (dispatch) => {
+  return CampaignApiUtil.getCampaign(id)
     .then((camp) => dispatch(receiveCampaign(camp)),
     (err) => dispatch(receiveErrors(err)));
 };

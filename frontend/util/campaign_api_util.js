@@ -1,4 +1,5 @@
 export const getCampaigns = () => {
+
   return $.ajax({
     url: `/api/campaigns`
   });
