@@ -1,8 +1,57 @@
-html, body, div, span, ul, li, a, section, main {
+/*html, body, div, span, ul, li, a, section, main {
 	margin: 0;
 	padding: 0;
 	border: 0;
   list-style-type: none;
   font-family: sans-serif;
   text-decoration: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea,html input[type="button"],
+input[type="reset"],
+input[type="submit"]::-webkit-appearance: button;
+html input[disabled],button::-moz-focus-inner,
+input::-moz-focus-inner, input[type="checkbox"],
+input[type="radio"], input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button, input[type="search"], input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}*/
+
+html, body, div, span, h1, h2, h3, h4, a, ol, ul, li, form, label, article, aside, figure, figcaption, footer, header, nav {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-style: sans-serif;
+  vertical-align: baseline;
+}
+
+body {
+  line-height: 1.5;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+input[type="radio"], select, input[type="submit"] {
+  cursor: pointer;
+  outline: none;
+}
+
+
+/* This is useful when implementing a grid system so that all image elements
+will take up 100% width of their containers */
+img {
+  width: 100%
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import Modal from 'react-modal';
+import ModalStyle from '../../../app/assets/stylesheets/modal_style';
+import SessionForm from '../session/session_form';
 
 class Greeting extends React.Component {
   constructor(props) {
@@ -27,8 +29,8 @@ class Greeting extends React.Component {
     return(
       <div className="auth-form-container">
         <ul>
-          <li id="signup-link"><Link onClick={() => this.handleClick()} to="/signup" >Sign Up</Link></li>
-          <li id="signin-link"><Link onClick={() => this.handleClick()} to="/login">Sign In</Link></li>
+          <li id="signup-link"><Link onClick={() => this.handleClick()} >Sign Up</Link></li>
+          <li id="signin-link"><Link onClick={() => this.handleClick()} >Sign In</Link></li>
         </ul>
       </div>
     );
@@ -53,11 +55,13 @@ class Greeting extends React.Component {
     return(
       <div>
         {message}
-
         <Modal
-          isOpen={this.state.modalOpen}
-          onRequestClose={this.onModalClose}>
-
+                 className="auth-modal"
+                 isOpen={this.state.modalOpen}
+                 onRequestClose={this.onModalClose}
+                 style={ModalStyle}>
+            <button id="x" onClick={this.onModalClose}>x</button>
+          <SessionForm/>
         </Modal>
       </div>
     );
