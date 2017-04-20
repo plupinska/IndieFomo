@@ -21,7 +21,7 @@ By the end of week 9, this app will have at minimum:
 * [Component-Hierarchy](https://github.com/plupinska/IndieFomo/blob/master/docs/component-hierarchy)
 * [Sample-State](https://github.com/plupinska/IndieFomo/blob/master/docs/sample-state.md)
 * [Schema](https://github.com/plupinska/IndieFomo/blob/master/docs/schema.md)
-
+* [Link To Heroku](https://indiefomo.herokuapp.com/)
 ## Implementation Timeline
 
 ### Phase 1: Backend setup and Front End User Authentication (2 days)
