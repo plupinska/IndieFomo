@@ -20,5 +20,7 @@
     json.image_url  campaign.image_url
     json.end_date  campaign.end_date
     json.target_amount  campaign.target_amount
+    debugger
+    json.image_url asset_path(campaign.image.url)
   end
 end

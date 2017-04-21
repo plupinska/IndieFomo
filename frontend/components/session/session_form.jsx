@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router';
+import { withRouter } from 'react-router';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -39,6 +39,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
+    debugger
     this.props.processForm(user).then(() => {
       return this.props.onModalClose();
     });

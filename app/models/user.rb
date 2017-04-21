@@ -2,16 +2,10 @@ class User < ActiveRecord::Base
   validates :email, :password_digest, :session_token, presence: true
   validates :password, length: {minimum: 6, allow_nil: true}
   after_initialize :ensure_session_token
+  has_attached_file :image, default_url: "profile_placeholder.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   attr_reader :password
-    #  has_attached_file :beard_photo, styles: {
-    #    big: "50x50>",
-    #   #  small: "50x50#"
-    #  }
-    #  validates_attachment_content_type(
-    #    :beard_photo,
-    #    content_type: /\Aimage\/.*\Z/
-    #  )
 
   def self.generate_session_token!
     SecureRandom::urlsafe_base64(16)
@@ -27,7 +21,7 @@ class User < ActiveRecord::Base
   end
 
   def self.find_by_credentials(email, password)
-    user = User.find_by(email: email)
+    user = User.find_by(emcail: email)
     return user if user && user.is_password?(password)
     nil
   end

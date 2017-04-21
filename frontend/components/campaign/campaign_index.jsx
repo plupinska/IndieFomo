@@ -13,15 +13,14 @@ class CampaignIndex extends React.Component {
   }
 
   render() {
-
     const AllCampaigns = this.props.campaigns.map((campaign) => {
       return(
         <li id="item" key={campaign.id}>
-          <CampaignIndexItem campaign={campaign} fetchCampaign={this.props.fetchCampaign}/>
+          <CampaignIndexItem campaign={campaign}
+          fetchCampaign={this.props.fetchCampaign}/>
         </li>
       );
     });
-
 
     return(
       <div className="all-campaigns">

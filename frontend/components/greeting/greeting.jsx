@@ -61,6 +61,7 @@ class Greeting extends React.Component {
       <div>
         {message}
         <Modal
+                contentLabel="Modal"
                  className="auth-modal"
                  isOpen={this.state.modalOpen}
                  onRequestClose={this.onModalClose}

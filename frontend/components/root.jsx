@@ -2,9 +2,8 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
-import SessionFormContainer from './session/session_form_container';
 import CampaignIndexContainer from './campaign/campaign_index_container';
-import CampaignIndexItem from './campaign/campaign_index_item';
+import CampaignShowContainer from './campaign/campaign_show_container';
 
 const Root = ({store}) => {
 
@@ -19,9 +18,8 @@ const Root = ({store}) => {
     <Provider store={ store }>
       <Router history={ hashHistory }>
         <Route path="/" component={ App }>
-          <Route path="/campaigns" component={CampaignIndexContainer} >
-          <Route path="/campaigns/:id" component={CampaignIndexItem}/>
-        </Route>
+          <Route path="/campaigns" component={CampaignIndexContainer}/>
+          <Route path="/campaigns/:id" component={CampaignShowContainer}/>
         </Route>
       </Router>
     </Provider>

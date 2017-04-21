@@ -6,13 +6,8 @@ class Campaign < ActiveRecord::Base
     foreign_key: :user_id,
     class_name: "User"
 
-    # has_attached_file :beard_photo, styles: {
-    #   big: "50x50>",
-    #  #  small: "50x50#"
-    # }
-    # validates_attachment_content_type(
-    #   :beard_photo,
-    #   content_type: /\Aimage\/.*\Z/
-    # )
+  has_attached_file :image, default_url: "img_placeholder.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+
 
 end
