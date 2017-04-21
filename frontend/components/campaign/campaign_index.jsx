@@ -9,7 +9,6 @@ class CampaignIndex extends React.Component {
   }
 
   componentWillMount() {
-
     this.props.fetchCampaigns();
   }
 
