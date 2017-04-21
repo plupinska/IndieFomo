@@ -57,7 +57,7 @@ class SessionForm extends React.Component {
         <input type="text"
         placeholder={this.state.first_name}
         onChange={this.update("first_name")}
-        className="fname">
+        className="input">
         </input>
 
         <br/>
@@ -65,7 +65,7 @@ class SessionForm extends React.Component {
         <input type="text"
         placeholder={this.state.last_name}
         onChange={this.update("last_name")}
-        className="lname">
+        className="input">
         </input>
         </div>
       );
@@ -75,14 +75,14 @@ class SessionForm extends React.Component {
   render() {
     return(
       <div className="auth-form">
-        <form onSubmit={this.handleSubmit}>
+        <form className="form" onSubmit={this.handleSubmit}>
 
           {this.handleFormType(this.props.formType)}
 
           <input type="text"
             placeholder={this.state.email}
             onChange={this.update("email")}
-            className="email">
+            className="input">
           </input>
 
           <br/>
@@ -90,10 +90,10 @@ class SessionForm extends React.Component {
           <input type="password"
             placeholder={this.state.password}
             onChange={this.update("password")}
-            className="password">
+            className="input">
           </input>
           <br/>
-          <input type="submit"
+          <input className="input submit" type="submit"
             value="Submit" >
             </input>
         </form>

@@ -18,9 +18,10 @@ const Root = ({store}) => {
   return(
     <Provider store={ store }>
       <Router history={ hashHistory }>
-        <Route path="/" component={ App }/>
-        <Route path="/campaigns" component={CampaignIndexContainer} >
+        <Route path="/" component={ App }>
+          <Route path="/campaigns" component={CampaignIndexContainer} >
           <Route path="/campaigns/:id" component={CampaignIndexItem}/>
+        </Route>
         </Route>
       </Router>
     </Provider>

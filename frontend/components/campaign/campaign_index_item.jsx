@@ -4,14 +4,19 @@ import {Link, hashHistory, withRouter} from 'react-router';
 class CampaignIndexItem extends React.Component {
 
   constructor(props) {
-    debugger
     super(props);
   }
 
   render() {
+
     return(
-      <div>
-        <h1> This is a campaign </h1>
+      <div className="campaign-tile">
+        <img src="./Images/coachella.png" alt={this.props.campaign.title}/>
+        <div className="description">
+          <div className="text">{this.props.campaign.title}</div>
+          <div className="text">{this.props.campaign.tagline}</div>
+          <div className="text">{this.props.campaign.target_amount}</div>
+        </div>
       </div>
     );
   }
