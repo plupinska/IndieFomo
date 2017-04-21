@@ -14,13 +14,12 @@ module.exports = {
     right                      : '40%',
     bottom                     : '10%',
     border                     : '1px solid #ccc',
-    background                 : '#f5f5f5',
+    background                 : '#fff',
     overflow                   : 'auto',
     WebkitOverflowScrolling    : 'touch',
     borderRadius               : '4px',
     outline                    : 'none',
-    padding                    : '20px',
-
+    padding                    : '20px'
 
   }
-};
+}
