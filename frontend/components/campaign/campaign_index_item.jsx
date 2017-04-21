@@ -11,7 +11,9 @@ class CampaignIndexItem extends React.Component {
 
     return(
       <div className="campaign-tile">
-        <img src="./Images/coachella.png" alt={this.props.campaign.title}/>
+        <img src="./Images/coachella.png"
+            alt={this.props.campaign.title}
+            />
         <div className="description">
           <div className="text">{this.props.campaign.title}</div>
           <div className="text">{this.props.campaign.tagline}</div>
