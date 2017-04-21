@@ -4,14 +4,14 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 
   attr_reader :password
-     has_attached_file :beard_photo, styles: {
-       big: "50x50>",
-      #  small: "50x50#"
-     }
-     validates_attachment_content_type(
-       :beard_photo,
-       content_type: /\Aimage\/.*\Z/
-     )
+    #  has_attached_file :beard_photo, styles: {
+    #    big: "50x50>",
+    #   #  small: "50x50#"
+    #  }
+    #  validates_attachment_content_type(
+    #    :beard_photo,
+    #    content_type: /\Aimage\/.*\Z/
+    #  )
 
   def self.generate_session_token!
     SecureRandom::urlsafe_base64(16)
