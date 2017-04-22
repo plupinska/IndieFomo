@@ -18,7 +18,7 @@ export const signIn = (user) => {
 };
 
 export const signOut = () => {
-
+    
   return $.ajax({
     url: `/api/session/`,
     method: 'DELETE'

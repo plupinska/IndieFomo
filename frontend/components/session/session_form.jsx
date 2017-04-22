@@ -13,34 +13,12 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  redirectIfLoggedIn() {
-
-    if (this.props.loggedIn) {
-      this.props.router.push('/');
-    }
-  }
-
-  // renderErrors() {
-  //   if (!this.props.errors) {
-  //     return null;
-  //   } else {
-  //     return(
-  //       <ul>
-  //         {this.props.errors}
-  //       </ul>
-  //     );
-  //   }
-  // }
-
-  componentWillReceiveProps() {
-    this.redirectIfLoggedIn();
-  }
-
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    
+
     this.props.processForm(user).then(() => {
+
       return this.props.onModalClose();
     });
   }

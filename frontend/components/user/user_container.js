@@ -2,15 +2,15 @@ import { connect } from 'react-redux';
 import { getUser, editUser } from '../../actions/user_actions';
 import UserShow from './user_show';
 
-const mapStateToProps = ( state ) => {
-
+const mapStateToProps = (state, ownProps) => {
+  debugger
   return {
     user: state.user,
     errors: state.errors
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
 
   return {
     getUser: (id) => dispatch(getUser(id)),

@@ -11,7 +11,7 @@ class Greeting extends React.Component {
     this.sessionLinks = this.sessionLinks.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.onModalClose = this.onModalClose.bind(this);
-
+    debugger
     this.state = {modalOpen: false,
                   currentUser: this.props.currentUser,
                   formType: ""
@@ -24,8 +24,16 @@ class Greeting extends React.Component {
     };
   }
 
-  onModalClose() {
+  componentWillReceiveProps(newProps) {
+    debugger
+    if (newProps.currentUser !== this.props.currentUser) {
+      debugger
+      this.setState({currentUser: newProps.currentUser});
+    }
+  }
 
+
+  onModalClose() {
     this.setState({ modalOpen: false});
   }
 
@@ -46,17 +54,22 @@ class Greeting extends React.Component {
 
     return(
       <div className="greet">
-        <ul>
-          <li className="name">Hi, {this.props.currentUser.first_name} </li>
-          <li><button onClick={this.props.logout}>Log Out</button> </li>
-        </ul>
+
+          <div className="name">Hi, {this.props.currentUser.first_name} </div>
+            <ul className="drop-down">
+            <br/>
+              <li><Link to={`/users/${this.props.currentUser.id}`}>Profile</Link></li>
+            <br/>
+              <li><button onClick={this.props.logout}>Log Out</button> </li>
+            </ul>
       </div>
     );
   }
 
   render() {
-    let message = this.props.currentUser ? this.userGreeting() : this.sessionLinks();
-
+    // Object.keys(this.props.currentUser).length === 0 && obj.constructor === Object
+    let message = this.props.loggedIn ? this.userGreeting() : this.sessionLinks();
+    debugger
     return(
       <div>
         {message}

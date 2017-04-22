@@ -1,5 +1,4 @@
 import React from 'react';
-import NavBar from './navbar';
 import GreetingContainer from './greeting/greeting_container';
 import { Link } from 'react-router';
 

@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
   has_attached_file :image, default_url: "profile_placeholder.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
-  has_many :campaigns 
+  has_many :campaigns
 
   attr_reader :password
 
@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   end
 
   def self.find_by_credentials(email, password)
-    user = User.find_by(emcail: email)
+    user = User.find_by(email: email)
     return user if user && user.is_password?(password)
     nil
   end

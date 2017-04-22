@@ -19,18 +19,9 @@
   height: 100%;
 }
 
-
 .a {
   text-decoration: none;
 }
-
-/*.inner-app {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  width: 100%;
-  height: 100%;
-}*/
 
 .indie-fomo {
   height: 100%;
@@ -52,16 +43,12 @@
 #app {
   display: flex;
   flex-direction: column;
-  /*border: 1px solid black;*/
-  /*align-items: flex-start;*/
   height: 100%;
   width: 100%;
-  /*justify-content: center;*/
 }
 
 .auth-form-container > ul {
   display: flex;
-  /*border: 1px solid black;*/
   justify-content: space-between;
   font-size: 2vw;
 }
@@ -139,4 +126,10 @@ input {
   margin: 3px;
   border: solid 1px #dcdcdc;
   transition: box-shadow 0.3s, border 0.3s;
+}
+
+.greet{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
