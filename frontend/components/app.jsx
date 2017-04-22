@@ -10,7 +10,6 @@ const App = ({children}) => {
       <div id="app">
           <div className="header">
             <Link className="logo" to="/">Indie Fomo
-            <i class="fa fa-hand-spock-o" aria-hidden="true"></i>
             </Link>
             <div className="search">Search </div>
             <GreetingContainer />

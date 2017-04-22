@@ -118,8 +118,14 @@
 
 .submit {
   cursor: pointer;
+  border: none;
+  width: 50%
 }
-button, html input[type="button"], input[type="reset"], input[type="submit"]
+/*button, html input[type="button"], input[type="reset"], input[type="submit"]*/
+.submit:hover {
+  background: #ff1854;
+}
+
 
 #x {
   position: absolute;
@@ -127,5 +133,10 @@ button, html input[type="button"], input[type="reset"], input[type="submit"]
 
 input {
   align-items: center;
-  text-align: center;
+  text-align: left;
+  padding-left: 10px;
+  padding: 7px;
+  margin: 3px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
 }
