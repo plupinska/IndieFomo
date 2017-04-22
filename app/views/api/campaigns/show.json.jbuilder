@@ -3,7 +3,7 @@
 
 json.set! @campaign.id do
   json.id @campaign.id
-  json.user_id @campaign.user_id
+  json.user @campaign.user
   json.title @campaign.title
   json.descriptions @campaign.descriptions
   json.tagline @campaign.tagline

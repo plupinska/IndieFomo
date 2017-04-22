@@ -1,0 +1,69 @@
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 90%;
+  width: 100%;
+  border: 1px solid black;
+  justify-content: flex-start;
+}
+
+.profile-greeting {
+  display: flex;
+  // border: 1px solid black;
+  height: 10%;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 4vw;
+}
+
+.main-content {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  height: 50%;
+  justify-content: space-around;
+  font-size: 2vw;
+  padding-bottom: 5px;
+}
+
+.left {
+  border: 1px solid black;
+  width: 40%;
+}
+
+.user-image {
+  border: 1px solid black;
+  height: 50%;
+}
+
+.about-me {
+  border: 1px solid black;
+}
+
+.right {
+  border: 1px solid black;
+  // padding: 10px;
+  width: 40%;
+}
+
+.user-overview {
+  border: 1px solid black;
+  // padding: 10px;
+  width: 100%;
+}
+
+.contributions {
+  border: 1px solid black;
+  height: 50%;
+  width: 90%;
+  font-size: 2vw;
+
+}
+
+.table-name {
+  border: 1px solid black;
+}

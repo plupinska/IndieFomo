@@ -10,12 +10,12 @@ User.destroy_all
 Campaign.destroy_all
 
 p = User.create!(first_name: "Patrycja", password: "password", last_name: "Lupinska", about_me: "happy",
-  email: "patrycjalupinska@gmail.com"),
+  email: "patrycjalupinska@gmail.com")
 l = User.create!(first_name: "Guest", last_name: "User", password: "password", about_me: "happy",
   email: "guest@gmail.com")
 
-c1 = Campaign.create!(user_id: 18, title: "Cochella Funds", descriptions: "I need to go",
+p.campaigns.create!( title: "Cochella Funds", descriptions: "I need to go",
   tagline: "Cure my useless experience FOMO", end_date: "Jan-12-2018", target_amount: 1000)
 
-c2 = Campaign.create!(user_id: 18, title: "Taco Stand", descriptions: "Feed the masses",
+l.campaigns.create!(user_id: l.id, title: "Taco Stand", descriptions: "Feed the masses",
   tagline: "Have you ever heard of a taco stand?", end_date: "Jan-12-2018", target_amount: 1000)

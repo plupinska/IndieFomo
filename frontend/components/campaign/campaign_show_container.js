@@ -4,14 +4,14 @@ import CampaignShow from './campaign_show';
 
 const mapStateToProps = (state, ownProps) => {
   let campaign = state.campaigns[ownProps.params.id];
-  debugger
+  
   return {
     campaign
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  debugger
+  
   return {
     fetchCampaign: (id) => dispatch(fetchCampaign(id))
   };
