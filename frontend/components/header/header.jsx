@@ -4,14 +4,14 @@ import Modal from 'react-modal';
 import ModalStyle from '../../../app/assets/stylesheets/modal_style';
 import SessionFormContainer from '../session/session_form_container';
 
-class Greeting extends React.Component {
+class Header extends React.Component {
   constructor(props) {
     super(props);
     this.userGreeting = this.userGreeting.bind(this);
     this.sessionLinks = this.sessionLinks.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.onModalClose = this.onModalClose.bind(this);
-    debugger
+
     this.state = {modalOpen: false,
                   currentUser: this.props.currentUser,
                   formType: ""
@@ -25,9 +25,7 @@ class Greeting extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    debugger
     if (newProps.currentUser !== this.props.currentUser) {
-      debugger
       this.setState({currentUser: newProps.currentUser});
     }
   }
@@ -51,17 +49,19 @@ class Greeting extends React.Component {
 
 
   userGreeting() {
-
     return(
       <div className="greet">
+          <div className="name">Hi, {this.props.currentUser.first_name}
 
-          <div className="name">Hi, {this.props.currentUser.first_name} </div>
-            <ul className="drop-down">
-            <br/>
-              <li><Link to={`/users/${this.props.currentUser.id}`}>Profile</Link></li>
-            <br/>
-              <li><button onClick={this.props.logout}>Log Out</button> </li>
-            </ul>
+              <ul className="drop-down">
+              <br/>
+                <li className="lis"><Link className="profile-link" to={`/users/${this.props.currentUser.id}`}>Profile</Link></li>
+              <br/>
+                <li className="lis"><button className="log-out-button" onClick={this.props.logout}>Log Out</button> </li>
+              </ul>
+
+          </div>
+
       </div>
     );
   }
@@ -69,7 +69,7 @@ class Greeting extends React.Component {
   render() {
     // Object.keys(this.props.currentUser).length === 0 && obj.constructor === Object
     let message = this.props.loggedIn ? this.userGreeting() : this.sessionLinks();
-    debugger
+
     return(
       <div>
         {message}
@@ -89,4 +89,4 @@ class Greeting extends React.Component {
 
 }
 
-export default Greeting;
+export default Header;

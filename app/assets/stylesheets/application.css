@@ -26,6 +26,7 @@
 .indie-fomo {
   height: 100%;
   width: 100%;
+  background-color: white;
 }
 
 .header {
@@ -131,5 +132,59 @@ input {
 .greet{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 60px;
+  margin-right: 20px;
+  width: 100%;
+}
+
+.name {
+  text-align: left;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.drop-down {
+  background-color: white;
+  width: 100%;
+  /*z-index: -5;*/
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.drop-down:hover {
+  z-index: 2;
+}
+
+.lis {
+  margin: 5px;
+  cursor: pointer;
+  color: #FC3468;
+  width: 100%;
+  text-decoration: none;
+}
+
+.lis:hover {
+  cursor: pointer;
+  color: #FC3468;
+}
+.name:hover {
+  cursor: pointer;
+  color: #FC3468;
+}
+
+.log-out-button:hover {
+    cursor: pointer;
+    color: #FC3468;
+}
+
+.profile-link {
+  color: black;
+}
+
+.profile-link:hover {
+  cursor: pointer;
+  color: #FC3468;
 }

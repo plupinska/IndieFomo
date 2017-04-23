@@ -51,8 +51,10 @@ group :development do
   gem 'rb-fsevent'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem "pg_search"
 end
 
 group :production do
   gem 'rails_12factor'
+  gem "pg_search"
 end

@@ -1,5 +1,5 @@
 import React from 'react';
-import GreetingContainer from './greeting/greeting_container';
+import HeaderContainer from './header/header_container';
 import { Link } from 'react-router';
 
 
@@ -11,7 +11,7 @@ const App = ({children}) => {
             <Link className="logo" to="/">Indie Fomo
             </Link>
             <div className="search">Search </div>
-            <GreetingContainer />
+            <HeaderContainer />
         </div>
         {children}
       </div>
@@ -19,8 +19,8 @@ const App = ({children}) => {
   );
 };
 
-<div className="inner-app">
-</div>
+// <div className="inner-app">
+// </div>
 // renders all children. must remember to style accordingly.
 
 export default App;

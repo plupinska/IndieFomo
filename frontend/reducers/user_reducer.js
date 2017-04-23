@@ -7,21 +7,20 @@ const _user = Object.freeze({
 });
 
 const UserReducer = (state = _user, action) => {
-  Object.freeze(state);
-  debugger
+
+
   switch(action.type) {
     case RECEIVE_USER:
-    debugger
       const receivedUser = action.user;
 
-      return merge({},state, action.user);
+      let x = merge({},state, {user: receivedUser});
+      return x;
     case UPDATE_USER:
-    debugger
+
       return merge({}, state, action.user);
     case RECEIVE_ERRORS:
       return merge({}, state, {errors: action.errors});
     default:
-    debugger
       return state;
   }
 };

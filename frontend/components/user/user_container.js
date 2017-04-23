@@ -3,10 +3,9 @@ import { getUser, editUser } from '../../actions/user_actions';
 import UserShow from './user_show';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+
   return {
-    user: state.user,
-    errors: state.errors
+    user: state.user.user,
   };
 };
 

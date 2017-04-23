@@ -9,10 +9,10 @@ module.exports = {
   },
   content : {
     position                   : 'absolute',
-    top                        : '10%',
+    top                        : '20%',
     left                       : '35%',
     right                      : '35%',
-    bottom                     : '10%',
+    bottom                     : '20%',
     border                     : '1px solid #ccc',
     background                 : '#fff',
     overflow                   : 'auto',

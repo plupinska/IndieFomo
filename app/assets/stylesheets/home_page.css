@@ -1,0 +1,44 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: white;
+}
+
+.carousel {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /*border: 1px solid red;*/
+  height: 40%;
+}
+
+.slick-dots {
+  /*border: 1px solid black;*/
+}
+
+
+.slide > h3 {
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.slick-track {
+  height: 100%
+  border: 1px solid purple;
+}
+
+.slider-img {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.slick-initialized {
+  height: 100%;
+  width: 100%;
+  border: 3px solid blue;
+}

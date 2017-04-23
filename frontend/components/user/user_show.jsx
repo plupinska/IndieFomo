@@ -3,54 +3,57 @@ import { Link, withRouter } from 'react-router';
 
 class UserShow extends React.Component {
   constructor(props) {
-
     super(props);
-    this.state = {
-      user: this.props.user,
-      imageFile: null,
-      imageUrl: null
-    };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
+    //
+    // this.State = {
+    //   user: this.props.user,
+    //   imageFile: null,
+    //   imageUrl: null
+    // };
+    // this.handleSubmit = this.handleSubmit.bind(this);
+    // this.updateFile = this.updateFile.bind(this);
   }
-
-  componentWillReceiveProps(props) {
-    if (this.props.params.location.id === this.props.user.id) {
-      this.props.getUser(this.props.user.id)
-    }
-  }
+  //
+  // componentWillReceiveProps(props) {
+  //   if (this.props.params.location.id === this.props.user.id) {
+  //     this.props.getUser(this.props.params.id)
+  //   }
+  // }
 
   componentDidMount() {
+    debugger
     this.props.getUser(this.props.params.id);
   }
-
-  updateFile(e) {
-    let file = e.currentTarget.files[0];
-    var fileReader = new FileReader();
-
-    fileReader.onloadend = function() {
-      debugger
-      this.setState({imageFile: file, imageUrl: fileReader.result});
-    }.bind(this);
-
-    if (file) {
-      fileReader.readAsDataURL(file);
-    }
-  }
-
-
-  handleSubmit(e) {
-    var formData = new FormData();
-    formData.append("user[image]", this.state.imageFile);
-    this.editUser(formData);
-  }
+  //
+  // updateFile(e) {
+  //   let file = e.currentTarget.files[0];
+  //   var fileReader = new FileReader();
+  //
+  //   fileReader.onloadend = function() {
+  //
+  //     this.setState({imageFile: file, imageUrl: fileReader.result});
+  //   };
+  //
+  //   if (file) {
+  //
+  //     fileReader.readAsDataURL(file);
+  //   }
+  // }
+  //
+  //
+  // handleSubmit(e) {
+  //   var formData = new FormData();
+  //   formData.append("user[image]", this.state.imageFile);
+  //   this.editUser(formData);
+  //
+  // }
 
   render() {
-
+    const name = this.props.user ? this.props.user.first_name : "";
     return(
       <div className="profile-page">
         <div className="profile-greeting">
-          <h1> Greetings, {this.props.user.first_name} </h1>
+          <h1> Greetings, {name} </h1>
         </div>
 
         <div className="main-content">
@@ -59,19 +62,7 @@ class UserShow extends React.Component {
               <h1 className="img-title"> User Image </h1>
               <div className="image-container">
 
-                <div className="user-img">
-                  <img  src={this.state.imageUrl}/>
-                </div>
 
-                <div className="file-upload">
-                  <input type="file"
-                    onChange={this.updateFile}
-                    onClick={this.handleSubmit}/>
-                </div>
-
-                <div className="file-submit">
-                  <button>Upload Image</button>
-                </div>
 
               </div>
               <br/>
@@ -102,5 +93,20 @@ class UserShow extends React.Component {
     );
   }
 }
+
+//
+// <div className="user-img">
+//   <img  src={this.state.imageUrl}/>
+// </div>
+//
+// <div className="file-upload">
+//   <input type="file"
+//     onChange={this.updateFile}
+//     onClick={this.handleSubmit}/>
+// </div>
+//
+// <div className="file-submit">
+//   <button>Upload Image</button>
+// </div>
 
 export default withRouter(UserShow);

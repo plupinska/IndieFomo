@@ -5,11 +5,6 @@ import configureStore from './store/store';
 import Root from './components/root';
 import Modal from 'react-modal';
 
-
-window.signUp = signUp;
-window.signIn = signIn;
-window.signOut = signOut;
-window.store = configureStore;
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   if (window.currentUser) {
