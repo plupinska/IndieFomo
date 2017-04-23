@@ -6,6 +6,7 @@ export const getUser = (id) => {
 };
 
 export const editUser = (user) => {
+
   return $.ajax({
     url: `api/users/${user.id}`,
     method: 'PATCH',

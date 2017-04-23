@@ -1,25 +1,25 @@
 import { RECEIVE_USER, UPDATE_USER, RECEIVE_ERRORS } from '../actions/user_actions';
+import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import merge from 'lodash/merge';
 
-const _user = Object.freeze({
-  user: null,
-  errors: {}
-});
-
-const UserReducer = (state = _user, action) => {
+const UserReducer = (state = {}, action) => {
 
 
   switch(action.type) {
     case RECEIVE_USER:
-      const receivedUser = action.user;
+      const receivedUser = action.currentUser;
 
-      let x = merge({},state, {user: receivedUser});
+      let x = merge({}, state, receivedUser);
+
       return x;
     case UPDATE_USER:
 
-      return merge({}, state, action.user);
-    case RECEIVE_ERRORS:
-      return merge({}, state, {errors: action.errors});
+      return merge({}, state, receivedUser);
+    case RECEIVE_CURRENT_USER:
+
+      let y = merge({}, state, action.currentUser);
+
+      return y;
     default:
       return state;
   }

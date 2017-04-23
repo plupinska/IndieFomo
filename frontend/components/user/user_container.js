@@ -5,7 +5,7 @@ import UserShow from './user_show';
 const mapStateToProps = (state, ownProps) => {
 
   return {
-    user: state.user.user,
+    user: state.user,
   };
 };
 

@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
+import { logout, loginguest } from '../../actions/session_actions';
 import Header from './header';
 
 const mapStateToProps = (state) => {
-
+    
   return {
     currentUser: state.session.currentUser,
     loggedIn: Boolean(state.session.currentUser)
@@ -13,7 +13,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 
   return {
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    loginguest: () => dispatch(loginguest())
   };
 };
 

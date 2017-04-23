@@ -5,17 +5,22 @@ import configureStore from './store/store';
 import Root from './components/root';
 import Modal from 'react-modal';
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   if (window.currentUser) {
     const preloadedState = {session: {currentUser: window.currentUser, errors: {}}};
+      debugger
     store = configureStore(preloadedState);
   } else {
+    debugger
     store = configureStore();
+
   }
 
   Modal.setAppElement(document.body);
-
+  window.store = configureStore()
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 });

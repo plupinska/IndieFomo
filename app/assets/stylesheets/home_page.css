@@ -12,7 +12,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  /*border: 1px solid red;*/
+  width: 100%;
+  overflow: hidden;
   height: 40%;
 }
 

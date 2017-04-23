@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import Carousel from './carousel_component';
+import Discovery from './discovery';
 
 class HomePage extends React.Component {
 
@@ -9,6 +10,7 @@ class HomePage extends React.Component {
       <div className="home-page">
         <div className="carousel">
           <Carousel/>
+          
         </div>
       </div>
     );

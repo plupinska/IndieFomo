@@ -37,6 +37,12 @@ export const login = (user) => (dispatch) => {
     (err) => dispatch(receiveErrors(err.responseJSON)));
 };
 
+export const loginguest = () => (dispatch) => {
+  return SessionAPIUtil.signIn({email: "guest@gmail.com", password: "password" })
+    .then((usr) => dispatch(receiveCurrentUser(usr)),
+      (err) => dispatch(receiveErrors(err.responseJSON)));
+};
+
 export const logout = () => (dispatch) => {
 
   return SessionAPIUtil.signOut()

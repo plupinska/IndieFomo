@@ -16,18 +16,17 @@ const Root = ({store}) => {
       replace('/yolo');
     }
   };
-  //
-  // const _redirectUnlessLoggedIn = (nextState, replace) => {
-  //   const currentUser = store.getState().session.currentUser;
-  //
-  //   const url = location.hash.split('/');
-  //   const userId = url[2];
-  //   if (currentUser && currentUser.id !== parseInt(userId)) {
-  //
-  //     replace('/');
-  //   }
-  //
-  // };
+
+  const _redirectUnlessLoggedIn = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
+    debugger
+    const url = location.hash.split('/');
+    const userId = url[2];
+    if (currentUser && currentUser.id !== parseInt(userId)) {
+      replace('/yolo');
+    }
+
+  };
 
   return(
     <Provider store={ store }>
@@ -35,16 +34,12 @@ const Root = ({store}) => {
         <Route path="/" component={ App }>
           <Route path="/yolo" component={HomePage}/>
           <Route path="/campaigns" component={CampaignIndexContainer}/>
-          <Route path="/campaigns/:id" component={CampaignShowContainer}/>
-          <Route path="/users/:id" component={UserShowContainer} />
+          <Route path="/campaigns/:id" component={CampaignShowContainer} />
+          <Route path="/users/:id" component={UserShowContainer} onEnter={_redirectUnlessLoggedIn}/>
         </Route>
       </Router>
     </Provider>
   );
 };
 
-
-  //
-  // <Route path="login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
-  // <Route path="signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
 export default Root;

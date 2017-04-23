@@ -20,7 +20,11 @@ class Header extends React.Component {
 
   handleClick(str) {
     return (e) => {
-      this.setState({ modalOpen: true, formType: str });
+      if (str === "loginguest") {
+        this.props.loginguest();
+      } else {
+        this.setState({ modalOpen: true, formType: str });
+      }
     };
   }
 
@@ -29,6 +33,10 @@ class Header extends React.Component {
       this.setState({currentUser: newProps.currentUser});
     }
   }
+  // 
+  // componentDidMount() {
+  //   if (this.state.cu)
+  // }
 
 
   onModalClose() {
@@ -42,6 +50,7 @@ class Header extends React.Component {
         <ul>
           <li id="signup-link"><Link onClick={this.handleClick("signup")} >Sign Up</Link></li>
           <li id="signin-link"><Link onClick={this.handleClick("login")} >Sign In</Link></li>
+          <li id="signin-link"><Link onClick={this.handleClick("loginguest")} >Guest</Link></li>
         </ul>
       </div>
     );
@@ -51,27 +60,22 @@ class Header extends React.Component {
   userGreeting() {
     return(
       <div className="greet">
-          <div className="name">Hi, {this.props.currentUser.first_name}
-
+          <Link className="name">Hi, {this.props.currentUser.first_name}</Link>
               <ul className="drop-down">
-              <br/>
+              <li className="lis"><Link className="campaigns-link" >Campaigns</Link></li>
                 <li className="lis"><Link className="profile-link" to={`/users/${this.props.currentUser.id}`}>Profile</Link></li>
-              <br/>
                 <li className="lis"><button className="log-out-button" onClick={this.props.logout}>Log Out</button> </li>
               </ul>
-
-          </div>
-
       </div>
     );
   }
 
   render() {
-    // Object.keys(this.props.currentUser).length === 0 && obj.constructor === Object
-    let message = this.props.loggedIn ? this.userGreeting() : this.sessionLinks();
+
+    let message = this.props.currentUser ? this.userGreeting() : this.sessionLinks();
 
     return(
-      <div>
+      <div className="dog">
         {message}
         <Modal
                 contentLabel="Modal"

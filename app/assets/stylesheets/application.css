@@ -30,7 +30,6 @@
 }
 
 .header {
-  /*border: 1px solid black;*/
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -39,6 +38,7 @@
   border-bottom: 1px solid #dad7d7;
   height: 10%;
   box-shadow: -1px 4px 4px 1px rgba(0, 0, 0, 0.04);
+
 }
 
 #app {
@@ -51,7 +51,11 @@
 .auth-form-container > ul {
   display: flex;
   justify-content: space-between;
-  font-size: 2vw;
+  font-size: 20px;
+  border: 1px solid black;
+  width: 70%;
+  align-items: center;
+  padding: 5px;
 }
 
 .logo {
@@ -59,12 +63,12 @@
   align-items: center;
   font-size: 4vw;
   font-weight: bold;
+  border: 1px solid black;
   padding-left: 5px;
 }
 .auth-form-container > ul > li {
   /*border: 1px solid black;*/
   justify-content: space-between;
-  padding: 20px;
 }
 
 .auth-form-container > ul > li:hover {
@@ -72,6 +76,18 @@
   color: #FC3468;
 }
 
+.createCampaign > a {
+  margin: 20px 0px;
+  background-color: #FC3468;
+  color: white;
+  align-items: center;
+  min-height: 30px;
+  padding: 5px;
+}
+.createCampaign >a:hover {
+  cursor: pointer;
+  background: #ff1854;
+}
 
 .auth-form {
   /*border: 1px solid black;*/
@@ -129,41 +145,63 @@ input {
   transition: box-shadow 0.3s, border 0.3s;
 }
 
+.dog{
+  width: 25%;
+
+}
+
 .greet{
-  display: flex;
+  /*display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
-  padding-top: 60px;
-  margin-right: 20px;
-  width: 100%;
+  align-items: flex-start;*/
+  position: relative;
+  display: inline-block;
 }
 
 .name {
-  text-align: left;
+  text-align: center;
   width: 100%;
-  margin-top: 40px;
+  display:block;
+  position: relative;
+  padding: 5px;
+}
+
+.greet:hover .drop-down {
+  display: block;
+}
+
+.drop-down:hover {
+  display: block;
+}
+
+.slick-next {
+  display: none;
 }
 
 .drop-down {
   background-color: white;
   width: 100%;
-  /*z-index: -5;*/
-  padding: 5px;
-  display: flex;
   flex-direction: column;
+  display: none;
+  position: absolute;
+  z-index: 432895719;
+  padding-top: 5px;
 }
 
-.drop-down:hover {
-  z-index: 2;
-}
-
-.lis {
-  margin: 5px;
+.drop-down > li {
+  display: block;
   cursor: pointer;
   color: #FC3468;
-  width: 100%;
+  width: 150%;
   text-decoration: none;
+  background-color: white;
+  border: 1px solid #dad7d7;
+  padding: 10px;
+}
+
+.drop-down >li:hover {
+  display: block;
 }
 
 .lis:hover {
@@ -182,8 +220,18 @@ input {
 
 .profile-link {
   color: black;
+  width: 79px;
+  background-color: white;
 }
 
+.campaigns-link {
+  color: black;
+}
+
+.campaigns-link:hover {
+  cursor: pointer;
+  color: #FC3468;
+}
 .profile-link:hover {
   cursor: pointer;
   color: #FC3468;

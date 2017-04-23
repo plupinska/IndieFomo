@@ -16,8 +16,9 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
+
     this.props.processForm(user).then(() => {
-      return this.props.onModalClose();
+      return this.props.modalClose();
     });
   }
 
@@ -78,5 +79,5 @@ class SessionForm extends React.Component {
     );
   }
 }
-// {this.renderErrors()}
+
 export default withRouter(SessionForm);
