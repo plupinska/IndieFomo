@@ -12,10 +12,14 @@ export const getCampaign = (id) => {
 };
 
 export const updateCampaign = (campaign) => {
+// Campaign is nested inside of form data, we retreive it with get
   return $.ajax({
-    url: `/api/campaigns/${campaign.id}`,
+    url: `/api/campaigns/${campaign.get("campaign[id]")}`,
     method: 'PATCH',
-    data: {campaign}
+    dataType: "json",
+    contentType: false,
+    processData: false,
+    data: campaign
   });
 };
 

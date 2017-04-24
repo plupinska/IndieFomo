@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router';
 
 class NewCampaign extends React.Component {
   constructor(props) {
-    debugger
+
     super(props);
     this.state = {
       user_id: this.props.user.id,
@@ -12,17 +12,17 @@ class NewCampaign extends React.Component {
       target_amount: 0,
       descriptions: ""
     };
-    debugger
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
-    debugger
+
     e.preventDefault();
     const newCamp = this.state
     this.props.createCampaign(newCamp).then((camp) => {
       const url = `campaign/${camp.campaign.id}/edit`;
-      debugger
+
       this.props.router.push(url);
     });
   }

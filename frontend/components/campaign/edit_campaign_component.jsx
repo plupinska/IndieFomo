@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router';
 
 class EditCampaign extends React.Component {
   constructor(props) {
-    debugger
+
     super(props);
     this.state = {
       user_id: this.props.user.id,
@@ -12,25 +12,22 @@ class EditCampaign extends React.Component {
       target_amount: this.props.target_amount,
       descriptions: this.props.descriptions,
       category_id: null,
-      image_url: null,
       end_date: null,
       tagline: "",
       imageFile: null,
-      imageUrl: null
+      imageUrl: null,
+      id: this.props.params.id
     };
-    debugger
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.updateFile = this.updateFile.bind(this);
-  }
 
-  componentDidMount() {
-    this.props.getUser(this.props.params.id);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleFileSubmit = this.handleFileSubmit.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
 
   updateFile(e) {
     let file = e.currentTarget.files[0];
     var fileReader = new FileReader();
-
+    debugger
     fileReader.onloadend = () => {
       this.setState({imageFile: file, imageUrl: fileReader.result});
     };
@@ -41,19 +38,24 @@ class EditCampaign extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
     e.preventDefault();
     const formData = new FormData();
+    // We need to append all other fields to form data
+    // in order to pass through all info from the form
     formData.append("campaign[image]", this.state.imageFile);
-    const newCamp = this.state
+    formData.append("campaign[title]", this.state.title);
+    formData.append("campaign[id]", this.state.id);
+    formData.append("campaign[tagline]", this.state.tagline);
+    formData.append("campaign[descriptions]", this.state.tagline);
+
     debugger
-    this.props.updateCampaign(newCamp).then((camp) => {
-      // const url = `campaigns/${camp.campaign.id}`;
-      const url = `/yolo`;
+    this.props.updateCampaign(formData).then((camp) => {
+      const url = `campaigns/${camp.campaign.id}`;
       debugger
       this.props.router.push(url);
     });
   }
+
 
   update(field) {
     return e => this.setState({
@@ -62,7 +64,6 @@ class EditCampaign extends React.Component {
   }
 
   render() {
-    if (this.props.user) {
       return(
         <div className="edit-campaign">
           <h1>Let's get some more details.</h1>
@@ -106,7 +107,7 @@ class EditCampaign extends React.Component {
                  <div className="file-upload">
                   <input type="file"
                     onChange={this.updateFile}
-                    onClick={this.handleSubmit}/>
+                    onClick={this.handleFileSubmit}/>
                 </div>
               </div>
 
@@ -119,13 +120,7 @@ class EditCampaign extends React.Component {
           </div>
         </div>
       );
-    } else {
-      return(
-        <h1> Nothing </h1>
-      );
     }
-
-  }
 }
 
 export default withRouter(EditCampaign);

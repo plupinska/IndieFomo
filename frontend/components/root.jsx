@@ -36,10 +36,11 @@ const Root = ({store}) => {
         <Route path="/" component={ App }>
           <Route path="/yolo" component={HomePage}/>
           <Route path="/campaigns" component={CampaignIndexContainer}/>
+          <Route path="/campaign/:id/edit" component={EditCampaignComponent}/>
           <Route path="/campaigns/:id" component={CampaignShowContainer} />
           <Route path="/users/:id" component={UserShowContainer} onEnter={_redirectUnlessLoggedIn}/>
           <Route path="/campaign/new" component={NewCampaignContainer}/>
-          <Route path="/campaign/:id/edit" component={EditCampaignComponent}/>
+
         </Route>
       </Router>
     </Provider>

@@ -5,7 +5,7 @@ import ProgressBlock from './progress_block';
 class CampaignOverview extends React.Component {
   constructor(props) {
     super(props);
-        debugger
+
   }
 
   componentWillMount() {
@@ -15,11 +15,11 @@ class CampaignOverview extends React.Component {
 
 
   render() {
-    debugger
+
     return (
       <div className="campaign-overview">
         <div className="photo">
-          {this.props.campaign.image}
+          {this.props.campaign.image_url}
         </div>
 
         <div className="campaign-basics">
