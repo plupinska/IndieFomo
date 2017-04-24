@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router';
 
 class EditCampaign extends React.Component {
   constructor(props) {
-
+    debugger
     super(props);
     this.state = {
       user_id: this.props.user.id,
@@ -25,9 +25,10 @@ class EditCampaign extends React.Component {
   }
 
   updateFile(e) {
+    debugger
     let file = e.currentTarget.files[0];
     var fileReader = new FileReader();
-    debugger
+
     fileReader.onloadend = () => {
       this.setState({imageFile: file, imageUrl: fileReader.result});
     };
@@ -38,22 +39,28 @@ class EditCampaign extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
-    const formData = new FormData();
-    // We need to append all other fields to form data
-    // in order to pass through all info from the form
-    formData.append("campaign[image]", this.state.imageFile);
-    formData.append("campaign[title]", this.state.title);
-    formData.append("campaign[id]", this.state.id);
-    formData.append("campaign[tagline]", this.state.tagline);
-    formData.append("campaign[descriptions]", this.state.tagline);
-
     debugger
-    this.props.updateCampaign(formData).then((camp) => {
-      const url = `campaigns/${camp.campaign.id}`;
-      debugger
-      this.props.router.push(url);
-    });
+    if (this.state.imageFile) {
+      e.preventDefault();
+      const formData = new FormData();
+      // We need to append all other fields to form data
+      // in order to pass through all info from the form
+      formData.append("campaign[image]", this.state.imageFile);
+      formData.append("campaign[title]", this.state.title);
+      formData.append("campaign[id]", this.state.id);
+      formData.append("campaign[tagline]", this.state.tagline);
+      formData.append("campaign[descriptions]", this.state.tagline);
+
+
+      this.props.updateCampaign(formData).then((camp) => {
+        const url = `campaigns/${camp.campaign.id}`;
+
+        this.props.router.push(url);
+      });
+    } else {
+      this.props.updateCampaign(this.state);
+    }
+
   }
 
 

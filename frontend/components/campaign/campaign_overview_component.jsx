@@ -5,17 +5,16 @@ import ProgressBlock from './progress_block';
 class CampaignOverview extends React.Component {
   constructor(props) {
     super(props);
-
+    debugger
   }
 
-  componentWillMount() {
-
-    this.props.fetchCampaign(this.props.campaignId);
-  }
+  // componentWillMount() {
+  //   this.props.fetchCampaign(this.props.campaignId);
+  // }
 
 
   render() {
-
+    debugger
     return (
       <div className="campaign-overview">
         <div className="photo">
@@ -26,11 +25,11 @@ class CampaignOverview extends React.Component {
           <h1>{this.props.campaign.title}</h1>
           <h2>{this.props.campaign.tagline}</h2>
           <div className="user-profile">
-            <UserProfileBlock />
+            <UserProfileBlock fetchUser={this.props.fetchUser} owner={this.props.ownerId} />
           </div>
 
           <div className="progress-bar">
-            <ProgressBlock/>
+            <ProgressBlock camp={this.props.campaign}/>
           </div>
 
           <div>

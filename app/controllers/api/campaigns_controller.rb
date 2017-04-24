@@ -25,17 +25,20 @@ class Api::CampaignsController < ApplicationController
   end
 
   def edit
-
+    debugger
     @campaign = Campaign.find(params[:id])
-
+    debugger
     render :edit
   end
 
   def update
     @campaign = Campaign.find(params[:id])
+      debugger
     if @campaign.update(campaign_params)
       render :show
+      debugger
     else
+      debugger
       render @campaign.errors.full_messages, status: 422
     end
   end

@@ -47,7 +47,7 @@ export const createCampaign = (campaign) => (dispatch) => {
 };
 
 export const updateCampaign = (campaign) => (dispatch) => {
-  debugger
+
   return CampaignApiUtil.updateCampaign(campaign)
     .then((camp) => dispatch(receiveCampaign(camp)),
     (err) => dispatch(receiveErrors(err)));

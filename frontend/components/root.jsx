@@ -40,7 +40,6 @@ const Root = ({store}) => {
           <Route path="/campaigns/:id" component={CampaignShowContainer} />
           <Route path="/users/:id" component={UserShowContainer} onEnter={_redirectUnlessLoggedIn}/>
           <Route path="/campaign/new" component={NewCampaignContainer}/>
-
         </Route>
       </Router>
     </Provider>
