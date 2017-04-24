@@ -33,11 +33,6 @@ class Header extends React.Component {
       this.setState({currentUser: newProps.currentUser});
     }
   }
-  // 
-  // componentDidMount() {
-  //   if (this.state.cu)
-  // }
-
 
   onModalClose() {
     this.setState({ modalOpen: false});

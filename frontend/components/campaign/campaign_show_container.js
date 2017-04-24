@@ -4,7 +4,7 @@ import CampaignShow from './campaign_show';
 
 const mapStateToProps = (state, ownProps) => {
   let campaign = state.campaigns[ownProps.params.id];
-    
+
   return {
     campaign
   };

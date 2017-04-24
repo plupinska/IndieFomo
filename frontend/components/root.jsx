@@ -19,13 +19,12 @@ const Root = ({store}) => {
 
   const _redirectUnlessLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
-    debugger
+
     const url = location.hash.split('/');
     const userId = url[2];
     if (currentUser && currentUser.id !== parseInt(userId)) {
       replace('/yolo');
     }
-
   };
 
   return(
@@ -36,6 +35,9 @@ const Root = ({store}) => {
           <Route path="/campaigns" component={CampaignIndexContainer}/>
           <Route path="/campaigns/:id" component={CampaignShowContainer} />
           <Route path="/users/:id" component={UserShowContainer} onEnter={_redirectUnlessLoggedIn}/>
+          <Route path="/campaign/new" />
+          <Route path="/campaign/:id/edit"/>
+          <Route path="/campaign/:id/addrewards" />
         </Route>
       </Router>
     </Provider>

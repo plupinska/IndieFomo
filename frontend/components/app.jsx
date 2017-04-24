@@ -4,7 +4,6 @@ import { Link } from 'react-router';
 
 
 const App = ({children}) => {
-
   return(
     <div className="indie-fomo">
       <div id="app">
@@ -23,8 +22,6 @@ const App = ({children}) => {
   );
 };
 
-// <div className="inner-app">
-// </div>
-// renders all children. must remember to style accordingly.
+
 
 export default App;

@@ -36,7 +36,7 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #dad7d7;
-  height: 10%;
+  min-height: 70px;
   box-shadow: -1px 4px 4px 1px rgba(0, 0, 0, 0.04);
 
 }
@@ -193,7 +193,7 @@ input {
   display: block;
   cursor: pointer;
   color: #FC3468;
-  width: 150%;
+  min-width: 100px;
   text-decoration: none;
   background-color: white;
   border: 1px solid #dad7d7;
@@ -202,9 +202,11 @@ input {
 
 .drop-down >li:hover {
   display: block;
+  min-width: 100px;
 }
 
 .lis:hover {
+  min-width: 100px;
   cursor: pointer;
   color: #FC3468;
 }

@@ -5,7 +5,7 @@ class UserShow extends React.Component {
   constructor(props) {
     super(props);
 
-    this.State = {
+    this.state = {
       user: this.props.user,
       imageFile: null,
       imageUrl: null
@@ -22,13 +22,11 @@ class UserShow extends React.Component {
     let file = e.currentTarget.files[0];
     var fileReader = new FileReader();
 
-    fileReader.onloadend = function() {
-
+    fileReader.onloadend = () => {
       this.setState({imageFile: file, imageUrl: fileReader.result});
     };
 
     if (file) {
-
       fileReader.readAsDataURL(file);
     }
   }
@@ -55,15 +53,15 @@ class UserShow extends React.Component {
               <h1 className="img-title"> User Image </h1>
               <div className="image-container">
 
-                <div className="user-img">
-                  <img  src={this.state.imageUrl}/>
-                </div>
+             <div className="user-img">
+               <img  src={this.state.imageUrl}/>
+             </div>
 
-                <div className="file-upload">
-                  <input type="file"
-                    onChange={this.updateFile}
-                    onClick={this.handleSubmit}/>
-                </div>
+              <div className="file-upload">
+               <input type="file"
+                 onChange={this.updateFile}
+                 onClick={this.handleSubmit}/>
+             </div>
 
                 <div className="file-submit">
                   <button>Upload Image</button>
@@ -93,8 +91,6 @@ class UserShow extends React.Component {
           <div className="table">
           </div>
         </div>
-
-
       </div>
     );
   }

@@ -9,7 +9,7 @@ class CampaignIndexItem extends React.Component {
   }
 
   handleClick(e) {
-    // e.preventDefault();
+    e.preventDefault();
     const url = `/campaigns/${this.props.campaign.id}`;
     this.props.router.push(url);
   }

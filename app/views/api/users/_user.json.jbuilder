@@ -2,7 +2,6 @@
 # :id, asset_path(:image[:url])
   #
   if (@user)
-
     json.id @user.id
     json.first_name @user.first_name
     json.last_name @user.last_name
@@ -11,6 +10,5 @@
     json.about_me @user.about_me
     json.campaigns @user.campaigns
   else
-
     {user: nil}
   end

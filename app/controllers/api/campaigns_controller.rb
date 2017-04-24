@@ -16,6 +16,7 @@ class Api::CampaignsController < ApplicationController
   end
 
   def show
+    
     @campaign = Campaign.find(params[:id])
     render :show
   end

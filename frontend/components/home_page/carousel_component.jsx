@@ -13,12 +13,12 @@ class Carousel extends React.Component {
 
     return (
       <Slider {...settings}>
-        <div className="slide" ><h3 className="slider-img" ><img src="https://i.ytimg.com/vi/6gOQwRVw9zg/maxresdefault.jpg"/></h3></div>
-        <div className="slide" ><h3 className="slider-img" ><img src="https://i.ytimg.com/vi/6gOQwRVw9zg/maxresdefault.jpg"/></h3></div>
-        <div className="slide" ><h3 className="slider-img" ><img src="https://i.ytimg.com/vi/6gOQwRVw9zg/maxresdefault.jpg"/></h3></div>
-        <div className="slide" ><h3 className="slider-img" ><img src="https://i.ytimg.com/vi/6gOQwRVw9zg/maxresdefault.jpg"/></h3></div>
-        <div className="slide" ><h3 className="slider-img" ><img src="https://i.ytimg.com/vi/6gOQwRVw9zg/maxresdefault.jpg"/></h3></div>
-        <div className="slide" ><h3 className="slider-img" ><img src="https://i.ytimg.com/vi/6gOQwRVw9zg/maxresdefault.jpg"/></h3></div>
+        <div className="slide" ><h3 className="slider-img" ><img src="http://lorempixel.com/400/250/technics/1" /></h3></div>
+        <div className="slide" ><h3 className="slider-img" ><img src="http://lorempixel.com/400/250/technics/7" /></h3></div>
+        <div className="slide" ><h3 className="slider-img" ><img src="http://lorempixel.com/400/250/technics/8" /></h3></div>
+        <div className="slide" ><h3 className="slider-img" ><img src="http://lorempixel.com/400/250/technics/3" /></h3></div>
+        <div className="slide" ><h3 className="slider-img" ><img src="http://lorempixel.com/400/250/technics/4" /></h3></div>
+        <div className="slide" ><h3 className="slider-img" ><img src="http://lorempixel.com/400/250/technics/5" /></h3></div>
       </Slider>
     );
   }
