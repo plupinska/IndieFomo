@@ -6,23 +6,28 @@ class Api::CampaignsController < ApplicationController
   end
 
   def create
+    debugger
     @campaign = Campaign.create(campaign_params)
-
+    debugger
     if @campaign.save
       render :show
+      debugger
     else
       render json: @campaign.errors.full_messages, status:422
+      debugger
     end
   end
 
   def show
-    
+
     @campaign = Campaign.find(params[:id])
     render :show
   end
 
   def edit
+    debugger
     @campaign = Campaign.find(params[:id])
+    debugger
     render :edit
   end
 
@@ -43,7 +48,7 @@ class Api::CampaignsController < ApplicationController
 
   private
   def campaign_params
-    params.require(:campaigns).permit(:user_id, :title, :descriptions,
+    params.require(:campaign).permit(:user_id, :title, :descriptions,
       :tagline, :category_id, :image_url, :end_date, :target_amount)
   end
 end
