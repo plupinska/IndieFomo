@@ -12,6 +12,7 @@ export const receiveCampaigns = (campaigns) => {
 };
 
 export const receiveCampaign = (campaign) => {
+  debugger
   return {
     type: RECEIVE_CAMPAIGN,
     campaign: campaign
@@ -39,6 +40,7 @@ export const fetchCampaign = (id) => (dispatch) => {
 };
 
 export const createCampaign = (campaign) => (dispatch) => {
+  debugger
   return CampaignApiUtil.createCampaign(campaign)
     .then((camp) => dispatch(receiveCampaign(camp)),
     (err) => dispatch(receiveErrors(err)));

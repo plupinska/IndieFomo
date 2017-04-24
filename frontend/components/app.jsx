@@ -12,7 +12,7 @@ const App = ({children}) => {
             </Link>
             <div className="search">Search </div>
             <div className="createCampaign">
-              <Link>Create A Campaign</Link>
+              <Link to="campaign/new">Create A Campaign</Link>
             </div>
             <HeaderContainer />
         </div>

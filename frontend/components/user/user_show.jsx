@@ -36,7 +36,6 @@ class UserShow extends React.Component {
     var formData = new FormData();
     formData.append("user[image]", this.state.imageFile);
     this.editUser(formData);
-
   }
 
   render() {
