@@ -1,14 +1,16 @@
 import { connect } from 'react-redux';
 import { createCampaign } from '../../actions/campaign_actions';
-import { NewCampaign } from './new_campaign';
+import NewCampaign from './new_campaign';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
+  debugger
   return {
-    user: state.user
+    user: state.session.currentUser
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
+  debugger
   return {
     createCampaign: (camp) => dispatch(createCampaign(camp))
   };

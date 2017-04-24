@@ -5,17 +5,17 @@ import ProgressBlock from './progress_block';
 class CampaignOverview extends React.Component {
   constructor(props) {
     super(props);
-        
+        debugger
   }
 
   componentWillMount() {
-      
+
     this.props.fetchCampaign(this.props.campaignId);
   }
 
 
   render() {
-      
+    debugger
     return (
       <div className="campaign-overview">
         <div className="photo">
