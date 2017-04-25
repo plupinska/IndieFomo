@@ -13,12 +13,12 @@ class Carousel extends React.Component {
 
     return (
       <Slider {...settings}>
-        <div className="slide" ><h3 className="slider-img" ><img /></h3></div>
-        <div className="slide" ><h3 className="slider-img" ><img  /></h3></div>
-        <div className="slide" ><h3 className="slider-img" ><img  /></h3></div>
-        <div className="slide" ><h3 className="slider-img" ><img  /></h3></div>
-        <div className="slide" ><h3 className="slider-img" ><img  /></h3></div>
-        <div className="slide" ><h3 className="slider-img" ><img  /></h3></div>
+        <div className="slide" ><h3 className="slider-img" >    img </h3></div>
+        <div className="slide" ><h3 className="slider-img" > img </h3></div>
+        <div className="slide" ><h3 className="slider-img" >  img</h3></div>
+        <div className="slide" ><h3 className="slider-img" >img </h3></div>
+        <div className="slide" ><h3 className="slider-img" > img </h3></div>
+        <div className="slide" ><h3 className="slider-img" > img </h3></div>
       </Slider>
     );
   }

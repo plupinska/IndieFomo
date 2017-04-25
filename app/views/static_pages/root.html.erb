@@ -1,4 +1,5 @@
 <script type="text/javascript">
+  window.image1 = <%= image_url("carousel1.png") %>
  <% if logged_in? %>
     window.currentUser =
     <%= render("api/sessions/user.json.jbuilder", user: current_user).html_safe %>
