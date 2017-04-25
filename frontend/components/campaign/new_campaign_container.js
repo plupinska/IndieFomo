@@ -5,7 +5,8 @@ import NewCampaign from './new_campaign';
 const mapStateToProps = (state) => {
 
   return {
-    user: state.session.currentUser
+    user: state.session.currentUser,
+    errors: state.campaigns.errors
   };
 };
 

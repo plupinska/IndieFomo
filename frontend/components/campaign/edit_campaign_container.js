@@ -5,10 +5,11 @@ import EditCampaign from './edit_campaign_component';
 const mapStateToProps = (state, ownProps) => {
 
   let campaign = state.campaigns;
-  debugger
+
   return {
     campaign,
-    user: state.session.currentUser
+    user: state.session.currentUser,
+    // errors: state.campaigns.campaign.errors
   };
 };
 

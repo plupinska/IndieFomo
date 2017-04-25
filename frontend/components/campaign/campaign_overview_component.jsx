@@ -5,39 +5,45 @@ import ProgressBlock from './progress_block';
 class CampaignOverview extends React.Component {
   constructor(props) {
     super(props);
-    debugger
+    // this.state = {
+    //   campaign: null
+    // };
   }
-
+  //
   // componentWillMount() {
-  //   this.props.fetchCampaign(this.props.campaignId);
+  //   this.props.fetchCampaign(this.props.campaignId).then(camp => {
+  //     this.setState({campaign: camp});
+  //   });
   // }
 
 
   render() {
-    debugger
-    return (
-      <div className="campaign-overview">
-        <div className="photo">
-          {this.props.campaign.image_url}
+      
+    if (this.props.campaign) {
+      return (
+        <div className="campaign-overview">
+          <div className="photo">
+            <img src={this.props.campaign.image_url} name={this.props.campaign.title}/>
+          </div>
+
+          <div className="campaign-basics">
+            <h1>{this.props.campaign.title}</h1>
+            <h2>{this.props.campaign.tagline}</h2>
+            <div className="user-profile">
+              <UserProfileBlock fetchUser={this.props.fetchUser} owner={this.props.ownerId} />
+            </div>
+
+            <div className="progress-bar">
+              <ProgressBlock camp={this.props.campaign}/>
+            </div>
+
+            <div>
+              <button>Back It</button>
+            </div>
+          </div>
         </div>
-
-        <div className="campaign-basics">
-          <h1>{this.props.campaign.title}</h1>
-          <h2>{this.props.campaign.tagline}</h2>
-          <div className="user-profile">
-            <UserProfileBlock fetchUser={this.props.fetchUser} owner={this.props.ownerId} />
-          </div>
-
-          <div className="progress-bar">
-            <ProgressBlock camp={this.props.campaign}/>
-          </div>
-
-          <div>
-            <button>Back It</button>
-          </div>
-        </div>
-      </div>
-    );
+      );
+    }
   }
 
 }

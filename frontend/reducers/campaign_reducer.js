@@ -1,33 +1,35 @@
-import { RECEIVE_CAMPAIGNS, RECEIVE_CAMPAIGN, RECEIVE_ERRORS} from '../actions/campaign_actions';
+import { RECEIVE_CAMPAIGNS, RECEIVE_CAMPAIGN, RECEIVE_CAMPAIGN_ERRORS} from '../actions/campaign_actions';
 import merge from 'lodash/merge';
 
+let _oldState = Object.freeze({
+  campaign: null,
+  errors: {}
+});
 
-
-const CampaignsReducer = (oldState={}, action) => {
-
-
-  const test = RECEIVE_CAMPAIGNS;
-
-Object.freeze(oldState);
+const CampaignsReducer = (state = _oldState, action) => {
+    
   switch(action.type) {
     case "RECEIVE_CAMPAIGNS":
-
       const allCampaigns = action.campaigns;
       // this returns an array
 
-        return allCampaigns;
-    case RECEIVE_CAMPAIGN:
-      const newState = merge({}, oldState);
+      const oldS = merge({}, state);
+      let x =  merge({}, oldS, {campaign: action.campaigns});
+        
+      return x;
+    case  "RECEIVE_CAMPAIGN":
+      const newState = merge({}, state);
 
-      return merge(newState, action.campaign);
-    case RECEIVE_ERRORS:
-      return merge(oldState, action.errors);
+      let y = merge(newState, {campaign: action.campaign});
+        
+      return y;
 
+    case "RECEIVE_CAMPAIGN_ERRORS":
+      return merge(state, {errors: action.errors});
+        
     default:
-
-      return oldState;
+      return state;
   }
-
 };
 
 export default CampaignsReducer;

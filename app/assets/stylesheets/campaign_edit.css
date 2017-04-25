@@ -1,0 +1,94 @@
+.edit-campaign {
+  height: 100%;
+  border: 1px solid black;
+}
+
+.edit-campaign > h1 {
+  padding-top: 10px;
+  padding-left: 50px;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+/*note that cform inherits from campaign new cform css*/
+
+.campaign-description {
+  padding-left: 25px;
+  margin-left: 25px;
+  margin-top: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 600px;
+  border: 1px solid #e4e4e4;
+}
+
+.campaign-description > input {
+  width: 375px;
+  height: 45px;
+  margin-top: 5px;
+}
+
+.tagline {
+  padding-left: 25px;
+  margin-left: 25px;
+  margin-top: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 600px;
+  border: 1px solid #e4e4e4;
+}
+
+.tagline > input {
+  width: 375px;
+  height: 45px;
+  margin-top: 5px;
+}
+
+.category_dropdown {
+  margin-top: 10px;
+  padding-left: 25px;
+  margin-left: 25px;
+  width: 600px;
+  border: 1px solid #e4e4e4;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.campaign-img-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 10px;
+  padding-left: 25px;
+  margin-left: 25px;
+  width: 600px;
+  border: 1px solid #e4e4e4;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.row-div {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.campaign-img > img {
+  position: absolute;
+  top:0;
+  left: 0;
+  margin-left: 500px;
+  width: 80px;
+  height: 80px;
+  margin-top: -27px;
+  background-size: cover;
+  background-color: #c3c3c3;
+  border-radius: 100%;
+  border: 1px solid  #e4e4e4;
+}
+
+.category {
+  padding-top: 5px;
+}

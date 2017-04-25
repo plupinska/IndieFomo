@@ -4,16 +4,16 @@ import { Link, withRouter } from 'react-router';
 
 class EditCampaign extends React.Component {
   constructor(props) {
-    debugger
+
     super(props);
     this.state = {
       user_id: this.props.user.id,
       title: this.props.title,
       target_amount: this.props.target_amount,
-      descriptions: this.props.descriptions,
+      descriptions: "Description...",
       category_id: null,
       end_date: null,
-      tagline: "",
+      tagline: "Think persuasion, not baseball...",
       imageFile: null,
       imageUrl: null,
       id: this.props.params.id
@@ -25,7 +25,7 @@ class EditCampaign extends React.Component {
   }
 
   updateFile(e) {
-    debugger
+
     let file = e.currentTarget.files[0];
     var fileReader = new FileReader();
 
@@ -39,9 +39,10 @@ class EditCampaign extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
+
     if (this.state.imageFile) {
       e.preventDefault();
+      let type;
       const formData = new FormData();
       // We need to append all other fields to form data
       // in order to pass through all info from the form
@@ -52,13 +53,18 @@ class EditCampaign extends React.Component {
       formData.append("campaign[descriptions]", this.state.tagline);
 
 
-      this.props.updateCampaign(formData).then((camp) => {
+      this.props.updateCampaign(formData, type = true).then((camp) => {
         const url = `campaigns/${camp.campaign.id}`;
 
         this.props.router.push(url);
       });
     } else {
-      this.props.updateCampaign(this.state);
+      let type;
+      this.props.updateCampaign(this.state, type = false).then((camp) => {
+        const url = `campaigns/${camp.campaign.id}`;
+
+        this.props.router.push(url);
+      });
     }
 
   }
@@ -71,6 +77,7 @@ class EditCampaign extends React.Component {
   }
 
   render() {
+
       return(
         <div className="edit-campaign">
           <h1>Let's get some more details.</h1>
@@ -86,10 +93,9 @@ class EditCampaign extends React.Component {
               </div>
 
               <div className="tagline">
-                <h1>Tagline: </h1>
                 <h2>Give us your best pitch! </h2>
                 <input type="text"
-                  placeholder={this.state.target_amount}
+                  placeholder={this.state.tagline}
                   onChange={this.update("tagline")}>
                 </input>
               </div>
@@ -107,14 +113,17 @@ class EditCampaign extends React.Component {
               </div>
 
               <div  className="campaign-img-preview">
-                <div className="user-img">
-                  <img  src={this.state.imageUrl}/>
-                </div>
+                <h2>Lastly, let's upload an image of what you're funding.</h2>
+                <div className="row-div">
+                  <div className="campaign-img">
+                    <img  src={this.state.imageUrl}/>
+                  </div>
 
-                 <div className="file-upload">
-                  <input type="file"
-                    onChange={this.updateFile}
-                    onClick={this.handleFileSubmit}/>
+                   <div className="file-upload">
+                    <input type="file"
+                      onChange={this.updateFile}
+                      onClick={this.handleFileSubmit}/>
+                  </div>
                 </div>
               </div>
 

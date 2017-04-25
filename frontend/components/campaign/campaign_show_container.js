@@ -3,12 +3,11 @@ import { fetchCampaign } from '../../actions/campaign_actions';
 import CampaignShow from './campaign_show';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
-  let campaign = state.campaigns[ownProps.params.id];
-  debugger
+    
+  let campaign = state.campaigns.campaign
+    
   return {
-    campaign,
-    ownerId: campaign.id
+    campaign
   };
 };
 

@@ -8,7 +8,7 @@ class NewCampaign extends React.Component {
     super(props);
     this.state = {
       user_id: this.props.user.id,
-      title: "",
+      title: "My campaign title...",
       target_amount: 0,
       descriptions: ""
     };
@@ -27,6 +27,11 @@ class NewCampaign extends React.Component {
     });
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps !== this.props) {
+
+    }
+  }
 
   update(field) {
     return e => this.setState({
@@ -35,7 +40,9 @@ class NewCampaign extends React.Component {
   }
 
   render() {
-    if (this.props.user) {
+
+    // let errors = this.props.errors.responseText;
+
       return(
         <div className="create-campaign">
           <h1>Start a Campaign</h1>
@@ -43,13 +50,16 @@ class NewCampaign extends React.Component {
 
           <div className="campaign-form">
             <form className="c-form"  onSubmit={this.handleSubmit}>
+              <div>
+
+              </div>
               <div className="target-amount">
                 <h2> How much would you like to raise? </h2>
                 <input type="text"
                   placeholder={this.state.target_amount}
                   onChange={this.update("target_amount")}>
-                </input>
-              </div>
+                </input> <span>USD</span>
+               </div>
 
               <div className="campaign-title">
                 <h2>What would you like to call your campaign?</h2>
@@ -59,7 +69,7 @@ class NewCampaign extends React.Component {
                 </input>
               </div>
 
-              <div className="submit-button">
+              <div className="submit-button1">
                 <input type="submit"
                         value="submit">
                 </input>
@@ -68,12 +78,6 @@ class NewCampaign extends React.Component {
           </div>
         </div>
       );
-    } else {
-      return(
-        <h1> Nothing </h1>
-      );
-    }
-
   }
 }
 
