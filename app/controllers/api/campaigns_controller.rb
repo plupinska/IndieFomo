@@ -24,22 +24,16 @@ class Api::CampaignsController < ApplicationController
     render :show
   end
 
-  def edit
-
-    @campaign = Campaign.find(params[:id])
-
-    render :edit
-  end
-
   def update
     @campaign = Campaign.find(params[:id])
-
+    begin
     if @campaign.update(campaign_params)
       render :show
-
     else
-      debugger
       render json: @campaign.errors.full_messages, status: 422
+    end
+    rescue
+      render json: 'Please upload an image!'
     end
   end
 

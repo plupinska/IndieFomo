@@ -7,7 +7,7 @@ let _oldState = Object.freeze({
 });
 
 const CampaignsReducer = (state = _oldState, action) => {
-  debugger
+
   switch(action.type) {
     case "RECEIVE_CAMPAIGNS":
       const allCampaigns = action.campaigns;

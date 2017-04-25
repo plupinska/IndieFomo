@@ -3,15 +3,15 @@ import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import merge from 'lodash/merge';
 
 const UserReducer = (state = {}, action) => {
-  debugger
+
   switch(action.type) {
     case RECEIVE_USER:
-    debugger
+
       const receivedUser = action.user;
       let x = merge({}, state, receivedUser);
       return x;
     case UPDATE_USER:
-    debugger
+
       return merge({}, state, receivedUser);
     default:
       return state;

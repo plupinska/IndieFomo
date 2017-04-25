@@ -51,7 +51,7 @@ class EditCampaign extends React.Component {
       formData.append("campaign[id]", this.state.id);
       formData.append("campaign[tagline]", this.state.tagline);
       formData.append("campaign[descriptions]", this.state.tagline);
-      debugger
+
 
       this.props.updateCampaign(formData, type = true).then((camp) => {
         const url = `campaigns/${camp.campaign.id}`;
@@ -59,7 +59,7 @@ class EditCampaign extends React.Component {
         this.props.router.push(url);
       });
     } else {
-      debugger
+
       let type;
       this.props.updateCampaign(this.state, type = false).then((camp) => {
         const url = `campaigns/${camp.campaign.id}`;
@@ -83,7 +83,7 @@ class EditCampaign extends React.Component {
     //   err= this.props.errors[0];
     // }
 
-    debugger
+
       return(
         <div className="edit-campaign">
           <h1>Let's get some more details.</h1>

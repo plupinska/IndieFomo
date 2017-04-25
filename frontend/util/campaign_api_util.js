@@ -13,7 +13,7 @@ export const getCampaign = (id) => {
 
 export const updateCampaign = (campaign, type) => {
 // Campaign is nested inside of form data, we retreive it with get
-debugger 
+   
   if (type) {
     return $.ajax({
       url: `/api/campaigns/${campaign.get("campaign[id]")}`,

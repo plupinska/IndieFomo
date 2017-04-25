@@ -1,5 +1,8 @@
 <script type="text/javascript">
-  window.image1 = <%= image_url("carousel1.png") %>
+  window.image1 = "<%= asset_path("1.png") %>"
+  window.image2 = "<%= asset_path("2.png") %>"
+  window.image3 = "<%= asset_path("3.png") %>"
+  window.image4 = "<%= asset_path("4.png") %>"
  <% if logged_in? %>
     window.currentUser =
     <%= render("api/sessions/user.json.jbuilder", user: current_user).html_safe %>

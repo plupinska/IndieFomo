@@ -9,11 +9,6 @@ import Modal from 'react-modal';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
-  window.image1 = "app/assets/images/carousel1.png";
-  window.image2 = "app/assets/images/carousel2.png";
-  window.image3 = "app/assets/images/carousel3.png";
-  window.image4 = "app/assets/images/carousel4.png";
-
   if (window.currentUser) {
     const preloadedState = {session: {currentUser: window.currentUser, errors: {}}};
     store = configureStore(preloadedState);

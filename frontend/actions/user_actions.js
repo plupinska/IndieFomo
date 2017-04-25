@@ -35,7 +35,7 @@ export const getUser = (id) => (dispatch) => {
 };
 
 export const editUser = (user) => (dispatch) => {
-  debugger
+    
   return UserAPIUtil.editUser(user)
     .then((usr) => dispatch(receiveUser(usr)),
     (err) => dispatch(receiveErrors(err.responseJSON)));

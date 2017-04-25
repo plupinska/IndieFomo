@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router';
 class UserShow extends React.Component {
   constructor(props) {
     super(props);
-    debugger
+
     this.state = {
       user: this.props.user,
       imageFile: null,
@@ -36,7 +36,7 @@ class UserShow extends React.Component {
     var formData = new FormData();
     formData.append("user[image]", this.state.imageFile);
     formData.append("user[id]", this.props.params.id);
-    debugger
+
     this.props.editUser(formData).then(usr => {
       this.setState({user: usr});
     });

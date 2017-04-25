@@ -13,14 +13,14 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    debugger
+
     if @user.update(user_params)
       @user.save
       render :show
-      debugger
+
     else
       render json: @user.errors.full_messages, status:422
-      debugger
+
     end
   end
 
