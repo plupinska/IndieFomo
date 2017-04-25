@@ -6,6 +6,7 @@ class CampaignIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+
   }
 
   handleClick(e) {
@@ -15,6 +16,7 @@ class CampaignIndexItem extends React.Component {
   }
 
   render() {
+      
     return(
       <div className="campaign-tile" onClick={this.handleClick}>
         <img src={this.props.campaign.image_url}

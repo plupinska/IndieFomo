@@ -7,7 +7,6 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid black;
   margin: 2%;
   height: 100%;
   flex-wrap: wrap;
@@ -16,18 +15,15 @@
 .all-campaigns {
   display: flex;
   flex-direction: column;
-  width: 95%;
-  margin: auto;
+  width: 100%;
+  align-items: center;
 }
 
 .title {
-  position: relative;
-  top: 0%;
+  // position: relative;
   border: 1px solid black;
   flex: auto;
   padding: 2px;
-  justify-content: flex-start;
-
 }
 
 .campaign-tile {
@@ -38,9 +34,9 @@
   flex-wrap: wrap;
   border: 1px solid rgba(0, 0, 0, 0.0980392);
   margin: 4px;
-  width: 30%;
+  width: 390px;
+  height: 400px;
   padding: 5px;
-  // height: 100%;
 }
 
 .campaign-tile:hover {
@@ -48,20 +44,12 @@
   border: 1px solid lightgrey;
 }
 
-.campaign-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 0 2vw 0 2vw;
-  flex-direction: column;
-}
-
 img {
   flex: auto;
   align-self: flex-start;
   justify-content: center;
-
+  width: 216px;
+  height: 250px;
 }
 
 .description {

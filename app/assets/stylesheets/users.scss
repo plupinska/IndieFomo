@@ -5,7 +5,6 @@
   align-items: center;
   height: 90%;
   width: 100%;
-  border: 1px solid black;
   justify-content: flex-start;
 }
 
@@ -19,7 +18,6 @@
 }
 
 .main-content {
-  border: 1px solid black;
   display: flex;
   flex-direction: row-reverse;
   width: 100%;
@@ -30,41 +28,86 @@
 }
 
 .left {
-  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e4e4e4;
   width: 40%;
   height: 100%
 }
 
 .user-image {
-  border: 1px solid black;
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
 .image-container {
-  // width: 30%;
-  // height: 40%;
-  // background-color: blue;
+  width: 100%;
+  height: 79%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
 }
 
 .img-title {
-  border: 1px solid black;
+  border-bottom: 1px solid #e4e4e4;
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  height: 20%;
 }
 
 .user-img {
-  width: 50px;
-  max-height: 100%;
-  background-size: cover;
-  background-color: black;
-  border-radius: 100px;
-  // border: none;
+  height: 100%;
+  width: 20%;
+  padding-top: 30px;
+  padding-left: 5px;
+  align-items: center;
+}
+
+.file-upload {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.file-upload > input {
+  width: 100%;
+  font-size: 20px;
+}
+
+.file-submit {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.file-submit > input {
+  padding: 5px;
+  margin: 20px 10px;
+  background-color: #FC3468;
+  color: white;
+  min-height: 30px;
+  border: none;
+  font-size: 20px;
+}
+
+.usr-avatar {
+  border: 5px solid red;
+  width: 90px;
+  height: 90px;
+  background-color: #c3c3c3;
+  border-radius: 100%;
+  border: 1px solid  #e4e4e4;
+}
+
+.usr-avatar-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 20px;
 }
 
 .about-me {
@@ -73,7 +116,6 @@
 
 .right {
   border: 1px solid black;
-  // padding: 10px;
   width: 40%;
 }
 
@@ -94,9 +136,3 @@
 .table-name {
   border: 1px solid black;
 }
-
-// .name:hover {
-//   .drop-down {
-//     z-index: 532895723;
-//   }
-// }

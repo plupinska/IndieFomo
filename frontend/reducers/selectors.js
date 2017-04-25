@@ -1,3 +1,10 @@
 export const selectCampaigns = (state) => {
-  return Object.keys(state.campaigns).map(key => state.campaigns[key]);
+  if (state.campaigns.campaign) {
+    return Object.keys(state.campaigns.campaign).map(key => state.campaigns.campaign[key]);
+  } else {
+    // because we need to check if we have campaigns in render method
+    // of campaign index
+    return [null];
+  }
+
 };

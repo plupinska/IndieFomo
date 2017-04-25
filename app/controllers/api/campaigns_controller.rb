@@ -38,8 +38,8 @@ class Api::CampaignsController < ApplicationController
       render :show
 
     else
-
-      render @campaign.errors.full_messages, status: 422
+      debugger
+      render json: @campaign.errors.full_messages, status: 422
     end
   end
 

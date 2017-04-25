@@ -1,0 +1,40 @@
+.overview-tile {
+  border: 1px solid black;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.photo {
+  border: 1px solid black;
+  width: 25%
+}
+
+.show-img {
+  width: 100%;
+  height: 100%;
+}
+
+.campaign-basics {
+  border: 1px solid black;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.campaign-overview {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 25px;
+  width: 100%;
+  height: 90%;
+}
+
+.user-profile {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}

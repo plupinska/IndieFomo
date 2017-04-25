@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router';
 
 class NewCampaign extends React.Component {
   constructor(props) {
-
+      
     super(props);
     this.state = {
       user_id: this.props.user.id,

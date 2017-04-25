@@ -7,7 +7,7 @@ let _oldState = Object.freeze({
 });
 
 const CampaignsReducer = (state = _oldState, action) => {
-    
+  debugger
   switch(action.type) {
     case "RECEIVE_CAMPAIGNS":
       const allCampaigns = action.campaigns;
@@ -15,18 +15,17 @@ const CampaignsReducer = (state = _oldState, action) => {
 
       const oldS = merge({}, state);
       let x =  merge({}, oldS, {campaign: action.campaigns});
-        
+
       return x;
     case  "RECEIVE_CAMPAIGN":
       const newState = merge({}, state);
-
       let y = merge(newState, {campaign: action.campaign});
-        
+
       return y;
 
     case "RECEIVE_CAMPAIGN_ERRORS":
-      return merge(state, {errors: action.errors});
-        
+      return merge(state, {errors: action.errors.statusText});
+
     default:
       return state;
   }

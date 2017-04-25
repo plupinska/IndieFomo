@@ -6,13 +6,13 @@ export const getUser = (id) => {
 };
 
 export const editUser = (user) => {
-
+  debugger
   return $.ajax({
-    url: `api/users/${user.id}`,
+    url: `api/users/${user.get("user[id]")}`,
     method: 'PATCH',
     dataType: "json",
     contentType: false,
     processData: false,
-    data: {user}
+    data: user
   });
 };
