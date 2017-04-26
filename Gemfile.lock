@@ -123,6 +123,8 @@ GEM
     mimemagic (0.3.2)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
+    momentjs-rails (2.17.1)
+      railties (>= 3.1)
     multi_json (1.12.1)
     nenv (0.3.0)
     nokogiri (1.7.1)
@@ -237,6 +239,7 @@ DEPENDENCIES
   guard-livereload
   jbuilder (~> 2.0)
   jquery-rails
+  momentjs-rails
   paperclip
   pg
   pg_search

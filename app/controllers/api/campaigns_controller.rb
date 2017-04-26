@@ -6,26 +6,19 @@ class Api::CampaignsController < ApplicationController
   end
 
   def create
-
     @campaign = Campaign.create(campaign_params)
 
     if @campaign.save
       render :show
-
     else
       render json: @campaign.errors.full_messages, status:422
-
     end
   end
 
   def show
-
-
     @campaign = Campaign.find(params[:id])
-
-    @total_contributions = Contribution.select("SUM(amount) as total_contributions")
-      .where("campaign_id = #{params[:id]}")
-
+    @num_contributions = Contribution.where(campaign_id: params[:id]).count
+    @total_contributions = Contribution.where(campaign_id: params[:id]).sum(:amount)
     render :show
   end
 

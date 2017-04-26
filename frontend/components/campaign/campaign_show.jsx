@@ -27,7 +27,8 @@ class CampaignShow extends React.Component {
             <CampaignOverview
             fetchCampaign={this.props.fetchCampaign}
             getUser={this.props.getUser}
-            campaign={this.state.campaign} />
+            campaign={this.state.campaign}
+            makeContribution={this.props.makeContribution} />
         </div>
       );
     } else {

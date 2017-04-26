@@ -3,7 +3,8 @@
 
 
   json.id @campaign.id
-  json.total_contributions @total_contributions[0]["total_contributions"]
+  json.total_contributions @total_contributions
+  json.num_contributions @num_contributions
   json.user_id @campaign.user_id
   json.title @campaign.title
   json.descriptions @campaign.descriptions

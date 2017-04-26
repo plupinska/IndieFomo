@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :users, only: [:update, :show]
     resource :session, only: [:create, :destroy]
     resources :campaigns
+    resources :contributions, only: [:create, :show]
   end
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

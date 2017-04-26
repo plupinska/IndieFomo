@@ -5,11 +5,43 @@ import ProgressBlock from './progress_block';
 class CampaignOverview extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      contribution: {amount: 0,
+      user_id:this.props.user.id,
+      campaign_id: this.props.campaign.id},
+      isOpen: false
+    };
+  }
 
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
+
+  handleButtonType(buttonType) {
+    if (this.state.isOpen) {
+      return(
+        <div className="contribute">
+          <button className="backit">Check Out</button>
+          <input className="contribution"
+                 value="$0"
+                 onChange={this.update("amount")}/>
+        </div>
+      );
+    } else {
+      return(
+        <div className="contribute">
+          <button className="backit">Check Out</button>
+          <input className="contribution"
+                 value="$0"
+                 onChange={this.update("amount")}/>
+        </div>
+      );
+    }
   }
 
   render() {
-
     return (
       <div className="campaign-overview">
         <div className="photo">
@@ -24,13 +56,9 @@ class CampaignOverview extends React.Component {
           </div>
 
           <div className="progress-bar">
-            <ProgressBlock />
+            <ProgressBlock campaign={this.props.campaign} makeContribution={this.props.makeContribution}/>
           </div>
-
-          <div className="contribute">
-            <button className="backit">Back It</button>
-            <input className="contribution" value=""/>
-          </div>
+          {this.handleButtonType(this.state.isOpen)}
         </div>
       </div>
     );
