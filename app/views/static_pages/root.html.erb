@@ -3,6 +3,7 @@
   window.image2 = "<%= asset_path("2.png") %>"
   window.image3 = "<%= asset_path("3.png") %>"
   window.image4 = "<%= asset_path("4.png") %>"
+  window.profile_placeholder= "<%= asset_path("profile_placeholder.png") %>"
  <% if logged_in? %>
     window.currentUser =
     <%= render("api/sessions/user.json.jbuilder", user: current_user).html_safe %>

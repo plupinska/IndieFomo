@@ -28,14 +28,14 @@ export const receiveErrors = (errors) => {
 };
 
 export const getUser = (id) => (dispatch) => {
-
+    
   return UserAPIUtil.getUser(id)
     .then((usr) => dispatch(receiveUser(usr)),
     (err) => dispatch(receiveErrors(err.responseJSON)));
 };
 
 export const editUser = (user) => (dispatch) => {
-    
+
   return UserAPIUtil.editUser(user)
     .then((usr) => dispatch(receiveUser(usr)),
     (err) => dispatch(receiveErrors(err.responseJSON)));

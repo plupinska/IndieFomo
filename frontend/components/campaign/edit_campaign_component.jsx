@@ -15,7 +15,7 @@ class EditCampaign extends React.Component {
       end_date: null,
       tagline: "Think persuasion, not baseball...",
       imageFile: null,
-      imageUrl: null,
+      imageUrl: this.props.user.image,
       id: this.props.params.id
     };
 

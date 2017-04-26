@@ -79,7 +79,7 @@
   position: absolute;
   top:0;
   left: 0;
-  margin-left: 500px;
+  margin-left: 508px;
   width: 80px;
   height: 80px;
   margin-top: -27px;
@@ -91,4 +91,25 @@
 
 .category {
   padding-top: 5px;
+}
+
+.submit-button > input {
+  margin-left: 25px;
+  margin-top: 10px;
+  background-color: #FC3468;
+  color: white;
+  align-items: center;
+  min-height: 30px;
+  padding:5px;
+  border: none;
+}
+
+.submit-button > input:hover {
+  cursor: pointer;
+  background: #ff1854;
+}
+
+.file-upload > input {
+  text-align: center;
+  font-size: 12px;
 }

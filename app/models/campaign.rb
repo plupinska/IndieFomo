@@ -1,9 +1,7 @@
 class Campaign < ActiveRecord::Base
   validates :title, presence: true
 
-  has_many :contributions, through: :user, source: :contributions
-
-  has_one :category
+  has_many :contributions
 
   belongs_to :user,
     primary_key: :id,

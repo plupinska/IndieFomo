@@ -14,7 +14,7 @@ class CampaignShow extends React.Component {
   componentWillMount() {
 
     this.props.fetchCampaign(this.props.campaignId).then(camp => {
-        
+
       this.setState({campaign: camp.campaign})
     });
   }
@@ -24,9 +24,9 @@ class CampaignShow extends React.Component {
     if (this.state.campaign) {
       return(
         <div className="overview-tile">
-          <h1>This is the campaign show </h1>
             <CampaignOverview
-            fetchCampaign={this.state.fetchCampaign}
+            fetchCampaign={this.props.fetchCampaign}
+            getUser={this.props.getUser}
             campaign={this.state.campaign} />
         </div>
       );

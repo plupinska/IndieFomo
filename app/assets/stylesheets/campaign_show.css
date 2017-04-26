@@ -1,40 +1,111 @@
 .overview-tile {
-  border: 1px solid black;
-  height: 60%;
+  /*border: 1px solid black;*/
+  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-
+/*SHOW AND OVERVIEW COMPONENTS COMBINED*/
 .photo {
-  border: 1px solid black;
+  border: 1px solid #eee;
   width: 25%
 }
 
 .show-img {
-  width: 100%;
-  height: 100%;
+  width: 160%;
+  height: 280px;
 }
 
 .campaign-basics {
-  border: 1px solid black;
+  /*border: 1px solid #eee;  */
   width: 30%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  height: 280px;
+  margin-left: 40px;
 }
 
-.campaign-overview {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-top: 25px;
-  width: 100%;
-  height: 90%;
+.campaign-basics > h1{
+  font-size: 24px;
+  padding: 5px;
+}
+.campaign-basics > h2 {
+  padding-left: 5px;
+  padding-right:5px;
+  color: #878787;
 }
 
 .user-profile {
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
+  padding: 5px;
+  /*border: 1px solid black;*/
+}
+
+.progress-bar {
+  border: 1px solid black;
+  height: 25%;
+}
+.campaign-overview {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 30px;
+  width: 100%;
+  height: auto;
+}
+
+.contribute {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+  height: 30%;
+  justify-content: space-between;
+  align-items: flex-end;
+
+}
+
+.backit {
+  background-color: #FC3468;
+  color: white;
+  align-items: center;
+  min-height: 30px;
+  padding:5px;
+  margin: 3px;
+}
+
+.backit:hover {
+  cursor: pointer;
+  background: #ff1854;
+}
+
+.usr-tag {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.right-profile {
+  font-size: 12px;
+}
+
+.about_me {
+  color: #878787;
+}
+
+.user-profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.user-tag {
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+  padding-right: 5px;
 }

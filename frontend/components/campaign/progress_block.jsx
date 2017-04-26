@@ -7,6 +7,7 @@ class ProgressBlock extends React.Component {
 
 
   render() {
+
     return (
       <div className="campaign-overview">
         <h1> This is the Progress Component </h1>

@@ -3,6 +3,7 @@
 
 
   json.id @campaign.id
+  json.total_contributions @contributions
   json.user_id @campaign.user_id
   json.title @campaign.title
   json.descriptions @campaign.descriptions

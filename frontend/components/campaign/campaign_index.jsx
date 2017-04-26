@@ -11,7 +11,6 @@ class CampaignIndex extends React.Component {
 
   componentWillMount() {
     this.props.fetchCampaigns();
-
   }
 
   render() {
@@ -29,7 +28,9 @@ class CampaignIndex extends React.Component {
 
       return(
         <div className="all-campaigns">
-          <h1 className="title">All Campaigns</h1>
+          <div className="title-">
+            <h1 className="title">All Campaigns</h1>
+          </div>
           <div className="campaigns">
             {AllCampaigns}
             {AllCampaigns}

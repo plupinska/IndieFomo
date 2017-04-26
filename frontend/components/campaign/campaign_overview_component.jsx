@@ -20,15 +20,16 @@ class CampaignOverview extends React.Component {
           <h1>{this.props.campaign.title}</h1>
           <h2>{this.props.campaign.tagline}</h2>
           <div className="user-profile">
-            <UserProfileBlock fetchUser={this.props.fetchUser} owner={this.props.ownerId} />
+            <UserProfileBlock getUser={this.props.getUser} userId={this.props.campaign.user_id}/>
           </div>
 
           <div className="progress-bar">
-            <ProgressBlock camp={this.props.campaign}/>
+            <ProgressBlock />
           </div>
 
-          <div>
-            <button>Back It</button>
+          <div className="contribute">
+            <button className="backit">Back It</button>
+            <input className="contribution" value=""/>
           </div>
         </div>
       </div>

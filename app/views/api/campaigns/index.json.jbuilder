@@ -11,12 +11,14 @@
 #
 
  @campaigns.each  do |campaign|
+   debugger
   json.set! campaign.id do
+    json.total_contributions @contributions
     json.user campaign.user
     json.id  campaign.id
     json.title  campaign.title
     json.descriptions  campaign.descriptions
-    json.tagline campaign.title
+    json.tagline campaign.tagline
     json.category_id  campaign.category_id
     json.image_url  campaign.image_url
     json.end_date  campaign.end_date

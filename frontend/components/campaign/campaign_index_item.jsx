@@ -16,7 +16,7 @@ class CampaignIndexItem extends React.Component {
   }
 
   render() {
-      
+
     return(
       <div className="campaign-tile" onClick={this.handleClick}>
         <img src={this.props.campaign.image_url}

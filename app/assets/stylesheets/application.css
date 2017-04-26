@@ -36,7 +36,7 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #dad7d7;
-  min-height: 70px;
+  min-height: 60px;
   box-shadow: -1px 4px 4px 1px rgba(0, 0, 0, 0.04);
 
 }
@@ -52,7 +52,7 @@
 .auth-form-container > ul {
   display: flex;
   justify-content: space-between;
-  font-size: 20px;
+  font-size: 18px;
   border: 1px solid black;
   width: 70%;
   align-items: center;
