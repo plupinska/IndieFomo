@@ -1,5 +1,5 @@
 import React from 'react';
-import TileSlider from './tile_slider';
+import TileSliderContainer from './tile_slider_container';
 
 class Discovery extends React.Component {
 
@@ -8,6 +8,7 @@ class Discovery extends React.Component {
     return(
       <div className="discovery">
         <h1> Top Picks </h1>
+        <TileSliderContainer/>
       </div>
     );
   }

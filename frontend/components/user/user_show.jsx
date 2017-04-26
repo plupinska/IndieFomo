@@ -51,6 +51,7 @@ class UserShow extends React.Component {
         return(
           <tr>
             <td>{cp.title}</td>
+            <td>{cp.amout}</td>
           </tr>
         )
       })

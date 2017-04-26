@@ -10,7 +10,6 @@ class HomePage extends React.Component {
       <div className="home-page">
         <div className="carousel">
           <Carousel/>
-          
         </div>
       </div>
     );

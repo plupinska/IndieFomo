@@ -82,7 +82,7 @@ class EditCampaign extends React.Component {
     // if (this.props.errors) {
     //   err= this.props.errors[0];
     // }
-
+       
 
       return(
         <div className="edit-campaign">

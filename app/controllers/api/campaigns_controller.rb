@@ -20,7 +20,11 @@ class Api::CampaignsController < ApplicationController
 
   def show
 
+
     @campaign = Campaign.find(params[:id])
+
+    @total_contributions = Contribution.select("SUM(amount) as total_contributions")
+      .where("campaign_id = #{params[:id]}")
 
     render :show
   end

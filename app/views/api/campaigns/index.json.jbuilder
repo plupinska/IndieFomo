@@ -11,9 +11,8 @@
 #
 
  @campaigns.each  do |campaign|
-   debugger
+
   json.set! campaign.id do
-    json.total_contributions @contributions
     json.user campaign.user
     json.id  campaign.id
     json.title  campaign.title

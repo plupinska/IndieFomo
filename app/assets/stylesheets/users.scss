@@ -30,7 +30,7 @@
 .left {
   display: flex;
   flex-direction: column;
-  border: 1px solid #e4e4e4;
+  // border: 1px solid #e4e4e4;
   width: 40%;
   height: 100%
 }
@@ -73,6 +73,7 @@
 .file-upload > input {
   width: 100%;
   font-size: 12px;
+
 }
 
 .file-submit {
@@ -111,11 +112,11 @@
 }
 
 .about-me {
-  border: 1px solid black;
+  // border: 1px solid black;
 }
 
 .right {
-  border: 1px solid black;
+  // border: 1px solid black;
   width: 40%;
 }
 

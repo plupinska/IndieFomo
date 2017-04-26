@@ -6,41 +6,50 @@
 // class TileSlider extends React.Component {
 //
 //   constructor(props) {
-//       
+//
 //     super(props);
 //   }
 //
 //   componentDidMount() {
-//       
+//
 //     this.props.fetchCampaigns();
 //   }
 //
 //   render() {
+//
 //     var settings = {
 //       dots: true,
 //       infinite: true,
-//       slidesToShow: 3,
-//       slidesToScroll: 3
+//       slidesToShow: 4,
+//       slidesToScroll: 5,
 //     };
-//     // Why is this a problem.
-//     const camps = this.props.tiles.campaigns.map(camp => {
-//         
-//       return (
-//         <CampaignIndexItem campaign={camp} fetchCampaign={this.props.fetchCampaign}/>
-//       )
-//     }
 //
-//     // Why is this a problem
-//     return (
-//       <Slider {...settings}>
-//         <div className="slide" ><h3 className="slider-img" >{camps[0]}</h3></div>
-//         <div className="slide" ><h3 className="slider-img" >{camps[1]}</h3></div>
-//         <div className="slide" ><h3 className="slider-img" >{camps[2]}</h3></div>
-//         <div className="slide" ><h3 className="slider-img" >{camps[3]}</h3></div>
-//       </Slider>
+//   if (this.props.tiles) {
+//     return(
+//       <div className="discover-slider">
+//         <Slider {...settings}>
+//           <div className="slide" ><h3 className="slider-img" >
+//           <CampaignIndexItem  campaign={}/>
+//           </h3></div>
+//
+//           <div className="slide" ><h3 className="slider-img" >
+//           <CampaignIndexItem />
+//           </h3></div>
+//
+//           <div className="slide" ><h3 className="slider-img" ><CampaignIndexItem />
+//           </h3></div>
+//
+//           <div className="slide" ><h3 className="slider-img" ><CampaignIndexItem />
+//           </h3></div>
+//
+//         </Slider>
+//       </div>
+//     );
+//   } else {
+//     return(
+//       <h1>Waiting.. </h1>
 //     );
 //   }
-//
 // }
 //
 // export default TileSlider;
