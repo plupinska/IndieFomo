@@ -24,6 +24,7 @@ class Api::CampaignsController < ApplicationController
 
   def update
     @campaign = Campaign.find(params[:id])
+
     begin
     if @campaign.update(campaign_params)
       render :show

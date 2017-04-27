@@ -48,7 +48,6 @@ class EditCampaign extends React.Component {
       // We need to append all other fields to form data
       // in order to pass through all info from the form
       formData.append("campaign[image]", this.state.imageFile);
-      formData.append("campaign[title]", this.state.title);
       formData.append("campaign[id]", this.state.id);
       formData.append("campaign[tagline]", this.state.tagline);
       formData.append("campaign[descriptions]", this.state.tagline);

@@ -21,7 +21,7 @@ class CampaignShow extends React.Component {
   }
 
   render() {
-
+      
     if (this.state.campaign) {
       return(
         <div className="campaign-show">

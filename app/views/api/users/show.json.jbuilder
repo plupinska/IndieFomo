@@ -1,1 +1,1 @@
-json.partial! "api/users/user", :locals => {user: @user}
+json.partial! "api/users/user", :locals => {user: @user, contributions: @contributions}

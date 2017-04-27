@@ -46,5 +46,3 @@ class UserProfileBlock extends React.Component {
 }
 
 export default UserProfileBlock;
-
-  

@@ -57,7 +57,7 @@ class Header extends React.Component {
       <div className="greet">
           <Link className="name">Hi, {this.props.currentUser.first_name}</Link>
               <ul className="drop-down">
-                <li className="lis"><Link className="campaigns-link" >Campaigns</Link></li>
+                <li className="lis"><Link to="campaigns" className="profile-link" >Campaigns</Link></li>
                 <li className="lis"><Link className="profile-link" to={`/users/${this.props.currentUser.id}`}>Profile</Link></li>
                 <li className="lis"><button className="log-out-button" onClick={this.props.logout}>Log Out</button> </li>
               </ul>

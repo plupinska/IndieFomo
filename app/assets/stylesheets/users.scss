@@ -13,8 +13,19 @@
   height: 10%;
   width: 100%;
   justify-content: flex-start;
+  padding-left: 55px;
   align-items: center;
   font-size: 4vw;
+}
+
+.profile-photo {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.profile-greeting > h1 {
+  font-size: 24px;
+  padding-left: 35px;
 }
 
 .main-content {
@@ -121,19 +132,49 @@
 }
 
 .user-overview {
-  border: 1px solid black;
   // padding: 10px;
   width: 100%;
 }
 
-.contributions {
-  border: 1px solid black;
-  height: 50%;
-  width: 90%;
-  font-size: 2vw;
+.user-content {
+  color: #878787;
+  font-size: 14px;
+}
 
+.stats {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 50%;
+  align-items: center;
+}
+
+.contributions-table {
+  border: 1px solid #e4e4e4;
+  height: 50%;
+  width: 40%;
+  font-size: 14px;
+  overflow: scroll;
+}
+
+.campaigns-table {
+  border: 1px solid #e4e4e4;
+  height: 50%;
+  width: 40%;
+  font-size: 14px;
+  overflow: scroll;
 }
 
 .table-name {
-  border: 1px solid black;
+  font-weight: bold;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.table > table {
+  width: 100%;
+}
+
+.table-label {
+  border-bottom: 1px solid #e4e4e4;
 }

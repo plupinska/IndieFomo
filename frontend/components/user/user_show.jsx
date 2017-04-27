@@ -8,7 +8,7 @@ class UserShow extends React.Component {
     this.state = {
       user: this.props.user,
       imageFile: null,
-      imageUrl: null
+      imageUrl: this.props.user.image_url
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
@@ -43,6 +43,7 @@ class UserShow extends React.Component {
   }
 
   render() {
+
     const name = this.props.user ? this.props.user.first_name : "";
 
     if (this.props.user.id) {
@@ -51,11 +52,24 @@ class UserShow extends React.Component {
         return(
           <tr>
             <td>{cp.title}</td>
-            <td>{cp.amout}</td>
+            <td>$ {cp.total_contributions} USD</td>
+            <td>{cp.num_contributions}</td>
+            <td>{Math.round((cp.total_contributions/cp.target_amount) * 100)}</td>
           </tr>
-        )
-      })
+        );
+      });
 
+
+    let table2 = this.props.user.contributions.map(cont => {
+
+      return(
+        <tr>
+          <td>{cont.campaign_title}</td>
+          <td>$ {cont.amount} USD</td>
+          <td>Thu, April 27, 2017</td>
+        </tr>
+      );
+    });
 
       return(
         <div className="profile-page">
@@ -70,7 +84,7 @@ class UserShow extends React.Component {
                 <div className="image-container">
 
                  <div className="user-img">
-                   <img className="usr-avatar"  src={image}/>
+                   <img className="usr-avatar"  src={this.state.imageUrl}/>
                  </div>
 
                 <form className= "usr-avatar-form" onSubmit={this.handleSubmit}>
@@ -91,32 +105,59 @@ class UserShow extends React.Component {
               </div>
             </div>
             <div className="right">
+              <div className="profile-photo">
+                <img className="profile-photo-img" src={this.props.user.image_url} />
+              </div>
               <div className="user-overview">
               <h1>About Me</h1>
               <div className="user-content">
-                {this.state.user.about_me}
+                {this.props.user.about_me}
               </div>
               </div>
             </div>
           </div>
 
-          <div className="contributions">
-            <h1 className="table-name"> Contributions </h1>
+          <div className="stats">
+          <div className="campaigns-table">
+            <h1 className="table-name">My Campaigns </h1>
             <div className="table">
               <table>
-                <tr>
-                  <td> </td>
-                </tr>
-                {table}
+                <tbody>
+                  <tr>
+                    <td className="table-label">Campaigns</td>
+                    <td className="table-label">Amount Raised</td>
+                    <td className="table-label">Number Contributions</td>
+                    <td className="table-label">% of Target</td>
+                  </tr>
+                  {table}
+                </tbody>
               </table>
             </div>
           </div>
+
+          <div className="contributions-table">
+            <h1 className="table-name">My Contributions</h1>
+            <div className="table">
+              <table>
+                <tbody>
+                  <tr>
+                    <td className="table-label">Campaign</td>
+                    <td className="table-label">Amount</td>
+                    <td className="table-label">Rewards</td>
+                  </tr>
+                  {table2}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          </div>
+
         </div>
       );
     } else {
       return (
         <h1> waiting... </h1>
-      )
+      );
     }
   }
 }

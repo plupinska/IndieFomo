@@ -15,7 +15,7 @@ const SessionReducer = (state = _nullUser, action) => {
       if (currentUser) {
         return merge({}, state, {currentUser: currentUser} );
       } else {
-        return merge({}, state);
+        return _nullUser;
       }
     case RECEIVE_SESSION_ERRORS:
 

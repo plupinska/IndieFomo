@@ -7,7 +7,10 @@ class Campaign < ActiveRecord::Base
   }
 
   validates :title, presence: true
-  has_many :contributions
+  has_many :contributions,
+    primary_key: :id,
+    foreign_key: :campaign_id,
+    class_name: "Contribution"
 
   belongs_to :user,
     primary_key: :id,

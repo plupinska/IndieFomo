@@ -10,7 +10,7 @@ class Discovery extends React.Component {
         <div className="explore-nav">
           <h1> Top Picks </h1>
           <div className="campaigns-link">
-            <Link to="campaigns" className="explore">See All</Link>
+            <Link to="/campaigns" className="explore">See All</Link>
           </div>
         </div>
         <TileSliderContainer/>
