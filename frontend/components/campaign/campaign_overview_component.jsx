@@ -34,26 +34,32 @@ class CampaignOverview extends React.Component {
   }
 
   handleButtonType() {
+    if (this.props.user) {
+      if (this.state.isOpen) {
 
-    if (this.state.isOpen) {
+        return(
+          <div className="contribute">
+            <button onClick={this.handleClick} className="check-out">Check Out</button>
+            <input className="contribution"
+                   type="text"
+                   placeholder="$0"
+                   onChange={this.update("amount")}/>
+          </div>
+        );
+      } else {
 
-      return(
-        <div className="contribute">
-          <button onClick={this.handleClick} className="check-out">Check Out</button>
-          <input className="contribution"
-                 type="text"
-                 placeholder="$0"
-                 onChange={this.update("amount")}/>
-        </div>
-      );
+        return(
+          <div className="contribute">
+            <button onClick={this.toggleOpen} className="back-it">Back It</button>
+          </div>
+        );
+      }
     } else {
-
-      return(
-        <div className="contribute">
-          <button onClick={this.toggleOpen} className="back-it">Back It</button>
-        </div>
-      );
+        return(
+            <div></div>
+        );
     }
+
   }
 
   render() {

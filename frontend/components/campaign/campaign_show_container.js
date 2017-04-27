@@ -6,10 +6,12 @@ import { makeContribution } from '../../actions/contribution_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let campaignId = ownProps.params.id;
+  let usr = state.session.currentUser;
 
+  debugger
   return {
     campaignId,
-    user: state.session.currentUser.id
+    user: usr
   };
 };
 

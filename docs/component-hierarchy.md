@@ -68,7 +68,7 @@
 |-------|-------------|
 | "/sign-up" | "Auth Form Container" |
 | "/sign-in" | "Auth Form Container" |
-| "/yolo" | "Landing Page" |
+| "/" | "Landing Page" |
 | "/profile/:id" | "UserProfile Container" |
 | "/profile/:id/contributions" | "User Contributions" |
 | "/profile/:id/campaigns" | "User Campaigns"

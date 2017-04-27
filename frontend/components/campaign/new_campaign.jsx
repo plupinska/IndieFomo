@@ -7,7 +7,7 @@ class NewCampaign extends React.Component {
 
     super(props);
     this.state = {
-      user_id: this.props.user.id,
+      user_id: null,
       title: "My campaign title...",
       target_amount: 0,
       descriptions: ""
@@ -17,7 +17,7 @@ class NewCampaign extends React.Component {
   }
 
   handleSubmit(e) {
-      
+
     e.preventDefault();
     const newCamp = this.state
     this.props.createCampaign(newCamp).then((camp) => {
@@ -27,9 +27,11 @@ class NewCampaign extends React.Component {
     });
   }
 
-  componentWillReceiveProps(newProps) {
-    if (newProps !== this.props) {
-
+  componentWillMount() {
+    if (!this.props.user) {
+      this.props.router.push('/');
+    } else {
+      this.setState({user_id: this.props.user.id});
     }
   }
 

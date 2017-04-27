@@ -16,7 +16,7 @@ const Root = ({store}) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
-      replace('/yolo');
+      replace('/');
     }
   };
 
@@ -26,15 +26,20 @@ const Root = ({store}) => {
     const url = location.hash.split('/');
     const userId = url[2];
     if (currentUser && currentUser.id !== parseInt(userId)) {
-      replace('/yolo');
+      replace('/');
     }
   };
+
+  const redirect = (nextState, replace) => {
+    replace('/');
+  };
+
 
   return(
     <Provider store={ store }>
       <Router history={ hashHistory }>
         <Route path="/" component={ App }>
-          <Route path="/yolo" component={HomePage}/>
+          <IndexRoute component={HomePage}/>
           <Route path="/campaigns" component={CampaignIndexContainer}/>
           <Route path="/campaign/:id/edit" component={EditCampaignComponent}/>
           <Route path="/campaigns/:id" component={CampaignShowContainer} />
@@ -46,6 +51,4 @@ const Root = ({store}) => {
   );
 };
 
-// <Route path="/campaign/:id/edit"/>
-// <Route path="/campaign/:id/addrewards" />
 export default Root;

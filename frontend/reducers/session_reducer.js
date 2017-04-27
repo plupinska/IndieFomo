@@ -3,7 +3,7 @@ import merge from 'lodash/merge';
 
 const _nullUser = Object.freeze({
   currentUser: null,
-  errors: {}
+  errors: null
 });
 
 const SessionReducer = (state = _nullUser, action) => {
@@ -13,14 +13,14 @@ const SessionReducer = (state = _nullUser, action) => {
       const currentUser = action.currentUser;
 
       if (currentUser) {
-        return merge({}, state, {currentUser: currentUser} );
+        return merge({}, state, {currentUser: currentUser, errors: null} );
       } else {
         return _nullUser;
       }
     case RECEIVE_SESSION_ERRORS:
-
-      const errors = action.errors;
-      return merge({}, _nullUser, {errors: action.errors.responseText});
+    debugger
+      const errors = action.errors.base[0];
+      return merge({}, _nullUser, {errors: errors});
     default:
 
       return state;

@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:update, :show]
     resource :session, only: [:create, :destroy]
-    resources :campaigns
+    resources :campaigns do
+      resources :rewards, only: [:create, :destroy, :update]
+    end
+
     resources :contributions, only: [:create, :show]
   end
   # You can have the root of your site routed with "root"

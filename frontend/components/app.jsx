@@ -8,7 +8,7 @@ const App = ({children}) => {
     <div className="indie-fomo">
       <div id="app">
           <div className="header">
-            <Link className="logo" to="/yolo">Indie Fomo
+            <Link className="logo" to="/">Indie Fomo
             </Link>
             <div className="search">Search </div>
             <div className="createCampaign">

@@ -26,7 +26,7 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @contributions = @user.contributions
+    @contributions = Contribution.where(user_id: params[:id])
     @contrubutions ||= 0
     render :show
   end

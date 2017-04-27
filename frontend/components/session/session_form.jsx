@@ -8,7 +8,8 @@ class SessionForm extends React.Component {
       password: "Password",
       first_name: "First Name",
       last_name: "Last Name",
-      email: "Email"
+      email: "Email",
+      errors: this.props.errors
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -25,6 +26,8 @@ class SessionForm extends React.Component {
       [field]: e.currentTarget.value
     });
   }
+
+
 
   handleFormType(type) {
     if (this.props.formType === "signup") {
@@ -43,6 +46,17 @@ class SessionForm extends React.Component {
         onChange={this.update("last_name")}
         className="input">
         </input>
+        </div>
+      );
+    }
+  }
+
+  renderErrors() {
+    if (this.props.errors) {
+
+      return(
+        <div className="session-errors">
+          {this.props.errors}
         </div>
       );
     }
@@ -71,7 +85,8 @@ class SessionForm extends React.Component {
           <br/>
           <input className="input submit" type="submit"
             value="Submit" >
-            </input>
+          </input>
+          {this.renderErrors()}
         </form>
       </div>
     );

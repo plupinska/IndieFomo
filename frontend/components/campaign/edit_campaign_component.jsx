@@ -72,12 +72,12 @@ class EditCampaign extends React.Component {
 
 
   renderErrors() {
-
+    debugger
     if (this.props.errors) {
-
+      debugger
       return(
         <div className="campaign-errors">
-          {this.props.errors}
+          {this.state.err}
         </div>
       );
     }

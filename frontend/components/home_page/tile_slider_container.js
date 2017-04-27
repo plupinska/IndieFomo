@@ -6,7 +6,8 @@ import { selectCampaigns } from '../../reducers/selectors';
 const mapStateToProps = (state) => {
 
   return {
-    campaigns: selectCampaigns(state)
+    campaigns: selectCampaigns(state),
+    // loggedIn: Boolean(session.currentUser),
   };
 };
 

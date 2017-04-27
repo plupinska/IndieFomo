@@ -40,8 +40,6 @@ tom = User.create!(first_name: "Thomas", password: "password", last_name: "Word"
 petty = User.create!(first_name: "Petty", last_name: "Jude", password: "password", about_me: "I need to fund my alter ego Petty McFly: the professional sandcastle building action sport explorer from the land to the sea.",
   email: "petty@gmail.com")
 
-cat = User.create!(first_name: "Marty", last_name: "McFly", password: "password", about_me: "I like Red Vests and Time travel. My funds will benefit the space time continuum.",
-  email: "cat@gmail.com", image: cat)
 
 Category.create!(cat: "Technology")
 Category.create!(cat: "Projects")
@@ -79,5 +77,5 @@ Contribution.create!(user_id: pl.id, campaign_id: Campaign.find_by(title: "Plant
 Contribution.create!(user_id: pl.id, campaign_id: Campaign.find_by(title: "Williamsburg Loft Party").id , amount: 5)
 Contribution.create!(user_id: petty.id, campaign_id: Campaign.find_by(title: "Taco Stand").id , amount: 257)
 Contribution.create!(user_id: petty.id, campaign_id: Campaign.find_by(title: "Cochella Funds").id , amount: 98)
-Contribution.create!(user_id: cat.id, campaign_id: Campaign.find_by(title: "Minimalistic magnetic shelf").id , amount: 40)
-Contribution.create!(user_id: cat.id, campaign_id: Campaign.find_by(title: "Plant Bot").id , amount: 87)
+Contribution.create!(user_id: l.id, campaign_id: Campaign.find_by(title: "Minimalistic magnetic shelf").id , amount: 40)
+Contribution.create!(user_id: l.id, campaign_id: Campaign.find_by(title: "Plant Bot").id , amount: 87)

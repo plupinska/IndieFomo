@@ -1,18 +1,22 @@
-
 import React from 'react';
 import Slider from 'react-slick';
 import { fetchCampaigns, fetchCampaign } from '../../actions/campaign_actions';
 import CampaignIndexItem from '../campaign/campaign_index_item';
-
+import { hashHistory } from 'react-router'
 class TileSlider extends React.Component {
 
   constructor(props) {
     super(props);
+    debugger
   }
 
   componentDidMount() {
+    debugger
     this.props.fetchCampaigns();
-
+    debugger
+    // if (!this.props.currentUser) {
+    //   hashHistory.push('/');
+    // }
   }
 
   render() {
