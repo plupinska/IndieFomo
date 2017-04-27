@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170426011902) do
+ActiveRecord::Schema.define(version: 20170427133706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20170426011902) do
     t.string   "tagline"
     t.integer  "category_id"
     t.string   "image_url"
-    t.date     "end_date"
     t.float    "target_amount"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
@@ -31,6 +30,7 @@ ActiveRecord::Schema.define(version: 20170426011902) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.datetime "end_date"
   end
 
   create_table "categories", force: :cascade do |t|

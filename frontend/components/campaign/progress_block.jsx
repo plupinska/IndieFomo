@@ -11,7 +11,7 @@ class ProgressBlock extends React.Component {
   render() {
 
     const percentage = Math.round((this.props.campaign.total_contributions / this.props.campaign.target_amount)*100);
-
+    const right_now = moment();
     return (
       <div className="progress-bar">
         <div className="funds-1">
@@ -25,7 +25,7 @@ class ProgressBlock extends React.Component {
         <div className="funds-2">
           {percentage}% of ${this.props.campaign.target_amount} goal
         </div>
-        <div className="moment">Figure out moment</div>
+        <div className="moment">{this.props.campaign.end_date}</div>
       </div>
     );
   }

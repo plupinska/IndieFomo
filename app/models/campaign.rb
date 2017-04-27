@@ -1,6 +1,12 @@
 class Campaign < ActiveRecord::Base
-  validates :title, presence: true
+  include PgSearch
+  pg_search_scope :search_by_title, :against => {
+    :title => 'A',
+    :tagline => 'B',
+    :descriptions => 'C'
+  }
 
+  validates :title, presence: true
   has_many :contributions
 
   belongs_to :user,
@@ -10,6 +16,5 @@ class Campaign < ActiveRecord::Base
 
   has_attached_file :image, default_url: "img_placeholder.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
-
 
 end
