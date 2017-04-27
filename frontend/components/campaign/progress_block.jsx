@@ -1,5 +1,4 @@
 import React from 'react';
-import moment from 'moment';
 import { connect } from 'react-redux';
 
 class ProgressBlock extends React.Component {
@@ -11,7 +10,6 @@ class ProgressBlock extends React.Component {
   render() {
 
     const percentage = Math.round((this.props.campaign.total_contributions / this.props.campaign.target_amount)*100);
-    const right_now = moment();
     return (
       <div className="progress-bar">
         <div className="funds-1">
