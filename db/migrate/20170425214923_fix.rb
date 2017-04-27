@@ -1,7 +1,8 @@
 class Fix < ActiveRecord::Migration
   def change
-    drop_table :category
-    drop_table :contribution
+    #NOT NEEDED 
+    # drop_table :category
+    # drop_table :contribution
 
     create_table :categories do |t|
       t.string :type
