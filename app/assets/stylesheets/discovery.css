@@ -1,0 +1,98 @@
+.discovery {
+  /*border: 1px solid black;*/
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+  margin-top: 40px;
+}
+
+.discovery-slider > div {
+  /*border: 10px solid red;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 400px;
+}
+
+.discover-slider {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.discovery-2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.explore {
+  color: black;
+}
+
+.explore:hover {
+  cursor: pointer;
+  color: #ff1854;
+}
+
+.explore-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: black;
+  margin-left: 5px;
+}
+
+.discovery > h1 {
+  align-items: flex-start;
+  width: 100%;
+  /*border-bottom: 1px solid black;*/
+}
+/*
+.discovery > .slick-track {
+  height: 100%
+}
+
+.discovery-slider button {
+  background: 20px solid red;
+  z-index: 50;
+  margin-left: 100px;
+  margin-bottom: 420px;
+  width: 20px
+}*/
+
+.slick-disabled {
+  /*visibility: hidden;*/
+}
+
+.slick-prev {
+  padding-right: 7px;
+}
+
+.slick-next {
+  padding-left: 7px;
+}
+
+.slick-arrow, .slick-prev, .slick-next {
+  color: transparent;
+  width: 24px;
+  height: 24px;
+  align-self: center;
+}
+
+.slick-prev:before {
+  content: '<';
+  /*zoom: 8%;*/
+}
+
+.slick-next:before {
+  content: '>';
+  /*zoom: 8%;*/
+}

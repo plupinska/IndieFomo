@@ -1,31 +1,35 @@
 // Place all the styles related to the Campaigns controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.campaigns {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-top: 1%;
-  height: 90%;
-  flex-wrap: wrap;
-}
 
 .all-campaigns {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
-  height: 80%;
+  height: auto;
   align-items: center;
 }
 
-.title {
-  // position: relative;
-  border: 1px solid black;
+.campaigns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 1%;
+  height: 90%;
+  width: 80%;
+  flex-wrap: wrap;
+}
+
+.title- {
+  border-bottom: 1px solid black;
   flex: auto;
   padding: 2px;
+  width: 80%;
+  margin-top: 15px;
 }
 
 
@@ -38,8 +42,9 @@
   flex-wrap: wrap;
   border: 1px solid rgba(0, 0, 0, 0.0980392);
   margin: 4px;
-  width: 220px;
-  height: 500px;
+  width: 275px;
+  height: 450px;
+  margin-bottom: 10px;
 }
 
 .campaign-tile:hover {
@@ -48,15 +53,16 @@
 }
 
 img {
-  flex: auto;
+  display: block;
   align-self: flex-start;
   justify-content: center;
-  height: 230px;
-  width: 100%;
+  height: 222px;
+  width: 227px;
+  overflow: hidden;
 
 }
 
-.description {
+.description-index-tiles {
   // padding: 2%;
   align-items: flex-start;
   justify-content: space-between;
@@ -66,10 +72,28 @@ img {
   width: 100%;
 }
 
+.description-container {
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+  justify-content: flex-start;
+  align-items: baseline;
+  height: 40%;
+}
+
+
 .text {
   padding: 2%;
   display: block;
   width: 100%;
+}
+
+.tagline-text {
+  color: #878787;
+  padding-left: 2%;
+  padding-right: 2%;
+  width: 100%;
+  font: 10px
 }
 
 #item {
@@ -79,9 +103,62 @@ img {
   height: auto;
 }
 
+
 .campaign-tile {
   display: flex;
-  width: 100%;
+  width: 225px;;
   // height: auto;
-  overflow-y: visible;
+  // overflow-y: visible;
+}
+
+.description-container {
+  // border: 1px solid black;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.progress-tile-bar {
+  // border: 1px solid black;
+  height: 100%;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 5px;
+}
+
+.dollars-tile {
+  font-size: 12px;
+}
+
+.funds-tile{
+  font-size: 12px;
+}
+
+.bar-tile {
+  display: inline-block;
+  background-color: #f5f5f5;
+  min-height: 5px;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.percentage-tile {
+  max-width: 100%;
+  background-color: #ff1854;
+  min-height: 5px;
+}
+
+.funds-tile {
+  margin-top: 2px;
+  font-size: 12px;
+}
+
+.moment-tile {
+  font-size: 12px;
 }
