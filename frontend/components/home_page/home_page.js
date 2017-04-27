@@ -11,6 +11,11 @@ class HomePage extends React.Component {
         <div className="carousel">
           <Carousel/>
         </div>
+
+        <div className="discovery">
+          <Discovery/>
+        </div>
+        <div className="space-"> </div>
       </div>
     );
   }

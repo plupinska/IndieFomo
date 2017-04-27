@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import { connect } from 'react-redux';
 
 class ProgressBlock extends React.Component {
   constructor(props) {
@@ -7,8 +8,9 @@ class ProgressBlock extends React.Component {
 
   }
 
-
   render() {
+
+    const percentage = Math.round((this.props.campaign.total_contributions / this.props.campaign.target_amount)*100);
 
     return (
       <div className="progress-bar">
@@ -16,10 +18,12 @@ class ProgressBlock extends React.Component {
           <span className="dollars">${this.props.campaign.total_contributions}</span> USD raised by {this.props.campaign.num_contributions} backers
         </div>
 
-        <div className="bar">.</div>
+        <div className="bar">
+          <div className="percentage" style={{width: `${percentage}%`}}></div>
+        </div>
 
         <div className="funds-2">
-          {(this.props.campaign.total_contributions / this.props.campaign.target_amount)*100}% of ${this.props.campaign.target_amount} goal
+          {percentage}% of ${this.props.campaign.target_amount} goal
         </div>
         <div className="moment">Figure out moment</div>
       </div>
@@ -27,4 +31,19 @@ class ProgressBlock extends React.Component {
   }
 }
 
-export default ProgressBlock;
+const mapStateToProps = (state) => {
+
+  return {
+    campaign: state.campaigns.campaign,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+
+  }
+}
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProgressBlock);

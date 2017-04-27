@@ -6,13 +6,15 @@ import { makeContribution } from '../../actions/contribution_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let campaignId = ownProps.params.id;
+
   return {
-    campaignId
+    campaignId,
+    user: state.session.currentUser.id
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-
+   
   return {
     fetchCampaign: (id) => dispatch(fetchCampaign(id)),
     getUser: (id) => dispatch(getUser(id)),

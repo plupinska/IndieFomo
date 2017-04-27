@@ -24,6 +24,8 @@ export const receiveErrors = (errors) => {
     type: RECEIVE_CAMPAIGN_ERRORS,
     errors: errors
   };
+
+
 };
 
 export const fetchCampaigns = () => (dispatch) => {
@@ -52,3 +54,9 @@ export const updateCampaign = (campaign) => (dispatch) => {
     .then((camp) => dispatch(receiveCampaign(camp)),
     (err) => dispatch(receiveErrors(err)));
 };
+
+export const updateCampaignForm = (campaign) => (dispatch) => {
+  return CampaignApiUtil.updateCampaignForm(campaign)
+    .then((camp) => dispatch(receiveCampaign(camp)),
+    (err) => dispatch(receiveErrors(err)));
+}

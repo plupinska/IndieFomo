@@ -6,15 +6,15 @@ class UserProfileBlock extends React.Component {
     super(props);
     this.state = {
       user: null
-    }
+    };
 
   }
 
   componentDidMount() {
 
     this.props.getUser(this.props.userId).then(usr => {
-      this.setState({user: usr})
-    })
+      this.setState({user: usr});
+    });
   }
 
   render() {
@@ -43,7 +43,8 @@ class UserProfileBlock extends React.Component {
       );
     }
   }
-
 }
 
 export default UserProfileBlock;
+
+  

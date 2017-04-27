@@ -11,10 +11,8 @@ export const getCampaign = (id) => {
   });
 };
 
-export const updateCampaign = (campaign, type) => {
+export const updateCampaignForm = (campaign) => {
 // Campaign is nested inside of form data, we retreive it with get
-   
-  if (type) {
     return $.ajax({
       url: `/api/campaigns/${campaign.get("campaign[id]")}`,
       method: 'PATCH',
@@ -23,14 +21,15 @@ export const updateCampaign = (campaign, type) => {
       processData: false,
       data: campaign
     });
-  } else {
-    return $.ajax({
-      url: `/api/campaigns/${campaign.id}`,
-      method: 'PATCH',
-      data: campaign
-    });
-  }
 
+};
+
+export const updateCampaign = (campaign) => {
+  return $.ajax({
+    url: `/api/campaigns/${campaign.id}`,
+    method: 'PATCH',
+    data: campaign
+  });
 };
 
 export const createCampaign = (campaign) => {

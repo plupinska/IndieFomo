@@ -5,12 +5,16 @@ import ProgressBlock from './progress_block';
 class CampaignOverview extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      contribution: {amount: 0,
-      user_id:this.props.user.id,
-      campaign_id: this.props.campaign.id},
+      amount: 0,
+      user_id: this.props.user,
+      campaign_id: this.props.campaignId,
       isOpen: false
     };
+
+    this.handleClick = this.handleClick.bind(this);
+    this.toggleOpen = this.toggleOpen.bind(this);
   }
 
   update(field) {
@@ -19,29 +23,41 @@ class CampaignOverview extends React.Component {
     });
   }
 
-  handleButtonType(buttonType) {
+  toggleOpen() {
+    this.setState({isOpen : !this.state.isOpen});
+  }
+
+  handleClick() {
+    this.props.makeContribution({amount: this.state.amount, user_id: this.state.user_id,
+      campaign_id: this.state.campaign_id});
+    this.toggleOpen();
+  }
+
+  handleButtonType() {
+
     if (this.state.isOpen) {
+
       return(
         <div className="contribute">
-          <button className="backit">Check Out</button>
+          <button onClick={this.handleClick} className="check-out">Check Out</button>
           <input className="contribution"
-                 value="$0"
+                 type="text"
+                 placeholder="$0"
                  onChange={this.update("amount")}/>
         </div>
       );
     } else {
+
       return(
         <div className="contribute">
-          <button className="backit">Check Out</button>
-          <input className="contribution"
-                 value="$0"
-                 onChange={this.update("amount")}/>
+          <button onClick={this.toggleOpen} className="back-it">Back It</button>
         </div>
       );
     }
   }
 
   render() {
+
     return (
       <div className="campaign-overview">
         <div className="photo">
@@ -58,7 +74,9 @@ class CampaignOverview extends React.Component {
           <div className="progress-bar">
             <ProgressBlock campaign={this.props.campaign} makeContribution={this.props.makeContribution}/>
           </div>
-          {this.handleButtonType(this.state.isOpen)}
+          <div className="contribute-button">
+            {this.handleButtonType()}
+          </div>
         </div>
       </div>
     );

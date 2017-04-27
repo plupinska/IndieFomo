@@ -1,4 +1,4 @@
-import * as ContributionApiUtil from '../util/contributions_api_util';
+ import * as ContributionApiUtil from '../util/contributions_api_util';
 export const RECEIVE_CONTRIBUTION = 'RECEIVE_CONTRIBUTION';
 export const RECEIVE_CONTRIBUTION_ERRORS = 'RECEIVE_ERRORS';
 
@@ -17,14 +17,14 @@ export const receiveContributionErrors = (errors) => {
 };
 
 export const getContribution = (id) => (dispatch)  => {
-  debugger
+
   return ContributionApiUtil.getContribution(id)
     .then((cont) => dispatch(receiveContribution(cont)),
     (err) => dispatch(receiveContributionErrors(err)));
 };
 
 export const makeContribution = (contribution) => (dispatch) => {
-  debugger
+
   return ContributionApiUtil.makeContribution(contribution)
     .then((cont) => dispatch(receiveContribution(cont)),
     (err) => dispatch(receiveContributionErrors(err)));

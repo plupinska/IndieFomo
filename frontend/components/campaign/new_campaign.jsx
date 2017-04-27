@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router';
 
 class NewCampaign extends React.Component {
   constructor(props) {
-      
+      debugger
     super(props);
     this.state = {
       user_id: this.props.user.id,
@@ -40,9 +40,8 @@ class NewCampaign extends React.Component {
   }
 
   render() {
-
     // let errors = this.props.errors.responseText;
-
+    debugger
       return(
         <div className="create-campaign">
           <h1>Start a Campaign</h1>

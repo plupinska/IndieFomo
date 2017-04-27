@@ -13,6 +13,8 @@
  @campaigns.each  do |campaign|
 
   json.set! campaign.id do
+    json.num_contributions  Contribution.where(campaign_id: campaign.id).count
+    json.total_contributions Contribution.where(campaign_id: campaign.id).sum(:amount)
     json.user campaign.user
     json.id  campaign.id
     json.title  campaign.title

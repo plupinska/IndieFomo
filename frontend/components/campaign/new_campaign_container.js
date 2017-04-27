@@ -3,7 +3,7 @@ import { createCampaign } from '../../actions/campaign_actions';
 import NewCampaign from './new_campaign';
 
 const mapStateToProps = (state) => {
-    
+    debugger
   return {
     user: state.session.currentUser,
     errors: state.campaigns.errors

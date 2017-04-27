@@ -1,4 +1,5 @@
 export const makeContribution = (contribution) => {
+
   return $.ajax({
     method: 'POST',
     url: `api/contributions`,

@@ -16,12 +16,13 @@ class EditCampaign extends React.Component {
       tagline: "Think persuasion, not baseball...",
       imageFile: null,
       imageUrl: this.props.user.image,
-      id: this.props.params.id
+      id: this.props.params.id,
+      err: this.props.errors
     };
-
     this.handleSubmit = this.handleSubmit.bind(this);
     // this.handleFileSubmit = this.handleFileSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
+
   }
 
   updateFile(e) {
@@ -53,7 +54,7 @@ class EditCampaign extends React.Component {
       formData.append("campaign[descriptions]", this.state.tagline);
 
 
-      this.props.updateCampaign(formData, type = true).then((camp) => {
+      this.props.updateCampaignForm(formData).then((camp) => {
         const url = `campaigns/${camp.campaign.id}`;
 
         this.props.router.push(url);
@@ -61,7 +62,7 @@ class EditCampaign extends React.Component {
     } else {
 
       let type;
-      this.props.updateCampaign(this.state, type = false).then((camp) => {
+      this.props.updateCampaign(this.state).then((camp) => {
         const url = `campaigns/${camp.campaign.id}`;
 
         this.props.router.push(url);
@@ -71,6 +72,18 @@ class EditCampaign extends React.Component {
   }
 
 
+  renderErrors() {
+
+    if (this.props.errors) {
+
+      return(
+        <div className="campaign-errors">
+          {this.props.errors}
+        </div>
+      );
+    }
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -78,11 +91,6 @@ class EditCampaign extends React.Component {
   }
 
   render() {
-    // let err = null;
-    // if (this.props.errors) {
-    //   err= this.props.errors[0];
-    // }
-       
 
       return(
         <div className="edit-campaign">
@@ -132,6 +140,11 @@ class EditCampaign extends React.Component {
                   </div>
 
                 </div>
+
+                  <div className="campaign-errors-1">
+                    {this.renderErrors()}
+                  </div>
+
               </div>
 
               <div className="submit-button">

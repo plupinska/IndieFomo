@@ -1,7 +1,7 @@
 class Api::CampaignsController < ApplicationController
 
   def index
-    @campaigns = Campaign.all
+    @campaigns = Campaign.includes(:user, :contributions).all
     render :index
   end
 

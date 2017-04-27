@@ -1,9 +1,10 @@
 import { RECEIVE_CAMPAIGNS, RECEIVE_CAMPAIGN, RECEIVE_CAMPAIGN_ERRORS} from '../actions/campaign_actions';
 import merge from 'lodash/merge';
+import { RECEIVE_CONTRIBUTION } from '../actions/contribution_actions';
 
 let _oldState = Object.freeze({
   campaign: null,
-  errors: {}
+  errors: null
 });
 
 const CampaignsReducer = (state = _oldState, action) => {
@@ -12,7 +13,6 @@ const CampaignsReducer = (state = _oldState, action) => {
     case "RECEIVE_CAMPAIGNS":
       const allCampaigns = action.campaigns;
       // this returns an array
-
       const oldS = merge({}, state);
       let x =  merge({}, oldS, {campaign: action.campaigns});
 
@@ -24,8 +24,20 @@ const CampaignsReducer = (state = _oldState, action) => {
       return y;
 
     case "RECEIVE_CAMPAIGN_ERRORS":
-      return merge(state, {errors: action.errors.statusText});
 
+      const old = merge({}, state);
+      return merge(old, {errors: action.errors.responseText});
+
+    case "RECEIVE_CONTRIBUTION":
+
+      let z = merge({}, state);
+
+      let updated = merge(z, {campaign: action.campaign});
+
+      let newAmount = updated.campaign.total_contributions + action.contribution.amount;
+      updated.campaign.total_contributions = newAmount;
+
+      return updated;
     default:
       return state;
   }
