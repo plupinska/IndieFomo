@@ -25,7 +25,7 @@ Campaign.destroy_all
 Category.destroy_all
 Contribution.destroy_all
 
-pl = User.create!(first_name: "Patrycja", password: "password", last_name: "Lupinska", about_me: "An inquisitive mind, I like reading and seeing my parents dog run around in the snow..",
+pl = User.create!(first_name: "Patrycja", password: "password", last_name: "Lupinska", about_me: "I like short stories, hiking, and my parents dog.",
   email: "patrycjalupinska@gmail.com")
 
 l = User.create!(first_name: "Guest", last_name: "User", password: "password", about_me: "I am the best guest you've ever guessed.",
