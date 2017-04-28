@@ -20,9 +20,8 @@ class RewardsShowPage extends React.Component {
 
   render() {
     let rewardTiles = null;
-
+    debugger
     rewardTiles= this.props.rewards.map((rew, idx) => {
-      if (rew.campaign_id === parseInt(this.props.campaignId)) {
         return(
           <div className="rewards-item" key={idx}>
             <div className="rew-img">
@@ -35,14 +34,11 @@ class RewardsShowPage extends React.Component {
               <div className="rewards-title">{rew.description}</div>
             </div>
           </div>
-        );
-      } else {
-        return (<div/>);
-      }
+      );
     });
 
 
-    if (this.props.rewards.length > 0 && this.props.rewards[0].campaign_id === parseInt(this.props.campaignId)) {
+    if (this.props.rewards.length > 0 ) {
 
       return(
         <div className="rewards-show-page">

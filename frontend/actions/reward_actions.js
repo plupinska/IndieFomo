@@ -2,11 +2,18 @@ import * as RewardsApiUtil from '../util/rewards_api_util';
 export const RECEIVE_REWARD = 'RECEIVE_REWARD';
 export const RECEIVE_REWARD_ERRORS = 'RECEIVE_REWARD_ERRORS';
 export const RECEIVE_ALL_REWARDS = 'RECEIVE_ALL_REWARDS';
+export const CLEAR_REWARD = 'CLEAR_REWARD';
 
 export const receiveReward = (reward) => {
   return {
     type: RECEIVE_REWARD,
     reward: reward
+  };
+};
+
+export const clearReward = () => {
+  return {
+    type: CLEAR_REWARD,
   };
 };
 
@@ -25,7 +32,7 @@ export const receiveRewardErrors = (errors) => {
 };
 
 export const createReward = (reward) => (dispatch) => {
-   
+
   return RewardsApiUtil.createReward(reward)
     .then((rew) => dispatch(receiveReward(rew)),
       (err) => dispatch(receiveRewardErrors(err)));

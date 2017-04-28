@@ -14,11 +14,13 @@ const RewardsReducer = (state = {}, action) => {
 
       const oldS = merge({}, state);
       if (action.rewards.id) {
-          
+
         return merge({}, oldS, {[action.rewards.id]: action.rewards});
       } else {
         return state;
       }
+      case "CLEAR_REWARD":
+        return {};
     default:
       return state;
   }

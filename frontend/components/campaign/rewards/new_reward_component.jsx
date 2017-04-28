@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createReward, getReward, getAllRewards } from '../../../actions/reward_actions';
+import { createReward, getReward, getAllRewards, clearReward } from '../../../actions/reward_actions';
 import React from 'react';
 import RewardsShowPage from './rewards_showpage';
 import {selectRewards} from '../../../reducers/selectors';
@@ -23,6 +23,7 @@ class NewReward extends React.Component {
   }
 
   componentWillMount() {
+    this.props.clearReward();
     this.setState({
       campaign_id: this.props.campaign_id,
       title: "Give it a title...",
@@ -96,7 +97,7 @@ class NewReward extends React.Component {
 
   render() {
     // let errors = this.props.errors.responseText;
-
+    debugger
       return(
         <div className="create-reward">
           <h1>Create a reward!</h1>
@@ -158,7 +159,7 @@ class NewReward extends React.Component {
 
 
 const mapStateToProps = (state, ownProps) => {
-   
+
   let campid = null;
   if (ownProps.params) {
     campid = ownProps.params.id ;
@@ -177,7 +178,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     createReward: (id) => dispatch(createReward(id)),
     getReward: (id) => dispatch(getReward(id)),
-    getAllRewards: (contribution) => dispatch(getAllRewards(contribution))
+    getAllRewards: (contribution) => dispatch(getAllRewards(contribution)),
+    clearReward: () => dispatch(clearReward())
   };
 };
 
