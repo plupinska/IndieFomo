@@ -22,23 +22,28 @@ class RewardsShowPage extends React.Component {
     let rewardTiles = null;
 
     rewardTiles= this.props.rewards.map((rew, idx) => {
+      if (rew.campaign_id === parseInt(this.props.campaignId)) {
+        return(
+          <div className="rewards-item" key={idx}>
+            <div className="rew-img">
+              <img src={rew.image}/>
+            </div>
 
-      return(
-        <div className="rewards-item" key={idx}>
-          <div className="rew-img">
-            <img src={rew.image}/>
+            <div className="rewards-details">
+            <div className="rewards-price">${rew.price} <span>USD</span></div>
+              <div className="reward--title">{rew.title}</div>
+              <div className="rewards-title">{rew.description}</div>
+            </div>
           </div>
-
-          <div className="rewards-details">
-          <div className="rewards-price">${rew.price} <span>USD</span></div>
-            <div className="reward--title">{rew.title}</div>
-            <div className="rewards-title">{rew.description}</div>
-          </div>
-        </div>
-      );
+        );
+      } else {
+        return (<div/>);
+      }
     });
 
-    if (rewardTiles) {
+
+    if (this.props.rewards.length > 0 && this.props.rewards[0].campaign_id === parseInt(this.props.campaignId)) {
+
       return(
         <div className="rewards-show-page">
           { rewardTiles }

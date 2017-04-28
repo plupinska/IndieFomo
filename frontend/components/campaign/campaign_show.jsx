@@ -35,7 +35,7 @@ class CampaignShow extends React.Component {
             </div>
 
             <div className="rewards">
-              <RewardsShowPage rewards={this.props.rewards}/>
+              <RewardsShowPage rewards={this.props.rewards} campaignId={this.props.campaign.id}/>
             </div>
           </div>
         </div>

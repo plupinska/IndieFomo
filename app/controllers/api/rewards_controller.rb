@@ -3,7 +3,7 @@ class Api::RewardsController < ApplicationController
   def index
     #
     @campaign = Campaign.find(params[:campaign_id])
-    #  
+    #
     render :index
   end
 
@@ -14,7 +14,7 @@ class Api::RewardsController < ApplicationController
 
 
   def create
-
+     
     @reward = Reward.create(reward_params)
 
     if @reward.save

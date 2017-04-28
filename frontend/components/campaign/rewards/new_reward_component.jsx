@@ -146,10 +146,8 @@ class NewReward extends React.Component {
              </div>
               </form>
             </div>
-
-
             <div className='rewards-show'>
-              <RewardsShowPage rewards={this.props.rewards}/>
+              <RewardsShowPage rewards={this.props.rewards} campaignId={this.props.campaignId}/>
             </div>
           </main>
         </div>
@@ -160,7 +158,7 @@ class NewReward extends React.Component {
 
 
 const mapStateToProps = (state, ownProps) => {
-
+   
   let campid = null;
   if (ownProps.params) {
     campid = ownProps.params.id ;

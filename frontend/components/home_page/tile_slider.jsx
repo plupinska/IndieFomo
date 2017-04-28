@@ -7,13 +7,13 @@ class TileSlider extends React.Component {
 
   constructor(props) {
     super(props);
-     
+
   }
 
   componentDidMount() {
-     
+
     this.props.fetchCampaigns();
-     
+
     // if (!this.props.currentUser) {
     //   hashHistory.push('/');
     // }
@@ -33,7 +33,7 @@ class TileSlider extends React.Component {
     let camps = this.props.campaigns;
 
     if (camps[0]) {
-
+       
       return(
         <div className="discover-slider">
           <Slider {...settings}>

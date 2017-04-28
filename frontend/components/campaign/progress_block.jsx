@@ -23,7 +23,7 @@ class ProgressBlock extends React.Component {
         <div className="funds-2">
           {percentage}% of ${this.props.campaign.target_amount} goal
         </div>
-        <div className="moment">{this.props.campaign.end_date}</div>
+        <div className="moment">12 Days left</div>
       </div>
     );
   }

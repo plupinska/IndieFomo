@@ -16,12 +16,13 @@
 /*SHOW AND OVERVIEW COMPONENTS COMBINED*/
 .photo {
   /*border: 1px solid #eee;*/
-  width: 25%
+  width: 25%;
 }
 
 .show-img {
-  width: 160%;
+  width: 100%;
   height: 280px;
+  padding-left: 125px;
 }
 
 .campaign-basics {
@@ -56,7 +57,7 @@
 .campaign-overview {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 30px;
   width: 100%;
   height: 100%;

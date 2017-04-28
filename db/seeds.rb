@@ -24,15 +24,12 @@ User.destroy_all
 Campaign.destroy_all
 Category.destroy_all
 Contribution.destroy_all
+Reward.destroy_all
 
 pl = User.create!(first_name: "Patrycja", password: "password", last_name: "Lupinska", about_me: "I like short stories, hiking, and my parents dog.",
   email: "patrycjalupinska@gmail.com")
 
-l = User.create!(first_name: "Guest", last_name: "User", password: "password", about_me: "I am the best guest you've ever guessed. Here is a haiku: Little semicolon
-that makes me not compile this,
-where are you missing? "
-,
-  email: "guest@gmail.com")
+l = User.create!(first_name: "Guest", last_name: "User", password: "password", about_me: "I am the best guest you've ever guessed. Here is a haiku: Implicit Return why are you not working here, oh yes javascript. ", email: "guest@gmail.com")
 
 marty = User.create!(first_name: "Marty", last_name: "McFly", password: "password", about_me: "I like Red Vests and Time travel. My funds will benefit the space time continuum.",
   email: "marty@gmail.com")
@@ -84,4 +81,4 @@ Contribution.create!(user_id: l.id, campaign_id: Campaign.find_by(title: "Minima
 Contribution.create!(user_id: l.id, campaign_id: Campaign.find_by(title: "Plant Bot").id , amount: 87)
 
 
-Campaign.find_by(title: "Taco Stand").rewards.create!(title: "Free Cat", description: "He likes fish tacos.", price: 50, image: cat)
+taco_campaign = Campaign.find_by(title: "Taco Stand").rewards.create!(title: "Free Cat", description: "He likes fish tacos.", price: 50, image: cat)

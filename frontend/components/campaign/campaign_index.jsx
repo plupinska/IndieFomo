@@ -34,8 +34,6 @@ class CampaignIndex extends React.Component {
           <div className="campaigns">
             {AllCampaigns}
             {AllCampaigns}
-            {AllCampaigns}
-            {AllCampaigns}
           </div>
         </div>
       );
