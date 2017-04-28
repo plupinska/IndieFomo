@@ -43,19 +43,18 @@ class EditCampaign extends React.Component {
 
     if (this.state.imageFile) {
       e.preventDefault();
-      let type;
+
       const formData = new FormData();
       // We need to append all other fields to form data
       // in order to pass through all info from the form
       formData.append("campaign[image]", this.state.imageFile);
       formData.append("campaign[id]", this.state.id);
       formData.append("campaign[tagline]", this.state.tagline);
-      formData.append("campaign[descriptions]", this.state.tagline);
-
+      formData.append("campaign[descriptions]", this.state.descriptions);
 
       this.props.updateCampaignForm(formData).then((camp) => {
-        const url = `campaigns/${camp.campaign.id}`;
 
+        const url = `campaign/${camp.campaign.id}/addrewards`;
         this.props.router.push(url);
       });
     } else {
@@ -72,9 +71,9 @@ class EditCampaign extends React.Component {
 
 
   renderErrors() {
-    debugger
+
     if (this.props.errors) {
-      debugger
+
       return(
         <div className="campaign-errors">
           {this.state.err}

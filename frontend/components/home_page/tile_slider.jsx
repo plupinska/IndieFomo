@@ -7,13 +7,13 @@ class TileSlider extends React.Component {
 
   constructor(props) {
     super(props);
-    debugger
+     
   }
 
   componentDidMount() {
-    debugger
+     
     this.props.fetchCampaigns();
-    debugger
+     
     // if (!this.props.currentUser) {
     //   hashHistory.push('/');
     // }

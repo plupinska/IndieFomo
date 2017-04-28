@@ -4,13 +4,15 @@ import CampaignsReducer from './campaign_reducer';
 import UserReducer from './user_reducer';
 import TileSliderReducer from './tile_slider_reducer';
 import ContributionReducer from './contribution_reducer';
+import RewardsReducer from './rewards_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
   campaigns: CampaignsReducer,
   user: UserReducer,
   slider: TileSliderReducer,
-  contribution: ContributionReducer
+  contribution: ContributionReducer,
+  rewards: RewardsReducer
 });
 
 export default RootReducer;

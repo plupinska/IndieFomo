@@ -8,7 +8,7 @@ import UserShowContainer from './user/user_container';
 import HomePage from './home_page/home_page';
 import NewCampaignContainer from './campaign/new_campaign_container';
 import EditCampaignComponent from './campaign/edit_campaign_container';
-
+import NewRewardContainer from './campaign/rewards/new_reward_component';
 
 
 const Root = ({store}) => {
@@ -42,6 +42,7 @@ const Root = ({store}) => {
           <IndexRoute component={HomePage}/>
           <Route path="/campaigns" component={CampaignIndexContainer}/>
           <Route path="/campaign/:id/edit" component={EditCampaignComponent}/>
+          <Route path="/campaign/:id/addrewards" component={NewRewardContainer}/>
           <Route path="/campaigns/:id" component={CampaignShowContainer} />
           <Route path="/users/:id" component={UserShowContainer} onEnter={_redirectUnlessLoggedIn}/>
           <Route path="/campaign/new" component={NewCampaignContainer}/>

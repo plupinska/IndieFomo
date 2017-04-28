@@ -5,10 +5,10 @@ class UserShow extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      user: this.props.user,
+      this.state = {
+      user: null,
       imageFile: null,
-      imageUrl: this.props.user.image_url
+      imageUrl: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
@@ -16,6 +16,14 @@ class UserShow extends React.Component {
 
   componentDidMount() {
     this.props.getUser(this.props.params.id);
+  }
+
+  componentWillReceiveProps(newProps) {
+
+    if (this.props.user.id != newProps.user.id) {
+
+      this.setState({user: newProps.user.id, imageUrl: newProps.user.image_ur})
+    }
   }
 
   updateFile(e) {
@@ -47,7 +55,6 @@ class UserShow extends React.Component {
     const name = this.props.user ? this.props.user.first_name : "";
 
     if (this.props.user.id) {
-      let image = this.props.user.image_url ? this.props.user.image_url : this.state.imageUrl;
       let table = this.props.user.campaigns.map(cp => {
         return(
           <tr>

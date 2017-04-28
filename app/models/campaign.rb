@@ -5,7 +5,7 @@ class Campaign < ActiveRecord::Base
     :tagline => 'B',
     :descriptions => 'C'
   }
-
+  has_many :rewards
   validates :title, presence: true
   has_many :contributions,
     primary_key: :id,

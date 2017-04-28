@@ -1,35 +1,29 @@
 import React from 'react';
 import  { withRouter } from 'react-router';
 import CampaignOverview from './campaign_overview_component';
+import RewardsShowPage from './rewards/rewards_showpage';
 
 class CampaignShow extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      campaign: null
-    }
-
   }
 
   componentWillMount() {
-
-    this.props.fetchCampaign(this.props.campaignId).then(camp => {
-      this.setState({campaign: camp.campaign})
-    });
-
+    this.props.fetchCampaign(this.props.campaignId)
+    this.props.getAllRewards(this.props.campaignId)
   }
 
   render() {
-      
-    if (this.state.campaign) {
+
+    if (this.props.campaign) {
       return(
         <div className="campaign-show">
           <div className="overview-tile">
               <CampaignOverview
               fetchCampaign={this.props.fetchCampaign}
               getUser={this.props.getUser}
-              campaign={this.state.campaign}
+              campaign={this.props.campaign}
               campaignId={this.props.campaignId}
               user={this.props.user}
               makeContribution={this.props.makeContribution} />
@@ -37,11 +31,11 @@ class CampaignShow extends React.Component {
 
           <div  className="more-details">
             <div className="show-description">
-              {this.state.campaign.descriptions}
+              {this.props.campaign.descriptions}
             </div>
 
             <div className="rewards">
-              Rewards will go here
+              <RewardsShowPage rewards={this.props.rewards}/>
             </div>
           </div>
         </div>
