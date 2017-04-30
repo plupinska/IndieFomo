@@ -7,18 +7,15 @@ class UserProfileBlock extends React.Component {
     this.state = {
       user: null
     };
-
   }
 
   componentDidMount() {
-
     this.props.getUser(this.props.userId).then(usr => {
       this.setState({user: usr});
     });
   }
 
   render() {
-
     if (this.state.user) {
 
       return (
@@ -39,10 +36,28 @@ class UserProfileBlock extends React.Component {
       );
     } else {
       return(
-        <div> Waiting.. </div>
+        <div></div>
       );
     }
   }
 }
 
-export default UserProfileBlock;
+const mapStateToProps = (state) => {
+
+  return {
+    userId: state.session.currentUser.id,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+
+  }
+}
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserProfileBlock);
+
+
+// export default UserProfileBlock;

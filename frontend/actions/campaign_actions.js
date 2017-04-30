@@ -28,9 +28,9 @@ export const receiveErrors = (errors) => {
 
 };
 
-export const fetchCampaigns = () => (dispatch) => {
+export const fetchCampaigns = (num) => (dispatch) => {
 
-  return CampaignApiUtil.getCampaigns()
+  return CampaignApiUtil.getCampaigns(num)
     .then((campaigns) => dispatch(receiveCampaigns(campaigns)),
     (err) => dispatch(receiveErrors(err)));
 };

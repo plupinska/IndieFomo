@@ -70,17 +70,31 @@ class Header extends React.Component {
     let message = this.props.currentUser ? this.userGreeting() : this.sessionLinks();
 
     return(
-      <div className="dog">
-        {message}
-        <Modal
-                contentLabel="Modal"
-                 className="auth-modal"
-                 isOpen={this.state.modalOpen}
-                 onRequestClose={this.onModalClose}
-                 style={ModalStyle}>
-            <button id="x" onClick={this.onModalClose}>x</button>
-          <SessionFormContainer modalClose={this.onModalClose} formType={this.state.formType} />
-        </Modal>
+      <div className="header">
+        <div className="header-left">
+          <Link className="logo" to="/">INDIE FOMO</Link>
+          <Link>Explore</Link>
+          <Link>GitHub Repo</Link>
+        </div>
+
+        <div className="header-right">
+          <div className="search">Search </div>
+          <div className="createCampaign">
+            <Link to="campaign/new">CREATE A CAMPAIGN</Link>
+          </div>
+          <div className="session-links">
+            {message}
+          </div>
+          <Modal
+                  contentLabel="Modal"
+                   className="auth-modal"
+                   isOpen={this.state.modalOpen}
+                   onRequestClose={this.onModalClose}
+                   style={ModalStyle}>
+              <button id="x" onClick={this.onModalClose}>x</button>
+            <SessionFormContainer modalClose={this.onModalClose} formType={this.state.formType} />
+          </Modal>
+        </div>
       </div>
     );
   }

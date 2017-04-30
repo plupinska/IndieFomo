@@ -72,7 +72,7 @@ class NewCampaign extends React.Component {
 
               <div className="submit-button1">
                 <input type="submit"
-                        value="submit">
+                        value="CREATE MY CAMPAIGN">
                 </input>
               </div>
             </form>

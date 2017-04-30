@@ -31,11 +31,14 @@ class CampaignShow extends React.Component {
 
           <div  className="more-details">
             <div className="show-description">
+              <h1>Overview</h1>
               {this.props.campaign.descriptions}
             </div>
 
             <div className="rewards">
-              <RewardsShowPage rewards={this.props.rewards} campaignId={this.props.campaign.id}/>
+              <h1>Rewards</h1>
+              <RewardsShowPage rewards={this.props.rewards} campaignId={this.props.campaign.id}
+                onShow={true}/>
             </div>
           </div>
         </div>

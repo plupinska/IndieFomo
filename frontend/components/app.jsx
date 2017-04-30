@@ -1,24 +1,16 @@
 import React from 'react';
 import HeaderContainer from './header/header_container';
+import Footer from './footer';
 import { Link } from 'react-router';
 
 
 const App = ({children}) => {
   return(
-    <div className="indie-fomo">
       <div id="app">
-          <div className="header">
-            <Link className="logo" to="/">Indie Fomo
-            </Link>
-            <div className="search">Search </div>
-            <div className="createCampaign">
-              <Link to="campaign/new">Create A Campaign</Link>
-            </div>
-            <HeaderContainer />
-        </div>
+        <HeaderContainer />
         {children}
+        <div className="footer"/>
       </div>
-    </div>
   );
 };
 

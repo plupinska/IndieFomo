@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { makeContribution } from '../../../actions/contribution_actions';
 import { createReward, getReward, getAllRewards, clearReward } from '../../../actions/reward_actions';
 import React from 'react';
 import RewardsShowPage from './rewards_showpage';
@@ -9,7 +10,7 @@ class NewReward extends React.Component {
 
     super(props);
     this.state = {
-      campaign_id: this.props.campaign_id,
+      campaign_id: this.props.campid,
       title: "Give it a title...",
       description: "Tell your contributors about your reward..",
       price: 0,
@@ -97,11 +98,13 @@ class NewReward extends React.Component {
 
   render() {
     // let errors = this.props.errors.responseText;
-    debugger
+
       return(
         <div className="create-reward">
-          <h1>Create a reward!</h1>
-          <h2>Can't crowdsource without incentives...</h2>
+          <div className="reward--">
+            <h1>Create a reward!</h1>
+            <h2>Can't crowdsource without incentives...</h2>
+          </div>
           <main>
             <div className="reward-form">
               <form className="r-form">
@@ -130,25 +133,19 @@ class NewReward extends React.Component {
                 </input> <span>USD</span>
                </div>
 
-               <div className="rewards-imgupload">Lastly, please add an image
-                  <div className="file-upload">
-                    <input type="file"
-                    onChange={this.updateFile}/>
-                 </div>
-             </div>
-
              <div className="submit-buttons" onClick={this.handleSubmit}>
                <input type="submit"
-                       value="Add Reward">
+                       value="ADD REWARD">
                </input>
                <input type="submit"
-                       value="Submit" onClick={this.handleClick}>
+                       value="SUBMIT" onClick={this.handleClick}>
                </input>
              </div>
               </form>
             </div>
             <div className='rewards-show'>
-              <RewardsShowPage rewards={this.props.rewards} campaignId={this.props.campaignId}/>
+              <RewardsShowPage rewards={this.props.rewards} campaignId={this.props.campaignId}
+                onShow={false} makeContribution={this.props.makeContribution}/>
             </div>
           </main>
         </div>
@@ -179,8 +176,16 @@ const mapDispatchToProps = (dispatch) => {
     createReward: (id) => dispatch(createReward(id)),
     getReward: (id) => dispatch(getReward(id)),
     getAllRewards: (contribution) => dispatch(getAllRewards(contribution)),
-    clearReward: () => dispatch(clearReward())
+    clearReward: () => dispatch(clearReward()),
+    makeContribution: () => dispatch(makeContribution())
   };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewReward);
+
+// <div className="rewards-imgupload">Lastly, please add an image
+//    <div className="file-upload">
+//      <input type="file"
+//      onChange={this.updateFile}/>
+//   </div>
+// </div>

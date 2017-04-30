@@ -16,7 +16,7 @@ class CampaignIndexItem extends React.Component {
   }
 
   render() {
-     
+
   const percentage = Math.round((this.props.campaign.total_contributions / this.props.campaign.target_amount)*100);
 
     return(

@@ -5,37 +5,47 @@ import { getAllRewards } from '../../../actions/reward_actions';
 class RewardsShowPage extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state= {
+      hover: false,
+    };
+    this.contribute = this.contribute.bind(this);
   }
-  //
-  // componentWillMount() {
-  //   this.props.getAllRewards(this.props.campaignId);
-  // }
-  //
-  // componentWillReceiveProps(newProps) {
-  //   if (newProps != this.props) {
-  //     this.state.rewards = this.props.rewards;
-  //   }
-  // }
+
+  onOver() {
+    this.setState({hover: true});
+  }
+
+  onOut() {
+    this.setState({hover: false});
+  }
+
+  contribute(price) {
+    this.props.makeContribution();
+  }
 
   render() {
     let rewardTiles = null;
-    debugger
-    rewardTiles= this.props.rewards.map((rew, idx) => {
-        return(
-          <div className="rewards-item" key={idx}>
-            <div className="rew-img">
-              <img src={rew.image}/>
-            </div>
 
+    let theseRewards = [];
+    let campId = parseInt(this.props.campaignId);
+    this.props.rewards.forEach((reward) => {
+      if (reward.campaign_id === campId) {
+        theseRewards.push(reward);
+      }
+    });
+
+    rewardTiles= theseRewards.map((rew, idx) => {
+      if (this.props.onShow) {
+        return(
+          <div className="rewards-item" key={idx} onMouseOver={this.showButton}>
             <div className="rewards-details">
             <div className="rewards-price">${rew.price} <span>USD</span></div>
               <div className="reward--title">{rew.title}</div>
-              <div className="rewards-title">{rew.description}</div>
+              <div className="rewards-description">{rew.description}</div>
             </div>
           </div>
       );
-    });
+    }});
 
 
     if (this.props.rewards.length > 0 ) {
@@ -54,18 +64,5 @@ class RewardsShowPage extends React.Component {
   }
 }
 
-// const mapStateToProps = (state, ownProps) => {
-//
-//   let campaignId = ownProps.params ? ownProps.params.id : state.campaigns.campaign.id;
-//   return {
-//     campaignId: campaignId
-//   };
-// };
-//
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     getAllRewards: (id) => dispatch(getAllRewards(id))
-//   };
-// };
 
 export default RewardsShowPage;

@@ -6,20 +6,15 @@ const RewardsReducer = (state = {}, action) => {
 
   switch (action.type) {
     case "RECEIVE_REWARD":
-      // const rewards = action.reward;
-      // let newState = merge({}, state);
-
       return merge({}, state, {[action.reward.id]: action.reward});
     case "RECEIVE_ALL_REWARDS":
-
       const oldS = merge({}, state);
       if (action.rewards.id) {
-
         return merge({}, oldS, {[action.rewards.id]: action.rewards});
       } else {
         return state;
       }
-      case "CLEAR_REWARD":
+    case "CLEAR_REWARD":
         return {};
     default:
       return state;
