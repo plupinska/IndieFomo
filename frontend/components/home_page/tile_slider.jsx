@@ -1,26 +1,15 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { fetchCampaigns, fetchCampaign } from '../../actions/campaign_actions';
 import CampaignIndexItem from '../campaign/campaign_index_item';
-import { hashHistory } from 'react-router'
+
 class TileSlider extends React.Component {
 
-  constructor(props) {
-    super(props);
-
-  }
-
   componentDidMount() {
+    this.props.fetchCampaigns(4);
 
-    this.props.fetchCampaigns();
-
-    // if (!this.props.currentUser) {
-    //   hashHistory.push('/');
-    // }
   }
 
   render() {
-
     var settings = {
       dots: true,
       infinite: true,
@@ -31,9 +20,8 @@ class TileSlider extends React.Component {
     };
 
     let camps = this.props.campaigns;
-
+     
     if (camps[0]) {
-       
       return(
         <div className="discover-slider">
           <Slider {...settings}>

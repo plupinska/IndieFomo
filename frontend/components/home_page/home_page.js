@@ -15,7 +15,6 @@ class HomePage extends React.Component {
         <div className="discovery">
           <Discovery/>
         </div>
-        <div className="space-"> </div>
       </div>
     );
   }
