@@ -1,5 +1,6 @@
 .edit-campaign {
   height: 100%;
+  width: 80%;
   border: 1px solid black;
 }
 
@@ -8,6 +9,7 @@
   padding-left: 50px;
   font-weight: 400;
   font-size: 24px;
+  font-weight: bold;
 }
 
 /*note that cform inherits from campaign new cform css*/
@@ -17,9 +19,7 @@
   margin-left: 25px;
   margin-top: 10px;
   padding-top: 20px;
-  padding-bottom: 20px;
   width: 600px;
-  border: 1px solid #e4e4e4;
 }
 
 .campaign-description > input {
@@ -33,9 +33,7 @@
   margin-left: 25px;
   margin-top: 10px;
   padding-top: 20px;
-  padding-bottom: 20px;
   width: 600px;
-  border: 1px solid #e4e4e4;
 }
 
 .tagline > input {
@@ -49,9 +47,7 @@
   padding-left: 25px;
   margin-left: 25px;
   width: 600px;
-  border: 1px solid #e4e4e4;
   padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 .campaign-img-preview {
@@ -62,7 +58,6 @@
   padding-left: 25px;
   margin-left: 25px;
   width: 600px;
-  border: 1px solid #e4e4e4;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -94,7 +89,7 @@
 }
 
 .submit-button > input {
-  margin-left: 25px;
+  margin-left: 50px;
   margin-top: 10px;
   background-color: #FC3468;
   color: white;
@@ -116,5 +111,4 @@
 
 .campaign-errors {
   color: red;
-
 }

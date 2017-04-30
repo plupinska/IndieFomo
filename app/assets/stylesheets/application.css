@@ -14,53 +14,78 @@
  *= require_self
  */
 
-
-#root {
-  height: 100%;
-}
-
 .a {
   text-decoration: none;
 }
 
-.indie-fomo {
-  height: 100%;
-  width: 100%;
-  background-color: white;
-}
 
 .header {
+  box-sizing: border-box;
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #dad7d7;
-  min-height: 60px;
+  min-height: 75px;
   box-shadow: -1px 4px 4px 1px rgba(0, 0, 0, 0.04);
+  padding: 5px;
 }
 
 #app {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
   font-family: 'PT Sans', sans-serif;
+}
+
+
+.header-left {
+  width: 30%;
+  height: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-right {
+  box-sizing: border-box;
+  width: 50%;
+  height: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.session-links {
+  width: 35%;
+}
+
+
+.auth-form-container {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
 }
 
 .auth-form-container > ul {
   display: flex;
   justify-content: space-between;
   font-size: 18px;
-  width: 70%;
+  width: 100%;
   align-items: center;
-  padding: 5px;
 }
 
 .logo {
   color: #FC3468;
   align-items: center;
-  font-size: 4vw;
+  font-size: 2vw;
   font-weight: bold;
   padding-left: 5px;
 }
@@ -142,16 +167,13 @@ input {
   transition: box-shadow 0.3s, border 0.3s;
 }
 
-.dog{
-  width: 25%;
-  font-size: 1em;
-}
-
 .greet{
+  box-sizing: border-box;
   font-size: 1em;
-  align-items: flex-start;
-  position: relative;
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 20
 }
 
 .name {
@@ -174,9 +196,15 @@ input {
   display: none;
 }
 
+
+.search {
+  border: 1px solid black;
+  width: 35%
+}
 .drop-down {
   background-color: white;
-  width: 100%;
+  width: 160px;
+  top: 50px;
   flex-direction: column;
   display: none;
   position: absolute;
@@ -188,7 +216,6 @@ input {
   display: block;
   cursor: pointer;
   color: #FC3468;
-  min-width: 100px;
   text-decoration: none;
   background-color: white;
   border: 1px solid #dad7d7;

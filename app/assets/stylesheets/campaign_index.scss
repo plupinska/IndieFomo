@@ -8,6 +8,7 @@
   justify-content: center;
   width: 100%;
   height: auto;
+  display: block;
   align-items: center;
 }
 
@@ -25,11 +26,11 @@
 }
 
 .title- {
+  margin-top: 20px;
+  align: center;
   border-bottom: 1px solid black;
-  flex: auto;
-  padding: 2px;
-  width: 80%;
-  margin-top: 15px;
+  width: 75.5%;
+  margin-left: 150px;
 }
 
 
