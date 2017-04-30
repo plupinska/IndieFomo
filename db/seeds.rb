@@ -51,24 +51,26 @@ Category.create!(cat: "Outdoors")
 Category.create!(cat: "Fomo")
 
 
-pl.campaigns.create!( title: "Cochella Funds", descriptions: "I need to go",
+pl.campaigns.create!( title: "Cochella Funds", descriptions: "I need to go. Do you ever feel like you have to attend the hottest concert, sporting event or show because you wouldn’t be able to stand it, if everyone was talking about how great it was, and you missed it? Do you have to go, even if the price is outrageous and it means racking up more credit card debt(that's what this is for!)?
+Do you feel that you missed out on an incredible adventure when you see your friends posing in front of the Eiffel Tower? Or when you view their incredible safari shots? Or listen to them gush about the fabulous diving trip they took to the Cayman Islands?
+Do you feel bad about yourself for not doing those things even though you thoroughly enjoyed your vacation visiting friends in Colorado? Fear not, you can try to fund your jetset lifestyle on IndieFomo.",
   tagline: "Cure my useless experience FOMO", end_date: "Jan-12-2018", target_amount: 1000, image: coachella, category_id: Category.find_by(cat: "Travel").id )
 
 l.campaigns.create!(user_id: l.id, title: "Taco Stand", tagline: "Feed the masses", image: img4,
-  descriptions: "Have you ever heard of a taco stand? I bet you have, but this is a taco stand like no other. It will consist of me, my Sakai Takayuki 45-Layer Damascus Hammered Chef Knife, and 3 pieces of plywood. Fund my dreams of being a chef and dig into the best taco stand you've never been to. ",
+  descriptions: "Have you ever heard of a taco stand? I bet you have, but this is a taco stand like no other. It will consist of me, my Sakai Takayuki 45-Layer Damascus Hammered Chef Knife, and 3 pieces of plywood. Fund my dreams of being a chef and dig into the best taco stand you've never been to. Make hand tacos after I'm gone. May my legacy live on forever!",
   end_date: "Jan-12-2018", target_amount: 1000, category_id: Category.find_by(cat: "Projects").id)
 
-marty.campaigns.create!(title: "DeLorean time machine", descriptions: "I need to build the flux capacitor.", tagline: "Get me back to the future",
+marty.campaigns.create!(title: "DeLorean time machine", descriptions: "I need to build the flux capacitor. Last night, Darth Vader came from the planet Vulcan and told me that if I didnt take Lorraine out that hed melt my brain. 1.21 JIGA WATTS!!!!! I am Darth Vader from Planet Vulcan!  You're telling me you built a time machine... Out of a DeLorean?!?!", tagline: "Get me back to the future",
   end_date: "July-17-2018", target_amount: 10000, image: future, category_id: Category.find_by(cat: "Technology").id)
 
-pl.campaigns.create!(title: "Plant Bot", descriptions: "Fund my Plant watering Robot, his name is Earl.", tagline: "Never see your plants thirsty",
+pl.campaigns.create!(title: "Plant Bot", descriptions: "Fund my Plant watering Robot, his name is Earl. The word robot usually is used for machines that move about. But consider this... even though it does not move, GardenBot is a robot. It is a robot in the same way a plant is a living organism. It is a slow, quiet robot. It is a robot that is threaded through your house like a plant threads its roots through the soil. GardenBot is formed to fit its function.", tagline: "Never see your plants thirsty",
   end_date: "August-17-2018", target_amount: 10000, image: gardenbot, category_id: Category.find_by(cat: "Technology").id)
 
-tom.campaigns.create!(title: "Williamsburg Loft Party", descriptions: "I missed my best friends party because I was working. The Fomo was great. This funding campaign is my chance to fill the gaping house party void present in my mind.", tagline: "You know you wanna donate. Donation = Invite for 2",
+tom.campaigns.create!(title: "Williamsburg Loft Party", descriptions: "I missed my best friends party because I was working. The Fomo was great. This funding campaign is my chance to fill the gaping house party void present in my mind. My fear influences the formation of long term goals and self perception.", tagline: "You know you wanna donate. Donation = Invite for 2",
   end_date: "September-18-1991", target_amount: 400, image: party, category_id: Category.find_by(cat: "Fomo").id)
 
 petty.campaigns.create!(title: "Minimalistic magnetic shelf", descriptions: "Are you tired of being expected to know how to put together furniture? Are you afraid of the amount of leftover hardware from your furniture build attempt? Lucky for you theres
-a magnetic shelf to solve all of the problems. Simply glue a large magnet to your wall and hold the shelf up to the magnet. Holds up to 5lbs of weight. Do not allow children to walk under.", tagline: "Less complicated than Ikea",
+a magnetic shelf to solve all of the problems. Simply glue a large magnet to your wall and hold the shelf up to the magnet. Holds up to 5lbs of weight. Do not allow children to walk under. Shelf does not come with dinasour head, iphone, or plants. We reccomend purchasing styrafoam objects to populate the empty space while simultaneously ensuring no more than 5lbs of weight are applied to the magnet.", tagline: "Less complicated than Ikea",
   end_date: "September-18-1991", target_amount: 400, image: minimalistic_shelf, category_id: Category.find_by(cat: "Home").id)
 
 

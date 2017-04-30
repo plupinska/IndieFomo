@@ -14,7 +14,6 @@ class Api::RewardsController < ApplicationController
 
 
   def create
-     
     @reward = Reward.create(reward_params)
 
     if @reward.save
@@ -41,6 +40,6 @@ class Api::RewardsController < ApplicationController
 
   def reward_params
 
-    params.require(:reward).permit(:campaign_id, :title, :description, :price, :image)
+    params.require(:reward).permit(:campaign_id, :title, :description, :price)
   end
 end

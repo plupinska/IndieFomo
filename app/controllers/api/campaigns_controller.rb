@@ -1,12 +1,20 @@
 class Api::CampaignsController < ApplicationController
 
   def index
-    @campaigns = Campaign.includes(:user, :contributions).all
-    render :index
+
+    if params["num"] == "all";
+      @campaigns = Campaign.includes(:user, :contributions).all
+      render :index
+    else
+      @campaigns = Campaign.includes(:user, :contributions).take(params["num"])
+      render :index
+    end
   end
 
   def create
     @campaign = Campaign.create(campaign_params)
+
+     
 
     if @campaign.save
       render :show
