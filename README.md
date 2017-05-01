@@ -2,7 +2,8 @@
 
 # IndieFomo
 Indie Fomo is a web aplication inspired by Indiegogo built using Ruby on Rails on the backend, a PostgresQL database, and React/Redux front end framework.
-![HomePage](/docs/images/IndieFomo Homepage.png)
+![HomePage](/docs/images/homepage.png)
+
 ## Features And Implementation
 
 ### Campaign Creation
