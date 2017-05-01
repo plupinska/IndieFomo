@@ -10,7 +10,6 @@
 }
 
 .discovery-slider > div {
-  /*border: 10px solid red;*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,6 +25,11 @@
   width: 70%;
 }
 
+.discover-tile > div {
+  width: 90%;
+  height: 90%;
+}
+
 .discovery-2 {
   width: 100%;
   height: 100%;
@@ -33,6 +37,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .explore {
