@@ -22,6 +22,7 @@ class Api::CampaignsController < ApplicationController
   end
 
   def show
+    
     @campaign = Campaign.find(params[:id])
     @num_contributions = Contribution.includes(:campaign_id, :id).where(campaign_id: params[:id]).count
     @total_contributions = Contribution.where(campaign_id: params[:id]).sum(:amount)

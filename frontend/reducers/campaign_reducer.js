@@ -35,8 +35,9 @@ const CampaignsReducer = (state = _oldState, action) => {
       let updated = merge(z, {campaign: action.campaign});
 
       let newAmount = updated.campaign.total_contributions + action.contribution.amount;
+      let newCount = updated.campaign.num_contributions + 1;
       updated.campaign.total_contributions = newAmount;
-
+      updated.campaign.num_contributions = newCount;
       return updated;
     default:
       return state;
