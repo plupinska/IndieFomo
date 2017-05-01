@@ -1,12 +1,9 @@
 export const createReward = (reward) => {
+   
   return $.ajax({
     url: `api/campaigns/${reward.campaign_id}/rewards`,
     method: 'POST',
     data: reward,
-    dataType: "json",
-    contentType: false,
-    processData: false,
-
   });
 };
 

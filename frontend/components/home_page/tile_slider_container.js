@@ -7,7 +7,6 @@ const mapStateToProps = (state) => {
 
   return {
     campaigns: selectCampaigns(state),
-    // loggedIn: Boolean(session.currentUser),
   };
 };
 

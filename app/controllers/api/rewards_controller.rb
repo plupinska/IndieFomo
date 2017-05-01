@@ -1,9 +1,7 @@
 class Api::RewardsController < ApplicationController
 
   def index
-    #
     @campaign = Campaign.find(params[:campaign_id])
-    #
     render :index
   end
 
@@ -14,6 +12,7 @@ class Api::RewardsController < ApplicationController
 
 
   def create
+
     @reward = Reward.create(reward_params)
 
     if @reward.save
@@ -33,13 +32,13 @@ class Api::RewardsController < ApplicationController
   end
 
   def destroy
+    
     @reward = Reward.find(params[:id])
     @reward.destroy
     render status: 200
   end
 
   def reward_params
-
-    params.require(:reward).permit(:campaign_id, :title, :description, :price)
+    params.permit(:campaign_id, :title, :description, :price)
   end
 end

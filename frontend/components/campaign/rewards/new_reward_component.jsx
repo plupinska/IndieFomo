@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { makeContribution } from '../../../actions/contribution_actions';
-import { createReward, getReward, getAllRewards, clearReward } from '../../../actions/reward_actions';
+import { createReward, getReward, getAllRewards, deleteReward } from '../../../actions/reward_actions';
 import React from 'react';
 import RewardsShowPage from './rewards_showpage';
 import {selectRewards} from '../../../reducers/selectors';
@@ -10,23 +10,21 @@ class NewReward extends React.Component {
 
     super(props);
     this.state = {
-      campaign_id: this.props.campid,
+      campaign_id: null,
       title: "Give it a title...",
       description: "Tell your contributors about your reward..",
       price: 0,
-      imageFile: null,
-      imageUrl: null
     };
 
     this.handleClick = this.handleClick.bind(this);
     this.handleSubmit =  this.handleSubmit.bind(this);
-    this.updateFile = this.updateFile.bind(this);
+    // this.updateFile = this.updateFile.bind(this);
   }
 
   componentWillMount() {
-    this.props.clearReward();
+    this.props.getAllRewards()
     this.setState({
-      campaign_id: this.props.campaign_id,
+      campaign_id: this.props.campaignId,
       title: "Give it a title...",
       description: "Tell your contributors about your reward..",
       price: 0,
@@ -37,49 +35,25 @@ class NewReward extends React.Component {
 
   componentWillReceiveProps() {
     this.setState({
-      campaign_id: this.props.campaign_id,
+      campaign_id: this.props.campaignId,
       title: "Give it a title...",
       description: "Tell your contributors about your reward..",
       price: 0,
-      imageFile: null,
-      imageUrl: null,
     });
   }
 
 
   handleSubmit(e) {
     e.preventDefault();
-    const formData = new FormData();
-    // We need to append all other fields to form data
-    // in order to pass through all info from the form
-    formData.append("reward[campaign_id]", this.props.campaignId);
-    formData.append("reward[title]", this.state.title);
-    formData.append("reward[price]", this.state.price);
-    formData.append("reward[description]", this.state.description);
-    formData.append("reward[image]", this.state.imageFile);
-
-    this.props.createReward(formData);
+    this.props.createReward(this.state);
   }
 
   handleClick(e) {
-
+    
     e.preventDefault();
+
     const url = `campaigns/${this.props.campaignId}`;
     this.props.router.push(url);
-  }
-
-  updateFile(e) {
-
-    let file = e.currentTarget.files[0];
-    var fileReader = new FileReader();
-
-    fileReader.onloadend = () => {
-      this.setState({imageFile: file, imageUrl: fileReader.result});
-    };
-
-    if (file) {
-      fileReader.readAsDataURL(file);
-    }
   }
 
   componentWillMount() {
@@ -97,8 +71,6 @@ class NewReward extends React.Component {
   }
 
   render() {
-    // let errors = this.props.errors.responseText;
-
       return(
         <div className="create-reward">
           <div className="reward--">
@@ -145,7 +117,8 @@ class NewReward extends React.Component {
             </div>
             <div className='rewards-show'>
               <RewardsShowPage rewards={this.props.rewards} campaignId={this.props.campaignId}
-                onShow={false} makeContribution={this.props.makeContribution}/>
+                onShow={false} makeContribution={this.props.makeContribution}
+                  user={this.props.user} deleteReward={this.props.deleteReward}/>
             </div>
           </main>
         </div>
@@ -163,8 +136,9 @@ const mapStateToProps = (state, ownProps) => {
   } else {
     campid = state.campaigns.campaign.id;
   }
+  
   return {
-    campaignId: campid,
+    campaignId: parseInt(campid),
     user: state.session.currentUser,
     rewards: selectRewards(state)
   };
@@ -176,16 +150,9 @@ const mapDispatchToProps = (dispatch) => {
     createReward: (id) => dispatch(createReward(id)),
     getReward: (id) => dispatch(getReward(id)),
     getAllRewards: (contribution) => dispatch(getAllRewards(contribution)),
-    clearReward: () => dispatch(clearReward()),
-    makeContribution: () => dispatch(makeContribution())
+    makeContribution: () => dispatch(makeContribution()),
+    deleteReward: (reward) => dispatch(deleteReward(reward))
   };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewReward);
-
-// <div className="rewards-imgupload">Lastly, please add an image
-//    <div className="file-upload">
-//      <input type="file"
-//      onChange={this.updateFile}/>
-//   </div>
-// </div>
