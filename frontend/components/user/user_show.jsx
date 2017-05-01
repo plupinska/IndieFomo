@@ -163,7 +163,7 @@ class UserShow extends React.Component {
       );
     } else {
       return (
-        <h1> waiting... </h1>
+        <h1></h1>
       );
     }
   }

@@ -20,7 +20,7 @@ class TileSlider extends React.Component {
     };
 
     let camps = this.props.campaigns;
-     
+
     if (camps[0]) {
       return(
         <div className="discover-slider">
@@ -29,15 +29,15 @@ class TileSlider extends React.Component {
                <CampaignIndexItem  fetchCampaign={this.props.fetchCampaign} campaign={camps[0]}/>
               </div>
 
-              <div key={camps[1].id} className="discovr-tile">
+              <div key={camps[1].id} className="discover-tile">
               <CampaignIndexItem  fetchCampaign={this.props.fetchCampaign} campaign={camps[1]}/>
              </div>
 
-             <div key={camps[2].id} className="discovr-tile">
+             <div key={camps[2].id} className="discover-tile">
                <CampaignIndexItem  fetchCampaign={this.props.fetchCampaign} campaign={camps[2]}/>
               </div>
 
-              <div key={camps[3].id}  className="discovr-tile">
+              <div key={camps[3].id}  className="discover-tile">
                 <CampaignIndexItem  fetchCampaign={this.props.fetchCampaign} campaign={camps[3]}/>
                </div>
          </Slider>

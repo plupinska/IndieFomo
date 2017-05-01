@@ -49,7 +49,7 @@ class NewReward extends React.Component {
   }
 
   handleClick(e) {
-    
+
     e.preventDefault();
 
     const url = `campaigns/${this.props.campaignId}`;
@@ -109,6 +109,8 @@ class NewReward extends React.Component {
                <input type="submit"
                        value="ADD REWARD">
                </input>
+               <br/>
+               <br/>
                <input type="submit"
                        value="SUBMIT" onClick={this.handleClick}>
                </input>
@@ -136,7 +138,7 @@ const mapStateToProps = (state, ownProps) => {
   } else {
     campid = state.campaigns.campaign.id;
   }
-  
+
   return {
     campaignId: parseInt(campid),
     user: state.session.currentUser,
