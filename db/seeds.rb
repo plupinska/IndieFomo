@@ -83,4 +83,18 @@ Contribution.create!(user_id: l.id, campaign_id: Campaign.find_by(title: "Minima
 Contribution.create!(user_id: l.id, campaign_id: Campaign.find_by(title: "Plant Bot").id , amount: 87)
 
 
-taco_campaign = Campaign.find_by(title: "Taco Stand").rewards.create!(title: "Free Cat", description: "He likes fish tacos.", price: 50, image: cat)
+taco_campaign1 = Campaign.find_by(title: "Taco Stand").rewards.create!(title: "Siamese Cat", description: "As a token of appreciation, donors of 500 or more will receive a Siamise cat. All cats are humanely sourced from shelters and are guaranteed to be a great companion on fish taco tuesday..", price: 500)
+taco_campaign2 = Campaign.find_by(title: "Taco Stand").rewards.create!(title: "Assortment of 5 Tacos", description: "This assortment of tacos is guaranteed to be the best assortment of tacos you'll ever have. Pork, chicken, avocado and the like. Your tastebuds will be tantilized and your heart will experience deep satisfaction.", price: 100)
+taco_campaign3 = Campaign.find_by(title: "Taco Stand").rewards.create!(title: "Chips and Guac", description: "The silkiest and smoothest guacamole you've ever had awaits with only a small donation.", price: 20)
+
+coachella_fund1 = Campaign.find_by(title: "Cochella Funds").rewards.create!(title: "Crochet Socks", description: "Socks made of out organic wool sourced from the Irish countryside. Guaranteed to be the best pair of socks you'll ever own.", price: 100)
+coachella_fund2 = Campaign.find_by(title: "Cochella Funds").rewards.create!(title: "Photo of me at Coachella", description: "A photo of me at coachella will bring a smile to your face and tears to your eyes.", price: 150)
+
+shelf1 = Campaign.find_by(title: "Minimalistic magnetic shelf").rewards.create!(title: "Styrafoam Cup", description: "Not just any styrafoam cup, this cup is sculpted and hand painted to resemble a hand carved wooden vase.", price: 100)
+shelf2 = Campaign.find_by(title: "Minimalistic magnetic shelf").rewards.create!(title: "Shelf and Peackock Feather", description: "First 50 donors of 500 or more will receive their very own magnetic shelf as well as a peackock feather.", price: 500)
+
+time1 = Campaign.find_by(title: "DeLorean time machine").rewards.create!(title: "Polariod Photo of the future", description: "Landscape polaroids will be taken between the years of 2050 and 2090.", price: 500)
+time2 = Campaign.find_by(title: "DeLorean time machine").rewards.create!(title: "One hour trip to 2068", description: "First 100 donors of 1000 or more will receive a trip to 2068. No insurance to be brought, trips are taken at participants own risk", price: 1000)
+
+time1 = Campaign.find_by(title: "Plant Bot").rewards.create!(title: "Soil Moisture Sensor", description: "The moisture sensor will light up when your plants are thirsty.", price: 500)
+time2 = Campaign.find_by(title: "Plant Bot").rewards.create!(title: "Solar Panel", description: "A 6V 2W solar panel will be provided with instructions on how to make useful.", price: 1000)
