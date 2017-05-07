@@ -30,6 +30,7 @@
     "loadash": "0.0.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-fontawesome": "^1.6.1",
     "react-modal": "^1.7.7",
     "react-moment": "^0.2.2",
     "react-redux": "^5.0.4",
