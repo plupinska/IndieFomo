@@ -6,7 +6,7 @@ ul, li, main{
   padding: 0;
   border: 0;
   font-size: 100%;
-  font-family: sans-serif;
+  font-family: 'Maven Pro', sans-serif;;
   font: inherit;
   background: transparent;
 }
@@ -27,5 +27,5 @@ img {
 
 html, body{
   height:100%;
-  font-family: sans-serif;
+  font-family: 'Maven Pro', sans-serif;;
 }

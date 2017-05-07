@@ -26,8 +26,8 @@
 }
 
 .discover-tile > div {
-  width: 90%;
-  height: 90%;
+  /*width: 90%;
+  height: 90%;*/
 }
 
 .discovery-2 {
@@ -43,7 +43,7 @@
 
 .explore {
   color: black;
-  z-index: 90000000800;
+  z-index: 90;
 }
 
 .explore:hover {
@@ -59,7 +59,7 @@
   height: 10%;
   width: 70%;
   border-bottom: 1px solid black;
-  z-index: 90000000000;
+  z-index: 90;
 }
 
 .discovery > h1 {

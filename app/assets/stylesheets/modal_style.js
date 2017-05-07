@@ -20,6 +20,5 @@ module.exports = {
     borderRadius               : '4px',
     outline                    : 'none',
     padding                    : '20px'
-
   }
 }
