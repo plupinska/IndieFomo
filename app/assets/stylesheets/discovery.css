@@ -1,33 +1,111 @@
 .discovery {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 1100px;
   justify-content: center;
   align-items: center;
-  height: 400px;
+  height: 550px;
   margin-top: 20px;
   box-sizing: border-box;
+  /*border: 1px solid blue;*/
 }
 
-.discovery-slider > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 400px;
-}
 
 .discover-slider {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 70%;
+  width: 100%;
+  /*border: 1px solid black;*/
+  margin-top: 20px;
+}
+
+.tile-slider {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  /*border: 1px solid red;*/
+  width: calc(100% - 50px);
+  overflow: hidden;
+}
+
+.slider-move-left {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  /*border: 1px solid red;*/
+  width: calc(100% - 50px);
+  overflow: hidden;
+}
+
+.slider-move-right {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  /*border: 1px solid black;*/
+  width: calc(100% - 50px);
+  overflow: hidden;
+}
+
+/*CSS Animation for Discovery Slider*/
+.slider-move-right > div{
+   animation-name: slidermoveright;
+   animation-duration: 0.5s;
+ }
+ @keyframes slidermoveright{
+   0% {}
+ }
+ .slider-move-left > div {
+   animation-name: slidermoveleft;
+   animation-duration: 0.5s;
+ }
+ @keyframes slidermoveleft{
+   0% {}
+ }
+
+
+.slider-left-button {
+  /*border: 1px solid green;*/
+  width: 50px;
+  height: 50px;
+  color: black;
 }
 
 .discover-tile > div {
-  /*width: 90%;
-  height: 90%;*/
+  max-width: 230px;
+}
+
+.arrows {
+  width: 100%;
+  height:100%;
+  color: grey;
+}
+
+.arrows:hover {
+  cursor: pointer;
+}
+
+.arrows:active {
+  width: 95%;
+  height: 95%;
+}
+
+.slider-right-button {
+  /*border: 1px solid green;*/
+  width: 50px;
+  height: 50px;
+  color: black;
+}
+
+.tile-slide-container {
+  /*border: 1px solid yellow;*/
+  display: flex;
+  margin: 20px;
+  padding-top: 150px;
 }
 
 .discovery-2 {
@@ -55,6 +133,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   color: black;
   height: 10%;
   width: 70%;
