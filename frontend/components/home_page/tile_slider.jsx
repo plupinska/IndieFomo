@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import CampaignIndexItem from '../campaign/campaign_index_item';
+import {selectCampaigns} from '../../reducers/selectors';
 
 class TileSlider extends React.Component {
 
@@ -12,45 +13,95 @@ class TileSlider extends React.Component {
       move: false,
       direction: 'right'
     };
+
+    this.movement = this.movement.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchCampaigns(4);
-    
+    this.props.fetchCampaigns(6).then((camps) => {
+
+      let campaigns = Object.keys(camps.campaigns).map(key => camps.campaigns[key])
+
+      this.setState({tiles: campaigns});
+    });
+    window.addEventListener('animationend', this.movement);
   }
 
-  render() {
-    var settings = {
-      dots: true,
-      infinite: true,
-      slidesToShow: 4,
-      slidesToScroll: 4,
-      arrows: true ,
-      draggable: false
-    };
+  componentWillReceiveProps(props) {
 
-    let camps = this.props.campaigns;
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('animationend', this.movement);
+  }
+
+  slideLeft(){
+
+     this.setState({dir:'right', move:'true'});
+   }
+
+   slideRight(){
+
+     this.setState({dir:'left', move:'true'});
+   }
+
+   movement(e){
+
+    const campaignTiles = this.state.tiles;
+    if(e.animationName === 'slidermoveleft'){
+      campaignTiles.push(campaignTiles.shift());
+    }else if(e.animationName === 'slidermoveright'){
+      campaignTiles.unshift(campaignTiles.pop());
+    }
+    else{
+      return;
+    }
+    this.setState({move:false, tiles: campaignTiles});
+  }
+
+  setTiles(tiles){
+   let container = [];
+   for(let i =0;i< tiles.length/4;i++){
+     let tile = [];
+     tile.push(tiles[i*4]);
+     tile.push(tiles[i*4+1]);
+     tile.push(tiles[i*4+2]);
+     tile.push(tiles[i*4+3]);
+     container.push(tile);
+   }
+   return container;
+ }
+
+  render() {
+    let camps = this.state.tiles;
+    let slidercname = "";
+
+    if(this.state.move){
+      slidercname = (this.state.dir === 'left' ? " slider-move-left" : " slider-move-right");
+    }
 
     if (camps[0]) {
       return(
         <div className="discover-slider">
-          <Slider {...settings}>
-               <div key={camps[0].id} className="discover-tile">
-               <CampaignIndexItem  fetchCampaign={this.props.fetchCampaign} campaign={camps[0]}/>
+          <div onClick={this.slideLeft.bind(this)} className="slider-left-button"><img className="arrows" src={window.back}/></div>
+            <div ref={(div)=>{this.slider = div;}} className={"tile-slider" + slidercname}>
+              <div key={camps[0].id} className="discover-tile">
+                <CampaignIndexItem  fetchCampaign={this.props.fetchCampaign} campaign={camps[0]}/>
               </div>
 
               <div key={camps[1].id} className="discover-tile">
-              <CampaignIndexItem  fetchCampaign={this.props.fetchCampaign} campaign={camps[1]}/>
-             </div>
+                <CampaignIndexItem  fetchCampaign={this.props.fetchCampaign} campaign={camps[1]}/>
+              </div>
 
-             <div key={camps[2].id} className="discover-tile">
-               <CampaignIndexItem  fetchCampaign={this.props.fetchCampaign} campaign={camps[2]}/>
+              <div key={camps[2].id} className="discover-tile">
+                <CampaignIndexItem  fetchCampaign={this.props.fetchCampaign} campaign={camps[2]}/>
               </div>
 
               <div key={camps[3].id}  className="discover-tile">
-                <CampaignIndexItem  fetchCampaign={this.props.fetchCampaign} campaign={camps[3]}/>
-               </div>
-         </Slider>
+               <CampaignIndexItem  fetchCampaign={this.props.fetchCampaign} campaign={camps[3]}/>
+              </div>
+            </div>
+           <div onClick={this.slideRight.bind(this)} className="slider-right-button"><img className="arrows" src={window.forward}/></div>
         </div>
       );
     } else {
