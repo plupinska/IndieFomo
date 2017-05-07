@@ -1,4 +1,5 @@
 export const selectCampaigns = (state) => {
+    
   if (state.campaigns.campaign) {
     return Object.keys(state.campaigns.campaign).map(key => state.campaigns.campaign[key]);
   } else {
