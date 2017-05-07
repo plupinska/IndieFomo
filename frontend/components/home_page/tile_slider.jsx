@@ -4,9 +4,19 @@ import CampaignIndexItem from '../campaign/campaign_index_item';
 
 class TileSlider extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      index: 0,
+      tiles: [],
+      move: false,
+      direction: 'right'
+    };
+  }
+
   componentDidMount() {
     this.props.fetchCampaigns(4);
-
+    
   }
 
   render() {
