@@ -10,14 +10,20 @@ img1 = open("https://s3.amazonaws.com/development1234/1.png")
 img2 = open("https://s3.amazonaws.com/development1234/2.png")
 img3 = open("https://s3.amazonaws.com/development1234/3.png")
 img4 = open("https://s3.amazonaws.com/development1234/4.png")
-cat = open("https://s3.amazonaws.com/development1234/cat.png")
 coachella = open("https://s3.amazonaws.com/development1234/coachella.png")
 future = open("https://s3.amazonaws.com/development1234/future.png")
 gardenbot = open("https://s3.amazonaws.com/development1234/gardenbot.png")
 minimalistic_shelf = open("https://s3.amazonaws.com/development1234/minimalistic_shelf.png")
 party = open("https://s3.amazonaws.com/development1234/party.png")
 
-
+fashion = open("https://s3.amazonaws.com/development1234/fashion.png")
+health = open("https://s3.amazonaws.com/development1234/health.png")
+music = open("https://s3.amazonaws.com/development1234/music.png")
+outdoors = open("https://s3.amazonaws.com/development1234/outdoors.png")
+projects = open("https://s3.amazonaws.com/development1234/projects.png")
+technology = open("https://s3.amazonaws.com/development1234/technology.png")
+travel = open("https://s3.amazonaws.com/development1234/travel.png")
+home = open("https://s3.amazonaws.com/development1234/home.png")
 
 
 User.destroy_all
@@ -41,14 +47,14 @@ petty = User.create!(first_name: "Petty", last_name: "Jude", password: "password
   email: "petty@gmail.com")
 
 
-Category.create!(cat: "Technology")
-Category.create!(cat: "Projects")
-Category.create!(cat: "Travel")
-Category.create!(cat: "Health & Fitness")
-Category.create!(cat: "Film")
-Category.create!(cat: "Home")
-Category.create!(cat: "Outdoors")
-Category.create!(cat: "Fomo")
+Category.create!(cat: "Technology", image: technology)
+Category.create!(cat: "Projects", image: projects)
+Category.create!(cat: "Travel", image: travel)
+Category.create!(cat: "Health & Fitness", image: health)
+Category.create!(cat: "Music & Film", image: music)
+Category.create!(cat: "Home", image: home)
+Category.create!(cat: "Outdoors", image: outdoors)
+Category.create!(cat: "Fashion", image: fashion)
 
 
 pl.campaigns.create!( title: "Cochella Funds", descriptions: "I need to go. Do you ever feel like you have to attend the hottest concert, sporting event or show because you wouldn’t be able to stand it, if everyone was talking about how great it was, and you missed it? Do you have to go, even if the price is outrageous and it means racking up more credit card debt(that's what this is for!)?
@@ -67,7 +73,7 @@ pl.campaigns.create!(title: "Plant Bot", descriptions: "Fund my Plant watering R
   end_date: "August-17-2018", target_amount: 10000, image: gardenbot, category_id: Category.find_by(cat: "Technology").id)
 
 tom.campaigns.create!(title: "Williamsburg Loft Party", descriptions: "I missed my best friends party because I was working. The Fomo was great. This funding campaign is my chance to fill the gaping house party void present in my mind. My fear influences the formation of long term goals and self perception.", tagline: "You know you wanna donate. Donation = Invite for 2",
-  end_date: "September-18-1991", target_amount: 400, image: party, category_id: Category.find_by(cat: "Fomo").id)
+  end_date: "September-18-1991", target_amount: 400, image: party, category_id: Category.find_by(cat: "Home").id)
 
 petty.campaigns.create!(title: "Minimalistic magnetic shelf", descriptions: "Are you tired of being expected to know how to put together furniture? Are you afraid of the amount of leftover hardware from your furniture build attempt? Lucky for you theres
 a magnetic shelf to solve all of the problems. Simply glue a large magnet to your wall and hold the shelf up to the magnet. Holds up to 5lbs of weight. Do not allow children to walk under. Shelf does not come with dinasour head, iphone, or plants. We reccomend purchasing styrafoam objects to populate the empty space while simultaneously ensuring no more than 5lbs of weight are applied to the magnet.", tagline: "Less complicated than Ikea",
@@ -83,7 +89,6 @@ Contribution.create!(user_id: l.id, campaign_id: Campaign.find_by(title: "Minima
 Contribution.create!(user_id: l.id, campaign_id: Campaign.find_by(title: "Plant Bot").id , amount: 87)
 
 
-taco_campaign1 = Campaign.find_by(title: "Taco Stand").rewards.create!(title: "Siamese Cat", description: "As a token of appreciation, donors of 500 or more will receive a Siamise cat. All cats are humanely sourced from shelters and are guaranteed to be a great companion on fish taco tuesday..", price: 500)
 taco_campaign2 = Campaign.find_by(title: "Taco Stand").rewards.create!(title: "Assortment of 5 Tacos", description: "This assortment of tacos is guaranteed to be the best assortment of tacos you'll ever have. Pork, chicken, avocado and the like. Your tastebuds will be tantilized and your heart will experience deep satisfaction.", price: 100)
 taco_campaign3 = Campaign.find_by(title: "Taco Stand").rewards.create!(title: "Chips and Guac", description: "The silkiest and smoothest guacamole you've ever had awaits with only a small donation.", price: 20)
 
