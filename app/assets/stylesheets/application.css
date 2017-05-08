@@ -55,7 +55,7 @@
 
 .header-right {
   box-sizing: border-box;
-  width: 50%;
+  width: 55%;
   height: 75%;
   display: flex;
   flex-direction: row;
@@ -105,6 +105,8 @@
   color: white;
   align-items: center;
   min-height: 30px;
+  width: 80px;
+  font-size: .9em;
   padding: 5px;
 }
 .createCampaign >a:hover {

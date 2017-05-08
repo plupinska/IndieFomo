@@ -18,7 +18,7 @@
   justify-content: center;
   width: 100%;
   /*border: 1px solid black;*/
-  margin-top: 20px;
+  margin: 20px;
 }
 
 .tile-slider {
@@ -115,8 +115,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 10px;
 }
 
 .explore {
@@ -139,6 +138,8 @@
   width: 70%;
   border-bottom: 1px solid black;
   z-index: 90;
+  margin: 10px;
+  position: relative;
 }
 
 .discovery > h1 {

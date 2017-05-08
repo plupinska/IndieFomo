@@ -42,10 +42,11 @@ class UserProfileBlock extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-
+const mapStateToProps = (state, ownProps) => {
+  debugger
+  
   return {
-    userId: state.session.currentUser.id,
+    userId: ownProps.params.id,
   }
 }
 
