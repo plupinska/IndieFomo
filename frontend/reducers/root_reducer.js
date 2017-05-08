@@ -5,6 +5,8 @@ import UserReducer from './user_reducer';
 import TileSliderReducer from './tile_slider_reducer';
 import ContributionReducer from './contribution_reducer';
 import RewardsReducer from './rewards_reducer';
+import categoryReducer from './category_reducer';
+
 
 const RootReducer = combineReducers({
   session: SessionReducer,
@@ -12,7 +14,8 @@ const RootReducer = combineReducers({
   user: UserReducer,
   slider: TileSliderReducer,
   contribution: ContributionReducer,
-  rewards: RewardsReducer
+  rewards: RewardsReducer,
+  categories: categoryReducer
 });
 
 export default RootReducer;
