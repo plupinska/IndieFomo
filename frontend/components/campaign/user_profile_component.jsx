@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 class UserProfileBlock extends React.Component {
   constructor(props) {
@@ -42,23 +41,7 @@ class UserProfileBlock extends React.Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  debugger
-  
-  return {
-    userId: ownProps.params.id,
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-
-  }
-}
-
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(UserProfileBlock);
+export default UserProfileBlock;
 
 
 // export default UserProfileBlock;

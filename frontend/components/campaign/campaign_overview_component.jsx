@@ -34,7 +34,7 @@ class CampaignOverview extends React.Component {
   }
 
   handleButtonType() {
-    if (this.props.user) {
+    if (this.props.currentUser) {
       if (this.state.isOpen) {
 
         return(
@@ -74,7 +74,7 @@ class CampaignOverview extends React.Component {
           <h1>{this.props.campaign.title}</h1>
           <h2>{this.props.campaign.tagline}</h2>
           <div className="user-profile">
-            <UserProfileBlock getUser={this.props.getUser} userId={this.props.campaign.user_id}/>
+            <UserProfileBlock getUser={this.props.getUser} userId={this.props.user}/>
           </div>
 
           <div className="progress-bar">

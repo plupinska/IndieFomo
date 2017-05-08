@@ -10,8 +10,8 @@ class CampaignShow extends React.Component {
   }
 
   componentWillMount() {
-    this.props.fetchCampaign(this.props.campaignId)
-    this.props.getAllRewards(this.props.campaignId)
+    this.props.fetchCampaign(this.props.campaignId);
+    this.props.getAllRewards(this.props.campaignId);
   }
 
   render() {
@@ -25,7 +25,8 @@ class CampaignShow extends React.Component {
               getUser={this.props.getUser}
               campaign={this.props.campaign}
               campaignId={this.props.campaignId}
-              user={this.props.user}
+              user={this.props.campaign.user_id}
+              currentUser={this.props.currentUser}
               makeContribution={this.props.makeContribution} />
           </div>
 

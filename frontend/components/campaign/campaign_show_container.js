@@ -16,7 +16,7 @@ const mapStateToProps = (state, ownProps) => {
     rewards: selectRewards(state),
     campaignId,
     campaign: state.campaigns.campaign,
-    user: usr,
+    currentUser: usr,
   };
 };
 
