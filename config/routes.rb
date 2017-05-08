@@ -11,7 +11,10 @@ Rails.application.routes.draw do
     end
 
     resources :contributions, only: [:create, :show]
-    resources :categories, only: [:index]
+
+    resources :categories do
+      resources :campaigns, only: [:index]
+    end
   end
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
