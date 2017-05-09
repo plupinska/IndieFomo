@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   width: 1100px;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  height: 550px;
+  min-height: 600px;
   margin-top: 20px;
   box-sizing: border-box;
   /*border: 1px solid blue;*/
@@ -28,7 +28,8 @@
   display: flex;
   /*border: 1px solid red;*/
   width: calc(100% - 50px);
-  overflow: hidden;
+
+  /*height: 450px;*/
 }
 
 .slider-move-left {
@@ -110,7 +111,7 @@
 
 .discovery-2 {
   width: 100%;
-  height: 100%;
+  height: 550px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -133,13 +134,15 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  text-align: start;
   color: black;
-  height: 10%;
+  height: 50px;
   width: 70%;
-  border-bottom: 1px solid black;
+  /*border: 1px solid black;*/
   z-index: 90;
+  padding: 10px;
   margin: 10px;
-  position: relative;
+  /*position: relative;*/
 }
 
 .discovery > h1 {

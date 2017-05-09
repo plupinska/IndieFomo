@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: flex-start;
   width: 1200px;
-  height: 100%;
 }
 
 .overview-tile {
@@ -64,7 +63,7 @@
   justify-content: space-around;
   margin-top: 30px;
   width: 80%;
-  height: 100%;
+  height: 500px;
 }
 
 .contribute {
