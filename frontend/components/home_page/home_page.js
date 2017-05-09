@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 import Carousel from './carousel_component';
 import Discovery from './discovery';
+import CategoryContainer from '../categories/category_container';
+
 
 class HomePage extends React.Component {
 
@@ -14,6 +16,10 @@ class HomePage extends React.Component {
 
         <div className="discovery">
           <Discovery/>
+        </div>
+
+        <div className="categories">
+          <CategoryContainer/>
         </div>
       </div>
     );
