@@ -33,8 +33,11 @@ class CategoryIndex extends React.Component {
     if (catTiles) {
       debugger
       return(
-        <div className="category-container">
-        {catTiles}
+        <div className="cat-wrap">
+          <h1>Explore categories</h1>
+          <div className="category-container">
+            {catTiles}
+          </div>
         </div>
       );
     } else {

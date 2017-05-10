@@ -115,12 +115,14 @@ class EditCampaign extends React.Component {
               <div className="category_dropdown">
                 <h2>Tag it with a Category!</h2>
                   <select name="category">
-                    <option value="1">Travel&Outdoors</option>
-                    <option value="2">Film</option>
-                    <option value="3">Community Projects</option>
-                    <option value="4">Music</option>
-                    <option value="5">Technology</option>
-                    <option value="6">Materialism</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Projects">Projects</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Health & Fitness">Health & Fitness</option>
+                    <option value="Music & Film">Music & Film</option>
+                    <option value="Home">Home</option>
+                    <option value="Outdoors">Outdoors</option>
+                    <option value="Fashion">Fashion</option>
                   </select>
               </div>
 

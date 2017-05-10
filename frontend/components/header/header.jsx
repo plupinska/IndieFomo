@@ -51,7 +51,6 @@ class Header extends React.Component {
     );
   }
 
-
   userGreeting() {
     return(
       <div className="greet">

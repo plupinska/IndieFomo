@@ -16,12 +16,10 @@ class Reward extends React.Component {
   }
 
   onhoverIn() {
-
     this.setState({hover: true});
   }
 
   onhoverOut() {
-
     this.setState({hover: false});
   }
 
