@@ -73,7 +73,7 @@ class Header extends React.Component {
         <div className="header-left">
           <Link className="logo" to="/">INDIE FOMO</Link>
           <Link>Explore</Link>
-          <Link>GitHub Repo</Link>
+           <a href="https://github.com/plupinska" target="_blank" className="t-link-container">Github</a>
         </div>
 
         <div className="header-right">

@@ -7,33 +7,29 @@ let _oldState = Object.freeze({
   errors: null
 });
 
+
 const CampaignsReducer = (state = _oldState, action) => {
 
   switch(action.type) {
-    case "RECEIVE_CAMPAIGNS":
+    case RECEIVE_CAMPAIGNS:
+
       const allCampaigns = action.campaigns;
-      // this returns an array
       const oldS = merge({}, state);
       let x =  merge({}, oldS, {campaign: action.campaigns});
+      return action.campaigns
+    case RECEIVE_CAMPAIGN:
 
-      return x;
-    case  "RECEIVE_CAMPAIGN":
       const newState = merge({}, state);
       let y = merge(newState, {campaign: action.campaign});
-
       return y;
-
-    case "RECEIVE_CAMPAIGN_ERRORS":
+    case RECEIVE_CAMPAIGN_ERRORS:
 
       const old = merge({}, state);
       return merge(old, {errors: action.errors.responseText});
-
     case "RECEIVE_CONTRIBUTION":
 
       let z = merge({}, state);
-
       let updated = merge(z, {campaign: action.campaign});
-
       let newAmount = updated.campaign.total_contributions + action.contribution.amount;
       let newCount = updated.campaign.num_contributions + 1;
       updated.campaign.total_contributions = newAmount;

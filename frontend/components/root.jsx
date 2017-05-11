@@ -9,7 +9,7 @@ import HomePage from './home_page/home_page';
 import NewCampaignContainer from './campaign/new_campaign_container';
 import EditCampaignComponent from './campaign/edit_campaign_container';
 import NewRewardContainer from './campaign/rewards/new_reward_component';
-
+import CategoryShowContainer from './categories/category_show_container';
 
 const Root = ({store}) => {
 
@@ -46,6 +46,7 @@ const Root = ({store}) => {
           <Route path="/campaigns/:id" component={CampaignShowContainer} />
           <Route path="/users/:id" component={UserShowContainer} onEnter={_redirectUnlessLoggedIn}/>
           <Route path="/campaign/new" component={NewCampaignContainer}/>
+          <Route path="/categories/:id/campaigns" component={CategoryShowContainer}/>
         </Route>
       </Router>
     </Provider>
