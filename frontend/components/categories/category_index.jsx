@@ -15,12 +15,12 @@ class CategoryIndex extends React.Component {
   makeCategoryTiles() {
      const tils = this.props.categories.map((cat, idx) => {
       return(
-        <li id="category" idx={idx}>
-          <CategoryTile idx={idx} category={cat}/>
+        <li id="category" key={idx}>
+          <CategoryTile key={idx} category={cat}/>
         </li>
       );
     });
-    debugger
+
     return tils;
   }
 
@@ -29,9 +29,9 @@ class CategoryIndex extends React.Component {
     if (this.props.categories) {
        catTiles = this.makeCategoryTiles();
     }
-    debugger
+
     if (catTiles) {
-      debugger
+
       return(
         <div className="cat-wrap">
           <h1>Explore categories</h1>
@@ -41,7 +41,7 @@ class CategoryIndex extends React.Component {
         </div>
       );
     } else {
-      debugger
+
       return(
         <h1>Waiting...</h1>
       );

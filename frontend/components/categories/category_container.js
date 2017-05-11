@@ -4,7 +4,7 @@ import CategoryIndex from './category_index';
 
 
 const mapStateToProps = (state) => {
-  debugger
+
   return {
     categories: state.categories,
     errors: state.errors

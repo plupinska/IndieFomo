@@ -6,11 +6,16 @@ class CategoryTile extends React.Component {
     super(props);
   }
 
+  handleClick(e) {
+    e.preventDefault();
+    const url = `/categories/${this.props.category.id}/campaigns`;
+    this.props.router.push(url);
+  }
+
   render() {
-    debugger
     return(
       <div className="category-tile">
-        <a>
+        <a onClick={this.handleClick.bind(this)}>
           <img src={this.props.category.image} className="cat-image"/>
           <div className="title">{this.props.category.cat}</div>
         </a>
@@ -19,4 +24,4 @@ class CategoryTile extends React.Component {
   }
 
 }
-export default CategoryTile;
+export default withRouter(CategoryTile);
