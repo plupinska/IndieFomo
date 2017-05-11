@@ -3,12 +3,22 @@ class Api::CampaignsController < ApplicationController
   def index
 
     if params["num"] == "all";
-      @campaigns = Campaign.includes(:user, :contributions).all
-      render :index
-    else
-      @campaigns = Campaign.includes(:user, :contributions).take(params["num"])
-      render :index
+      if params["category"] === "none"
+        @campaigns = Campaign.includes(:user, :contributions).all
+      elsif params["category"] != "none"
+        if params["category"].to_i > 0
+          @campaigns = Campaign.where(category_id: params["category"].to_i)
+        else
+          category_id = Category.find(cat: params["category"])
+          @campaigns = Campaign.where(category_id: category_id)
+        end
+      else
+        @campaigns = Campaign.where(cat: params["cat"])
+      end
+    else params["num"].to_i.is_a?(Integer)
+      @campaigns = Campaign.includes(:user, :contributions).take(params["num"].to_i)
     end
+    render :index
   end
 
   def create
@@ -22,7 +32,7 @@ class Api::CampaignsController < ApplicationController
   end
 
   def show
-    
+
     @campaign = Campaign.find(params[:id])
     @num_contributions = Contribution.includes(:campaign_id, :id).where(campaign_id: params[:id]).count
     @total_contributions = Contribution.where(campaign_id: params[:id]).sum(:amount)
