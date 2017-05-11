@@ -29,10 +29,9 @@ class CampaignIndex extends React.Component {
       return(
         <div className="all-campaigns">
           <div className="title-">
-            <h1 className="title">All Campaigns</h1>
+            <h1 className="campaign-index-header">All Campaigns</h1>
           </div>
           <div className="campaigns-x">
-            {AllCampaigns}
             {AllCampaigns}
           </div>
         </div>

@@ -8,7 +8,7 @@ class CampaignOverview extends React.Component {
 
     this.state = {
       amount: 0,
-      user_id: this.props.user,
+      user_id: null,
       campaign_id: this.props.campaignId,
       isOpen: false
     };
@@ -28,6 +28,7 @@ class CampaignOverview extends React.Component {
   }
 
   handleClick() {
+
     this.props.makeContribution({amount: this.state.amount, user_id: this.state.user_id,
       campaign_id: this.state.campaign_id});
     this.toggleOpen();

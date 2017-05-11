@@ -11,14 +11,13 @@ class NewReward extends React.Component {
     super(props);
     this.state = {
       campaign_id: null,
-      title: "Give it a title...",
-      description: "Tell your contributors about your reward..",
-      price: 0,
+        title: "Give it a title...",
+        description: "Tell your contributors about your reward..",
+        price: 0
     };
 
     this.handleClick = this.handleClick.bind(this);
     this.handleSubmit =  this.handleSubmit.bind(this);
-    // this.updateFile = this.updateFile.bind(this);
   }
 
   componentWillMount() {
@@ -35,10 +34,10 @@ class NewReward extends React.Component {
 
   componentWillReceiveProps() {
     this.setState({
-      campaign_id: this.props.campaignId,
-      title: "Give it a title...",
-      description: "Tell your contributors about your reward..",
-      price: 0,
+        campaign_id: this.props.campaignId,
+        title: "Give it a title...",
+        description: "Tell your contributors about your reward..",
+        price: 0,
     });
   }
 

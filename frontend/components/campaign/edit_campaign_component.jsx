@@ -11,7 +11,7 @@ class EditCampaign extends React.Component {
       title: this.props.title,
       target_amount: this.props.target_amount,
       descriptions: "Description...",
-      category_id: null,
+      category_name: "Travel",
       end_date: null,
       tagline: "Think persuasion, not baseball...",
       imageFile: null,
@@ -114,7 +114,7 @@ class EditCampaign extends React.Component {
 
               <div className="category_dropdown">
                 <h2>Tag it with a Category!</h2>
-                  <select name="category">
+                  <select name="category" onChange={this.update("category_name")}>
                     <option value="Technology">Technology</option>
                     <option value="Projects">Projects</option>
                     <option value="Travel">Travel</option>
