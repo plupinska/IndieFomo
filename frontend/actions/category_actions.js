@@ -5,7 +5,7 @@ export const RECEIVE_CATEGORY_ERRORS = 'RECEIVE_CATEGORY_ERRORS';
 export const receiveCategories = (categories) => {
   return {
     type: RECEIVE_CATEGORIES,
-    categories
+    categories: categories
   };
 };
 

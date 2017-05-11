@@ -24,13 +24,11 @@ export const receiveErrors = (errors) => {
     type: RECEIVE_CAMPAIGN_ERRORS,
     errors: errors
   };
-
-
 };
 
-export const fetchCampaigns = (num) => (dispatch) => {
+export const fetchCampaigns = (num, cat) => (dispatch) => {
 
-  return CampaignApiUtil.getCampaigns(num)
+  return CampaignApiUtil.getCampaigns(num, cat)
     .then((campaigns) => dispatch(receiveCampaigns(campaigns)),
     (err) => dispatch(receiveErrors(err)));
 };
