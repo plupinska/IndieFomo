@@ -1,7 +1,8 @@
-export const getCampaigns = (number = 'all') => {
+export const getCampaigns = (number = 'all', category = "none") => {
+
   return $.ajax({
     url: `/api/campaigns`,
-    data: { num: number },
+    data: { num: number, category: category },
     method: 'GET'
   });
 };
