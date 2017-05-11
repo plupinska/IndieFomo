@@ -51,6 +51,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  font-size: 24px;
 }
 
 .header-right {
@@ -61,6 +62,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  font-size: 24px;
 }
 
 .session-links {
@@ -205,7 +207,7 @@ input {
 }
 .drop-down {
   background-color: white;
-  width: 160px;
+  width: 180px;
   top: 50px;
   flex-direction: column;
   display: none;
