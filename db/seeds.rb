@@ -43,7 +43,7 @@ marty = User.create!(first_name: "Marty", last_name: "McFly", password: "passwor
 tom = User.create!(first_name: "Thomas", password: "password", last_name: "Word", about_me: "I like long walks in the park, cabernet, french baguettes and Tolstoy. I also need my fund my addiction to cats.",
   email: "tom@gmail.com")
 
-petty = User.create!(first_name: "Petty", last_name: "Jude", password: "password", about_me: "I need to fund my alter ego Petty McFly: the professional sandcastle building action sport explorer from the land to the sea.",
+petty = User.create!(first_name: "Petty", last_name: "Jude", password: "password", about_me: "I need to fund my alter ego Party McFly: the professional sandcastle building action sport explorer from the land to the sea.",
   email: "petty@gmail.com")
 
 
@@ -56,6 +56,7 @@ Category.create!(cat: "Home", image: home)
 Category.create!(cat: "Outdoors", image: outdoors)
 Category.create!(cat: "Fashion", image: fashion)
 
+categories = [ "Technology", "Projects", "Travel", "Health & Fitness", "Music & Film", "Home","Outdoors", "Fashion"]
 
 pl.campaigns.create!( title: "Cochella Funds", descriptions: "I need to go. Do you ever feel like you have to attend the hottest concert, sporting event or show because you wouldn’t be able to stand it, if everyone was talking about how great it was, and you missed it? Do you have to go, even if the price is outrageous and it means racking up more credit card debt(that's what this is for!)?
 Do you feel that you missed out on an incredible adventure when you see your friends posing in front of the Eiffel Tower? Or when you view their incredible safari shots? Or listen to them gush about the fabulous diving trip they took to the Cayman Islands?
@@ -79,8 +80,8 @@ petty.campaigns.create!(title: "Minimalistic magnetic shelf", descriptions: "Are
 a magnetic shelf to solve all of the problems. Simply glue a large magnet to your wall and hold the shelf up to the magnet. Holds up to 5lbs of weight. Do not allow children to walk under. Shelf does not come with dinasour head, iphone, or plants. We reccomend purchasing styrafoam objects to populate the empty space while simultaneously ensuring no more than 5lbs of weight are applied to the magnet.", tagline: "Less complicated than Ikea",
   end_date: "September-18-1991", target_amount: 400, image: minimalistic_shelf, category_id: Category.find_by(cat: "Home").id)
 
-
-Contribution.create!(user_id: pl.id, campaign_id: Campaign.find_by(title: "DeLorean time machine").id , amount: 40)
+users = [pl, l, marty, tom, petty]
+Contribution.create!(user_id: pl.id, campaign_id: Campaign.find_by(title: "DeLorean time machine").id , amount: 4000)
 Contribution.create!(user_id: pl.id, campaign_id: Campaign.find_by(title: "Plant Bot").id , amount: 100)
 Contribution.create!(user_id: pl.id, campaign_id: Campaign.find_by(title: "Williamsburg Loft Party").id , amount: 5)
 Contribution.create!(user_id: petty.id, campaign_id: Campaign.find_by(title: "Taco Stand").id , amount: 257)
@@ -103,3 +104,34 @@ time2 = Campaign.find_by(title: "DeLorean time machine").rewards.create!(title: 
 
 time1 = Campaign.find_by(title: "Plant Bot").rewards.create!(title: "Soil Moisture Sensor", description: "The moisture sensor will light up when your plants are thirsty.", price: 500)
 time2 = Campaign.find_by(title: "Plant Bot").rewards.create!(title: "Solar Panel", description: "A 6V 2W solar panel will be provided with instructions on how to make useful.", price: 1000)
+
+ i = 0
+
+while (i < 60)
+  usr = users.sample
+  cat = Category.find_by(cat: categories.sample).id
+  img = Faker::LoremPixel.image
+  amount = [1000, 3000, 5000, 800, 8000, 10000, 500].sample
+  title = Faker::Hipster.words(3).join(' ')
+  tagline = Faker::Hipster.words(7).join(' ')
+  desc = Faker::Hipster.words(100).join(' ')
+  end_date = Faker::Date.between(2.weeks.from_now, 1.year.from_now)
+
+  Campaign.create!(image: img, user_id: usr.id, descriptions: desc, category_id: cat, target_amount: amount, title: title, tagline: tagline, end_date: end_date)
+  i += 1
+end
+
+Campaign.all.each do |campaign|
+  usr = users.sample
+  amount = [100, 300, 500, 250, 36, 787].sample
+  price = [50, 100, 150, 200, 500, 1000].sample
+  if (price < campaign.target_amount)
+    until price < campaign.target_amount
+      price = [50, 100, 150, 200, 500, 1000].sample
+    end
+  end
+
+
+  Contribution.create!(user_id: usr.id, campaign_id: campaign.id, amount: amount)
+  campaign.rewards.create!(title: Faker::Hipster.words(2), description: Faker::Hipster.words(11), price: price)
+end
