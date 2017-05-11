@@ -7,6 +7,8 @@ class Campaign < ActiveRecord::Base
   }
   has_many :rewards
   validates :title, presence: true
+  has_one :category
+  
   has_many :contributions,
     primary_key: :id,
     foreign_key: :campaign_id,
