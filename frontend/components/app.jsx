@@ -9,7 +9,7 @@ const App = ({children}) => {
       <div id="app">
         <HeaderContainer />
         {children}
-        <div className="footer"/>
+        <Footer/>
       </div>
   );
 };
