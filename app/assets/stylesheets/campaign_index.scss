@@ -6,9 +6,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 65%;
+  width: 80%;
   display: block;
   align-items: center;
+  margin-top: 25px;
+  margin-bottom: 50px;
   // border: 1px solid black;
 }
 
@@ -24,6 +26,8 @@
   margin: 0;
   flex-wrap: wrap;
   margin-left: 100px;
+  // border: 1px solid yellow;
+
 }
 
 .title- {
@@ -97,9 +101,9 @@ img {
 }
 
 #item {
-  display: flex;
-  width: 21%;
-  height: auto;
+  // display: flex;
+  // width: 21%;
+  // height: auto;
   // padding: 10px;
 }
 

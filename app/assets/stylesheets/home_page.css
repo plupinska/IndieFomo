@@ -23,7 +23,8 @@
 
 .carousel {
   width: 100%;
-  min-height: 250px;;
+  min-height: 250px;
+  max-height: 249px;
   overflow-x: hidden;
   overflow-y: hidden;
 }
