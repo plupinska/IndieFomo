@@ -26,6 +26,7 @@ export const receiveRewardErrors = (errors) => {
 };
 
 export const deleteReward = (reward) => {
+
   return {
     type: DELETE_REWARD,
     reward
@@ -46,6 +47,7 @@ export const editReward = (reward) => (dispatch) => {
 };
 
 export const removeReward = (reward) => (dispatch) => {
+
   return RewardsApiUtil.deleteReward(reward)
     .then((rew) => dispatch(deleteReward(rew)),
     (err) => dispatch(receiveRewardErrors(err)));
