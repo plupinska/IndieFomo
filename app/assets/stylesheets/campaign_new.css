@@ -7,14 +7,14 @@
 .c-form {
   display: flex;
   flex-direction: column;
-
+  font-size: 18px;
 }
 
 .create-campaign > h1 {
-  padding-top: 10px;
+  padding-top: 40px;
   padding-left: 50px;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: bold;
 }
 
@@ -22,7 +22,7 @@
   padding-left: 50px;
   padding-top: 2px;
   padding-bottom: 10px;
-
+  font-size: 24px;
 }
 
 .target-amount {

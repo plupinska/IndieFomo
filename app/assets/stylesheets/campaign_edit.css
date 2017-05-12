@@ -4,11 +4,15 @@
 }
 
 .edit-campaign > h1 {
-  padding-top: 10px;
+  padding-top: 40px;
   padding-left: 50px;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: bold;
+}
+
+.c-form {
+  font-size: 18px;
 }
 
 /*note that cform inherits from campaign new cform css*/
@@ -59,6 +63,7 @@
   width: 600px;
   padding-top: 20px;
   padding-bottom: 20px;
+  border: none;
 }
 
 .row-div {

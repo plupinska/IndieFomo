@@ -14,6 +14,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 40px;
 }
 /*SHOW AND OVERVIEW COMPONENTS COMBINED*/
 .photo {

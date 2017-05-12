@@ -17,6 +17,14 @@
   padding-left: 55px;
   align-items: center;
   font-size: 4vw;
+  margin-top: 30px;
+}
+
+.top-divider {
+  margin-bottom: 40px;
+  height: 30px;
+  width: 100%;
+  background-color: black;
 }
 
 .profile-photo {
@@ -25,7 +33,8 @@
 }
 
 .profile-greeting > h1 {
-  font-size: 24px;
+  font-size: 32;
+  font-weight: bold;
   padding-left: 35px;
 }
 
@@ -33,16 +42,16 @@
   display: flex;
   flex-direction: row-reverse;
   width: 100%;
-  height: 50%;
+  height: 500px;
+  margin-bottom: 40px;
   justify-content: space-around;
-  font-size: 2vw;
+  font-size: 24px;
   padding-bottom: 5px;
 }
 
 .left {
   display: flex;
   flex-direction: column;
-  // border: 1px solid #e4e4e4;
   width: 40%;
   height: 100%
 }
@@ -54,7 +63,7 @@
 
 .image-container {
   width: 100%;
-  height: 79%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -96,6 +105,39 @@
   align-items: flex-start;
 }
 
+.navigation-options {
+  width: 100%;
+  height: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-profile-nav {
+  width: 90%;
+  height: 100%;
+  border-bottom: 3px solid #e4e4e4;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+}
+
+.user-nav-location {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+}
+.user-nav-location:hover {
+  cursor: pointer;
+  border-bottom: 3px solid #FC3468;
+}
+
 .file-submit > input {
   padding: 5px;
   margin: 20px 10px;
@@ -104,6 +146,7 @@
   min-height: 30px;
   border: none;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .usr-avatar {
@@ -124,7 +167,7 @@
 }
 
 .about-me {
-  // border: 1px solid black;
+  font-size: 24px;
 }
 
 .right {
@@ -133,7 +176,7 @@
 }
 
 .user-overview {
-  // padding: 10px;
+  margin-top: 50px;
   width: 100%;
 }
 
