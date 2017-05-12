@@ -50,7 +50,6 @@ class UserShow extends React.Component {
   }
 
   render() {
-
     const name = this.props.user ? this.props.user.first_name : "";
 
     if (this.props.user.id) {
