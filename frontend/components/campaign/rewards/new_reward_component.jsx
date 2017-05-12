@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { makeContribution } from '../../../actions/contribution_actions';
-import { createReward, getReward, getAllRewards, deleteReward } from '../../../actions/reward_actions';
+import { createReward, getReward, getAllRewards, removeReward } from '../../../actions/reward_actions';
 import React from 'react';
 import RewardsShowPage from './rewards_showpage';
 import {selectRewards} from '../../../reducers/selectors';
@@ -20,11 +20,11 @@ class NewReward extends React.Component {
     this.isChanged = this.isChanged.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleSubmit =  this.handleSubmit.bind(this);
-    debugger
+
   }
 
   componentWillMount() {
-    debugger
+
     this.props.getAllRewards(this.props.campaignId);
     this.setState({
       campaign_id: this.props.campaignId,
@@ -35,18 +35,9 @@ class NewReward extends React.Component {
 
   }
 
-  // componentWillReceiveProps() {
-  //   this.setState({
-  //       campaign_id: this.props.campaignId,
-  //       title: "Give it a title...",
-  //       description: "Tell your contributors about your reward..",
-  //       price: 0,
-  //   });
-  // }
-
 
   handleSubmit(e) {
-    debugger
+
     e.preventDefault();
     if (this.isChanged(this.state)) {
       this.props.createReward(this.state);
@@ -62,7 +53,7 @@ class NewReward extends React.Component {
         change += 1;
       }
     });
-    debugger
+
     let changed = change > 0 ? true : false;
     return changed
   }
@@ -82,7 +73,7 @@ class NewReward extends React.Component {
   }
 
   render() {
-    debugger
+
       return(
         <div className="create-reward">
           <div className="reward--">
@@ -117,9 +108,9 @@ class NewReward extends React.Component {
                 </input> <span>USD</span>
                </div>
 
-             <div className="submit-buttons" onClick={this.handleSubmit}>
+             <div className="submit-buttons">
                <input type="submit"
-                       value="ADD REWARD">
+                       value="ADD REWARD" onClick={this.handleSubmit}>
                </input>
                <br/>
                <br/>
@@ -132,7 +123,7 @@ class NewReward extends React.Component {
             <div className='rewards-show'>
               <RewardsShowPage rewards={this.props.rewards} campaignId={this.props.campaignId}
                 onShow={false} makeContribution={this.props.makeContribution}
-                  user={this.props.user} deleteReward={this.props.deleteReward}/>
+                  user={this.props.user} deleteReward={this.props.removeReward}/>
             </div>
           </main>
         </div>
@@ -155,7 +146,7 @@ const mapStateToProps = (state, ownProps) => {
   if (Object.keys(state.rewards).length > 0) {
     rews = Object.keys(state.rewards).map((key) => state.rewards[key]);
   }
-  debugger
+
   return {
     campaignId: parseInt(campid),
     user: state.session.currentUser,
@@ -170,7 +161,7 @@ const mapDispatchToProps = (dispatch) => {
     getReward: (id) => dispatch(getReward(id)),
     getAllRewards: (contribution) => dispatch(getAllRewards(contribution)),
     makeContribution: (contribution) => dispatch(makeContribution(contribution)),
-    deleteReward: (reward) => dispatch(deleteReward(reward))
+    removeReward: (reward) => dispatch(removeReward(reward))
   };
 };
 

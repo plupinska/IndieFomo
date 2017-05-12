@@ -9,7 +9,7 @@ class RewardsShowPage extends React.Component {
 
   render() {
     let rewardTiles = null;
-    debugger
+
     let theseRewards = [];
     let campId = parseInt(this.props.campaignId);
     this.props.rewards.forEach((reward) => {
@@ -19,7 +19,7 @@ class RewardsShowPage extends React.Component {
     });
 
     rewardTiles= theseRewards.map((rew, idx) => {
-
+      debugger
         return(
         <Reward key={idx} reward={rew} onShow={this.props.onShow} campaignId={this.props.campaignId}
           makeContribution={this.props.makeContribution} user={this.props.user} deleteReward={this.props.deleteReward}/>

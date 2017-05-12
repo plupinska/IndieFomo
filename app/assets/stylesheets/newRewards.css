@@ -40,6 +40,8 @@
 
 .rewards-show {
   padding-left: 150px;
+  height: 100%;
+  display: block;
 }
 
 .create-reward > h1 {

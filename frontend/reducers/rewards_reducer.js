@@ -16,9 +16,8 @@ const RewardsReducer = (state = {}, action) => {
       }
     case DELETE_REWARD:
      let newState = merge({}, state);
-     
       delete newState[action.reward.id];
-      
+
       return newState;
     default:
       return state;
