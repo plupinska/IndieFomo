@@ -133,5 +133,5 @@ Campaign.all.each do |campaign|
 
 
   Contribution.create!(user_id: usr.id, campaign_id: campaign.id, amount: amount)
-  campaign.rewards.create!(title: Faker::Hipster.words(2), description: Faker::Hipster.words(11), price: price)
+  campaign.rewards.create!(title: Faker::Hipster.words(2).join(' '), description: Faker::Hipster.words(11).join(' '), price: price)
 end
