@@ -2,12 +2,17 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 65%;
+  width: 50%;
   display: block;
   align-items: center;
+  margin-top: 25px;
+  margin-bottom: 50px;
 }
 
 .category-show-wrapper > h1 {
+  /*border: 4px solid blue;*/
+  height: 30px;
+  color: black;
   font-size: 24px;
   width: 65%;
   margin-top: 40px;

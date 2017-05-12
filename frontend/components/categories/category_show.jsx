@@ -45,11 +45,11 @@ class CategoryShow extends React.Component {
     if (this.props.campaigns[0] && this.allOfCategory()) {
       tiles = this.makeCampaignTiles();
     }
-     
+
     if (tiles.length > 0) {
       return(
         <div className="category-show-wrapper">
-          <h1>{this.props.campaigns[0].category}</h1>
+          <h1>{this.props.campaigns[0].cat}</h1>
           <div className="category-campaign-tile">
             {tiles}
           </div>
