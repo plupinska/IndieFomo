@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import UserNav from './user_navigation_component';
 
 class UserShow extends React.Component {
   constructor(props) {
@@ -19,9 +20,7 @@ class UserShow extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-
     if (this.props.user.id != newProps.user.id) {
-
       this.setState({user: newProps.user.id, imageUrl: newProps.user.image_ur})
     }
   }
@@ -80,8 +79,13 @@ class UserShow extends React.Component {
 
       return(
         <div className="profile-page">
+        <div className="top-divider"> </div>
+        <div className="navigation-options">
+          <UserNav contributions={this.props.contributions}
+          campaigns={this.props.campaigns}/>
+        </div>
           <div className="profile-greeting">
-            <h1> Greetings, {name} </h1>
+            <h1>{name}</h1>
           </div>
 
           <div className="main-content">

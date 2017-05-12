@@ -5,15 +5,18 @@ import { selectCampaigns } from '../../reducers/selectors';
 import { makeContribution } from '../../actions/contribution_actions';
 
 const mapStateToProps = (state) =>  {
-   
+    let camps = null;
+    if (state.campaigns){
+      camps = Object.keys(state.campaigns).map((el) => state.campaigns[el]);
+    }
   return {
-    campaigns: selectCampaigns(state),
+    campaigns: camps,
     errors: state.errors
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-
+  debugger
   return {
     fetchCampaigns: () => dispatch(fetchCampaigns()),
     fetchCampaign: (id) => dispatch(fetchCampaign(id)),

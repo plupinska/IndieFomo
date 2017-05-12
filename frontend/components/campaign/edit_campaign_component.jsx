@@ -149,7 +149,7 @@ class EditCampaign extends React.Component {
 
               <div className="submit-button">
                 <input type="submit"
-                        value="submit">
+                        value="SUBMIT">
                 </input>
               </div>
             </form>

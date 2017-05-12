@@ -13,4 +13,3 @@
   json.image_url asset_path(@campaign.image.url)
   json.end_date @campaign.end_date
   json.target_amount @campaign.target_amount
-  json.category Category.find(@campaign.category_id).cat

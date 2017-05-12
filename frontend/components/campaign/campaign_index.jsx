@@ -14,7 +14,7 @@ class CampaignIndex extends React.Component {
   }
 
   render() {
-
+    debugger
     if (this.props.campaigns[0] ) {
 
       const AllCampaigns = this.props.campaigns.map((campaign) => {
