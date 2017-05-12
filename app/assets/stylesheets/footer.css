@@ -4,4 +4,29 @@
   background-color: black;
   display: flex;
   margin-top: 150px;
+  color: white;
+}
+
+.contact {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.linkedin {
+  width: 70%;
+  height: 70%;
+  padding: 10px;
+}
+
+.personal {
+  width: 55%;
+  height: 55%;
+  padding: 10px;
+}
+
+.github {
+  width: 120%;
+  height: 120%;
 }

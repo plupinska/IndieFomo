@@ -7,6 +7,10 @@
   window.forward = "<%= asset_path("gright.png") %>"
   window.back = "<%= asset_path("gleft.png") %>"
   window.profile_placeholder= "<%= asset_path("profile_placeholder.png") %>"
+  window.briefcase = "<%= asset_path("briefcase.png") %>"
+  window.github = "<%= asset_path("GitHub-Mark-Light-32px.png") %>"
+  window.linkedin = "<%= asset_path("linkedin.png") %>"
+
  <% if logged_in? %>
     window.currentUser =
     <%= render("api/sessions/user.json.jbuilder", user: current_user).html_safe %>
