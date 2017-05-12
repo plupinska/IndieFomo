@@ -19,58 +19,40 @@ class TileSlider extends React.Component {
 
   componentDidMount() {
     this.props.fetchCampaigns(6).then((camps) => {
-
       let campaigns = Object.keys(camps.campaigns).map(key => camps.campaigns[key])
-
       this.setState({tiles: campaigns});
     });
     window.addEventListener('animationend', this.movement);
   }
 
-  componentWillReceiveProps(props) {
-
-  }
 
   componentWillUnmount () {
     window.removeEventListener('animationend', this.movement);
   }
 
   slideLeft(){
-
      this.setState({dir:'right', move:'true'});
    }
 
    slideRight(){
-
      this.setState({dir:'left', move:'true'});
    }
 
    movement(e){
-
     const campaignTiles = this.state.tiles;
-    if(e.animationName === 'slidermoveleft'){
+
+    if (e.animationName === 'slidermoveleft') {
       campaignTiles.push(campaignTiles.shift());
-    }else if(e.animationName === 'slidermoveright'){
+    } else if (e.animationName === 'slidermoveright') {
       campaignTiles.unshift(campaignTiles.pop());
     }
-    else{
+    else {
       return;
     }
+    
     this.setState({move:false, tiles: campaignTiles});
   }
 
-  setTiles(tiles){
-   let container = [];
-   for(let i =0;i< tiles.length/4;i++){
-     let tile = [];
-     tile.push(tiles[i*4]);
-     tile.push(tiles[i*4+1]);
-     tile.push(tiles[i*4+2]);
-     tile.push(tiles[i*4+3]);
-     container.push(tile);
-   }
-   return container;
- }
 
   render() {
     let camps = this.state.tiles;
@@ -84,7 +66,7 @@ class TileSlider extends React.Component {
       return(
         <div className="discover-slider">
           <div onClick={this.slideLeft.bind(this)} className="slider-left-button"><img className="arrows" src={window.back}/></div>
-            <div ref={(div)=>{this.slider = div;}} className={"tile-slider" + slidercname}>
+            <div className={"tile-slider" + slidercname}>
               <div key={camps[0].id} className="discover-tile">
                 <CampaignIndexItem  fetchCampaign={this.props.fetchCampaign} campaign={camps[0]}/>
               </div>
