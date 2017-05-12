@@ -14,7 +14,7 @@ class Api::RewardsController < ApplicationController
   def create
 
     @reward = Reward.create(reward_params)
-
+    debugger
     if @reward.save
       render :show
     else
@@ -32,7 +32,7 @@ class Api::RewardsController < ApplicationController
   end
 
   def destroy
-    
+    debugger
     @reward = Reward.find(params[:id])
     @reward.destroy
     render status: 200

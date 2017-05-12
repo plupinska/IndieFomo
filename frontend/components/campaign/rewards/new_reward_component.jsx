@@ -16,35 +16,55 @@ class NewReward extends React.Component {
         price: 0
     };
 
+    const newState = Object.assign({}, this.state);
+    this.isChanged = this.isChanged.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleSubmit =  this.handleSubmit.bind(this);
+    debugger
   }
 
   componentWillMount() {
-    this.props.getAllRewards()
+    debugger
+    this.props.getAllRewards(this.props.campaignId);
     this.setState({
       campaign_id: this.props.campaignId,
       title: "Give it a title...",
       description: "Tell your contributors about your reward..",
       price: 0,
-      imageFile: null,
-      imageUrl: null,
     });
+
   }
 
-  componentWillReceiveProps() {
-    this.setState({
-        campaign_id: this.props.campaignId,
-        title: "Give it a title...",
-        description: "Tell your contributors about your reward..",
-        price: 0,
-    });
-  }
+  // componentWillReceiveProps() {
+  //   this.setState({
+  //       campaign_id: this.props.campaignId,
+  //       title: "Give it a title...",
+  //       description: "Tell your contributors about your reward..",
+  //       price: 0,
+  //   });
+  // }
 
 
   handleSubmit(e) {
+    debugger
     e.preventDefault();
-    this.props.createReward(this.state);
+    if (this.isChanged(this.state)) {
+      this.props.createReward(this.state);
+    }
+  }
+
+  isChanged(newState) {
+    // make change -1 to account for the campaign id always being the same
+    let change = -1;
+
+    Object.keys(this.state).forEach((key) => {
+      if (newState[key] !== this.state.key) {
+        change += 1;
+      }
+    });
+    debugger
+    let changed = change > 0 ? true : false;
+    return changed
   }
 
   handleClick(e) {
@@ -55,14 +75,6 @@ class NewReward extends React.Component {
     this.props.router.push(url);
   }
 
-  componentWillMount() {
-    if (!this.props.user) {
-      this.props.router.push('/');
-    } else {
-      this.setState({user_id: this.props.user.id});
-    }
-  }
-
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -70,6 +82,7 @@ class NewReward extends React.Component {
   }
 
   render() {
+    debugger
       return(
         <div className="create-reward">
           <div className="reward--">
@@ -138,10 +151,15 @@ const mapStateToProps = (state, ownProps) => {
     campid = state.campaigns.campaign.id;
   }
 
+  let rews = [];
+  if (Object.keys(state.rewards).length > 0) {
+    rews = Object.keys(state.rewards).map((key) => state.rewards[key]);
+  }
+  debugger
   return {
     campaignId: parseInt(campid),
     user: state.session.currentUser,
-    rewards: selectRewards(state)
+    rewards: rews
   };
 };
 
@@ -151,7 +169,7 @@ const mapDispatchToProps = (dispatch) => {
     createReward: (id) => dispatch(createReward(id)),
     getReward: (id) => dispatch(getReward(id)),
     getAllRewards: (contribution) => dispatch(getAllRewards(contribution)),
-    makeContribution: () => dispatch(makeContribution()),
+    makeContribution: (contribution) => dispatch(makeContribution(contribution)),
     deleteReward: (reward) => dispatch(deleteReward(reward))
   };
 };

@@ -9,7 +9,7 @@ class RewardsShowPage extends React.Component {
 
   render() {
     let rewardTiles = null;
-
+    debugger
     let theseRewards = [];
     let campId = parseInt(this.props.campaignId);
     this.props.rewards.forEach((reward) => {

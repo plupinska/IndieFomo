@@ -1,5 +1,5 @@
 export const createReward = (reward) => {
-   
+
   return $.ajax({
     url: `api/campaigns/${reward.campaign_id}/rewards`,
     method: 'POST',
@@ -16,6 +16,7 @@ export const editReward = (reward) => {
 };
 
 export const deleteReward = (reward) => {
+  debugger
   return $.ajax({
     url: `api/campaigns/${reward.campaign_id}/rewards/${reward.id}`,
     method: 'DELETE'

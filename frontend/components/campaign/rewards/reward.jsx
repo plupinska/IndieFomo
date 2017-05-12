@@ -24,6 +24,7 @@ class Reward extends React.Component {
   }
 
   deleteReward() {
+    debugger
     this.props.deleteReward({campaign_id: this.props.campaignId, reward_id: this.props.reward.id})
   }
 
@@ -46,7 +47,7 @@ class Reward extends React.Component {
 
 
   render() {
-     
+     debugger
     if (this.props.onShow) {
       return(
         <div className="reward-show" onMouseOver={this.onhoverIn} onMouseOut={this.onhoverOut}>
