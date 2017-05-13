@@ -19,7 +19,7 @@ class RewardsShowPage extends React.Component {
     });
 
     rewardTiles= theseRewards.map((rew, idx) => {
-      debugger
+
         return(
         <Reward key={idx} reward={rew} onShow={this.props.onShow} campaignId={this.props.campaignId}
           makeContribution={this.props.makeContribution} user={this.props.user} deleteReward={this.props.deleteReward}/>
