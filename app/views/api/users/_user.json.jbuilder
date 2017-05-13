@@ -8,6 +8,7 @@
     json.email @user.email
     json.image_url asset_path(@user.image.url)
     json.about_me @user.about_me
+    
     json.contributions @contributions.each do |contribution|
 
       json.user_id contribution.user_id
@@ -17,6 +18,7 @@
 
       json.campaign_title Campaign.find(contribution.campaign_id).title
     end
+
     json.campaigns @user.campaigns.each do |campaign|
         json.num_contributions  Contribution.where(campaign_id: campaign.id).count
         json.total_contributions Contribution.where(campaign_id: campaign.id).sum(:amount)

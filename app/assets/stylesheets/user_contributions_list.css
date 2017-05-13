@@ -1,0 +1,34 @@
+
+.table-names {
+  height: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-col {
+  font-size: 18px;
+  border-bottom: 1px solid #e4e4e4;
+  height: 100%;
+  width: 25%;
+}
+
+.link-nav {
+  color: black;
+}
+
+.user-reward-item {
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-row {
+  margin-top: 20px;
+  height: 100%;
+  width: 25%;
+}

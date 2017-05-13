@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 90%;
   width: 100%;
   justify-content: flex-start;
 }
@@ -11,13 +10,12 @@
 .profile-greeting {
   box-sizing: border-box;
   display: flex;
-  height: 10%;
-  width: 100%;
+  height: 80px;
+  width: 85%;
   justify-content: flex-start;
-  padding-left: 55px;
   align-items: center;
-  font-size: 4vw;
-  margin-top: 30px;
+  font-size: 32px;
+  border-bottom: 1px solid #e4e4e4;
 }
 
 .top-divider {
@@ -35,14 +33,13 @@
 .profile-greeting > h1 {
   font-size: 32;
   font-weight: bold;
-  padding-left: 35px;
 }
 
 .main-content {
   display: flex;
   flex-direction: row-reverse;
   width: 100%;
-  height: 500px;
+  height: 600px;
   margin-bottom: 40px;
   justify-content: space-around;
   font-size: 24px;
@@ -50,10 +47,12 @@
 }
 
 .left {
+  box-sizing: border-box;
+  margin-top: 40px;
+  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
   width: 40%;
-  height: 100%
 }
 
 .user-image {
@@ -62,22 +61,23 @@
 }
 
 .image-container {
-  width: 100%;
-  height: 100%;
+  width: 500px;
+  height: 200px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-content: center;
 }
 
 .img-title {
   border-bottom: 1px solid #e4e4e4;
   width: 100%;
-  height: 20%;
+  height: 50px;
 }
 
 .user-img {
-  height: 100%;
-  width: 20%;
+  height: 90%;
+  width: 150px;
   padding-top: 30px;
   padding-left: 5px;
   align-items: center;
@@ -97,12 +97,14 @@
 
 }
 
-.file-submit {
-  height: 100%;
+.file-submit > input{
+  min-height: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  margin: 20px 0px;
+  font-size: 10px;
 }
 
 .navigation-options {
@@ -117,10 +119,11 @@
 }
 
 .user-profile-nav {
-  width: 90%;
-  height: 100%;
+  width: 85%;
+  height: 30px;
   border-bottom: 3px solid #e4e4e4;
   display: flex;
+  box-sizing: border-box;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -128,6 +131,7 @@
 }
 
 .user-nav-location {
+  box-sizing: border-box;
   height: 100%;
   text-align: center;
   display: flex;
@@ -150,7 +154,6 @@
 }
 
 .usr-avatar {
-  border: 5px solid red;
   width: 90px;
   height: 90px;
   background-color: #c3c3c3;
@@ -160,6 +163,7 @@
 
 .usr-avatar-form {
   display: flex;
+  width: 400px;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
@@ -171,7 +175,7 @@
 }
 
 .right {
-  // border: 1px solid black;
+  margin-top: 40px;
   width: 40%;
 }
 
