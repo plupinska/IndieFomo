@@ -7,7 +7,7 @@ class UserContributions extends React.Component {
 
   makeTile() {
     return this.props.contributions.map((contribution, idx) => {
-      debugger
+
       let reward;
       if (contribution.reward) {
         reward = contribution.reward;

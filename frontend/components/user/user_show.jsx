@@ -1,167 +1,94 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-import UserNav from './user_navigation_component';
+import UserProfile from './profile';
+import UserCampaignList from './campaigns';
+import UserContributions from './contributions';
 
 class UserShow extends React.Component {
   constructor(props) {
     super(props);
-
-      this.state = {
+    this.state = {
       user: null,
-      imageFile: null,
-      imageUrl: null
+      show: "profile"
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.updateFile = this.updateFile.bind(this);
+
+    this.handleClick = this.handleClick.bind(this);
+    this.properContent = this.properContent.bind(this);
   }
 
   componentDidMount() {
     this.props.getUser(this.props.params.id);
   }
 
-  componentWillReceiveProps(newProps) {
-    if (this.props.user.id != newProps.user.id) {
-      this.setState({user: newProps.user.id, imageUrl: newProps.user.image_ur})
+    handleClick(e) {
+
+      switch (e.target.className) {
+        case "user-nav-location loc-profile":
+          return this.setState({show: "profile"});
+        case "user-nav-location loc-campaigns":
+          return this.setState({show: "campaigns"});
+        case "user-nav-location loc-contributions":
+          return this.setState({show: "contributions"});
+        default:
+          break;
+      }
     }
-  }
 
-  updateFile(e) {
-    let file = e.currentTarget.files[0];
-    var fileReader = new FileReader();
 
-    fileReader.onloadend = () => {
-      this.setState({imageFile: file, imageUrl: fileReader.result});
-    };
-
-    if (file) {
-      fileReader.readAsDataURL(file);
+  properContent() {
+    switch (this.state.show) {
+      case "profile":
+        return(
+          <UserProfile user={this.props.user}
+            editUser={this.props.editUser}/>
+        );
+      case "campaigns":
+        return(
+          <UserCampaignList user={this.props.user}
+            campaigns={this.props.campaigns}/>
+        );
+      case "contributions":
+        return(
+          <UserContributions contributions={this.props.contributions}/>
+        );
+      default:
+        return(
+          <UserProfile user={this.props.user}
+            campaigns={this.props.campaigns}
+            contributions={this.props.contributions}/>
+        );
     }
-  }
-
-
-  handleSubmit(e) {
-    var formData = new FormData();
-    formData.append("user[image]", this.state.imageFile);
-    formData.append("user[id]", this.props.params.id);
-
-    this.props.editUser(formData).then(usr => {
-      this.setState({user: usr});
-    });
   }
 
   render() {
     const name = this.props.user ? this.props.user.first_name : "";
+    const type = this.state.show;
+    const content = this.properContent();
 
     if (this.props.user.id) {
-      let table = this.props.user.campaigns.map(cp => {
-        return(
-          <tr>
-            <td>{cp.title}</td>
-            <td>$ {cp.total_contributions} USD</td>
-            <td>{cp.num_contributions}</td>
-            <td>{Math.round((cp.total_contributions/cp.target_amount) * 100)}</td>
-          </tr>
-        );
-      });
-
-
-    let table2 = this.props.user.contributions.map(cont => {
-
-      return(
-        <tr>
-          <td>{cont.campaign_title}</td>
-          <td>$ {cont.amount} USD</td>
-          <td>Thu, April 27, 2017</td>
-        </tr>
-      );
-    });
-
       return(
         <div className="profile-page">
         <div className="top-divider"> </div>
-        <div className="navigation-options">
-          <UserNav contributions={this.props.contributions}
-          campaigns={this.props.campaigns}/>
-        </div>
+
+            <div className="user-profile-nav">
+              <div className="user-nav-location loc-profile" onClick={this.handleClick}>
+                Profile
+              </div>
+              <div className="user-nav-location loc-campaigns" onClick={this.handleClick}>
+                Campaigns: {this.props.campaigns.count}
+              </div>
+              <div className="user-nav-location loc-contributions" onClick={this.handleClick}>
+                Contributions: {this.props.contributions.count}
+              </div>
+            </div>
+
           <div className="profile-greeting">
-            <h1>{name}</h1>
+            <h1>Hi, {name}</h1>
           </div>
 
-          <div className="main-content">
-            <div className="left">
-              <div className="user-image">
-                <h1 className="img-title"> User Image </h1>
-                <div className="image-container">
-
-                 <div className="user-img">
-                   <img className="usr-avatar"  src={this.state.imageUrl}/>
-                 </div>
-
-                <form className= "usr-avatar-form" onSubmit={this.handleSubmit}>
-                <div className="file-upload">
-                   <input type="file"
-                     onChange={this.updateFile}/>
-
-                     <div className="file-submit">
-                       <input type="submit" value="Upload Image"></input>
-                     </div>
-                 </div>
-                </form>
-
-                </div>
-                <br/>
-
-
-              </div>
-            </div>
-            <div className="right">
-              <div className="profile-photo">
-                <img className="profile-photo-img" src={this.props.user.image_url} />
-              </div>
-              <div className="user-overview">
-              <h1>About Me</h1>
-              <div className="user-content">
-                {this.props.user.about_me}
-              </div>
-              </div>
-            </div>
+          <div className="profile-content-container">
+            {content}
           </div>
-
-          <div className="stats">
-          <div className="campaigns-table">
-            <h1 className="table-name">My Campaigns </h1>
-            <div className="table">
-              <table>
-                <tbody>
-                  <tr>
-                    <td className="table-label">Campaigns</td>
-                    <td className="table-label">Amount Raised</td>
-                    <td className="table-label">Number Contributions</td>
-                    <td className="table-label">% of Target</td>
-                  </tr>
-                  {table}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <div className="contributions-table">
-            <h1 className="table-name">My Contributions</h1>
-            <div className="table">
-              <table>
-                <tbody>
-                  <tr>
-                    <td className="table-label">Campaign</td>
-                    <td className="table-label">Amount</td>
-                    <td className="table-label">Rewards</td>
-                  </tr>
-                  {table2}
-                </tbody>
-              </table>
-            </div>
-          </div>
-          </div>
-
         </div>
       );
     } else {
