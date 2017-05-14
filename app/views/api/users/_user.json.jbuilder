@@ -8,13 +8,19 @@
     json.email @user.email
     json.image_url asset_path(@user.image.url)
     json.about_me @user.about_me
-    
-    json.contributions @contributions.each do |contribution|
 
+    json.contributions @contributions.each do |contribution|
       json.user_id contribution.user_id
       json.reward_id contribution.reward_id
+    begin
+      if (contribution.reward.id)
+        json.reward Reward.find(contribution.reward_id)
+      end
+    rescue
+    end
       json.amount contribution.amount
       json.campaign_id contribution.campaign_id
+      json.date contribution.date
 
       json.campaign_title Campaign.find(contribution.campaign_id).title
     end
