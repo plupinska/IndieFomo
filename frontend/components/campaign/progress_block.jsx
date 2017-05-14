@@ -40,8 +40,8 @@ const mapStateToProps = (state) => {
 
   return {
     campaign: state.campaigns.campaign,
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {

@@ -48,7 +48,7 @@ class CampaignOverview extends React.Component {
 
   handleClick() {
     let date = this.getThisDate();
-    debugger
+
     this.props.makeContribution({amount: this.state.amount, user_id: this.props.currentUser.id,
       campaign_id: this.state.campaign_id, date: date});
     this.toggleOpen();

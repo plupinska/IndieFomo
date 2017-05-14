@@ -1,11 +1,11 @@
 class Api::ContributionsController < ApplicationController
 
   def create
-    debugger
+
     @contribution = Contribution.create(contribution_params)
     if contribution_params[:amount].to_i <= 0
       render json: "Please enter a valid amount.", status: 422
-      debugger
+
     elsif @contribution.save
       render :show
     else
