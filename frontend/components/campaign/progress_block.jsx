@@ -16,7 +16,7 @@ class ProgressBlock extends React.Component {
   render() {
 
     const num_backers = this.props.campaign.num_contributions;
-    const percentage = Math.round((this.props.campaign.total_contributions / this.props.campaign.target_amount)*100);
+    let percentage = Math.round((this.props.campaign.total_contributions / this.props.campaign.target_amount)*100) || 0;
     return (
       <div className="progress-bar">
         <div className="funds-1">
