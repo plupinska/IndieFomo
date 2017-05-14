@@ -121,9 +121,7 @@ class NewReward extends React.Component {
               </form>
             </div>
             <div className='rewards-show'>
-              <RewardsShowPage rewards={this.props.rewards} campaignId={this.props.campaignId}
-                onShow={false} makeContribution={this.props.makeContribution}
-                  user={this.props.user} deleteReward={this.props.removeReward}/>
+              <RewardsShowPage/>
             </div>
           </main>
         </div>

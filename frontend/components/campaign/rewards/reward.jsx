@@ -5,7 +5,8 @@ class Reward extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hover: false
+      hover: false,
+      madeContribution: false
     };
 
     this.contribute = this.contribute.bind(this);
@@ -28,9 +29,14 @@ class Reward extends React.Component {
   }
 
   handleButtonType() {
-    if (this.state.hover) {
+    if (this.state.madeContribution) {
       return(
-        <button className="get-it" onClick={this.contribute}>GET THIS PERK</button>
+        <div className="contribute-thanks" onClick={this.contribute}>THANK YOU FOR CONTRIBUTING!</div>
+      );
+    }
+    else if (this.state.hover && this.props.user.id) {
+      return(
+        <div className="get-it" onClick={this.contribute}>GET THIS PERK</div>
       );
     } else {
       return(
@@ -38,10 +44,32 @@ class Reward extends React.Component {
       );
     }
   }
-  contribute() {
 
+  getThisDate() {
+    let monthHash = {1: 'Jan', 2: 'Feb', 3: 'Mar', 4: 'Apr', 5: 'May',
+                    6: 'Jun', 7: 'Jul', 8: 'Aug', 9: 'Sept', 10: 'Oct', 11: 'Nov', 12: 'Dec'};
+    let today = new Date();
+    let day = today.getDate();
+    let mm = today.getMonth() + 1;
+    let yy = today.getFullYear();
+
+    if (day < 10) {
+      day = '0' + day;
+    }
+    mm = parseInt(mm);
+    mm = monthHash[mm];
+
+     today = mm + ' ' + day + ' ' + yy;
+     return today;
+  }
+
+  contribute() {
+    let date = this.getThisDate();
+    
     this.props.makeContribution({user_id: this.props.user.id, reward_id: this.props.reward.id,
-      amount: this.props.reward.amount, campaign_id: this.props.campaignId})
+      amount: this.props.reward.price, campaign_id: this.props.campaignId, date: date }).then((contribution) => {
+        this.setState({madeContribution: true});
+      });
   }
 
 

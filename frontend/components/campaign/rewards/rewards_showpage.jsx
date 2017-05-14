@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Reward from './reward';
+import {removeReward} from '../../../actions/reward_actions';
+import {makeContribution} from '../../../actions/contribution_actions';
 
 class RewardsShowPage extends React.Component {
   constructor(props) {
@@ -44,5 +46,35 @@ class RewardsShowPage extends React.Component {
   }
 }
 
+const mapStateToProps = (state, ownProps) => {
 
-export default RewardsShowPage;
+    let campid = null;
+    if (ownProps.params) {
+      campid = ownProps.campaignId;
+    } else {
+      campid = state.campaigns.campaign.id;
+    }
+    let rews = [];
+  if (Object.keys(state.rewards).length > 0) {
+      rews = Object.keys(state.rewards).map((key) => state.rewards[key]);
+    }
+
+    let showbool = ownProps.onShow;
+
+  return {
+    rewards: rews,
+    campaignId: parseInt(campid),
+    user: state.session.currentUser,
+    onShow:  showbool
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return{
+    removeReward: (reward) => dispatch(removeReward(reward)),
+    makeContribution: (contribution) => dispatch(makeContribution(contribution))
+  };
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(RewardsShowPage);
