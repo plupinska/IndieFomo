@@ -1,10 +1,9 @@
 class Campaign < ActiveRecord::Base
   include PgSearch
+
   pg_search_scope :search_by_title, :against => {
     :title => 'A',
     :tagline => 'B',
-    :descriptions => 'C',
-    :category => 'D'
   }
   has_many :rewards
   validates :title, presence: true

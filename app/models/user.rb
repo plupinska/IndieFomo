@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   has_many :campaigns
-  has_many :contributions, through: :campaigns, source: :contributions
+  has_many :contributions
 
   attr_reader :password
 
