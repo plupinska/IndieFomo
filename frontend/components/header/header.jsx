@@ -77,7 +77,7 @@ class Header extends React.Component {
         </div>
 
         <div className="header-right">
-          <div className="search">Search </div>
+          <div className="search"> </div>
           <div className="createCampaign">
             <Link to="campaign/new">CREATE A CAMPAIGN</Link>
           </div>
