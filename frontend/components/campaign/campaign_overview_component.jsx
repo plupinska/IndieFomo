@@ -27,10 +27,30 @@ class CampaignOverview extends React.Component {
     this.setState({isOpen : !this.state.isOpen});
   }
 
-  handleClick() {
 
-    this.props.makeContribution({amount: this.state.amount, user_id: this.state.user_id,
-      campaign_id: this.state.campaign_id});
+  getThisDate() {
+    let monthHash = {1: 'Jan', 2: 'Feb', 3: 'Mar', 4: 'Apr', 5: 'May',
+                    6: 'Jun', 7: 'Jul', 8: 'Aug', 9: 'Sept', 10: 'Oct', 11: 'Nov', 12: 'Dec'};
+    let today = new Date();
+    let day = today.getDate();
+    let mm = today.getMonth() + 1;
+    let yy = today.getFullYear();
+
+    if (day < 10) {
+      day = '0' + day;
+    }
+    mm = parseInt(mm);
+    mm = monthHash[mm];
+
+     today = mm + ' ' + day + ' ' + yy;
+     return today;
+  }
+
+  handleClick() {
+    let date = this.getThisDate();
+    debugger
+    this.props.makeContribution({amount: this.state.amount, user_id: this.props.currentUser.id,
+      campaign_id: this.state.campaign_id, date: date});
     this.toggleOpen();
   }
 
