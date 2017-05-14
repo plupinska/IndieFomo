@@ -2,7 +2,7 @@ export const getCampaigns = (number = 'all', category = "none") => {
 
   return $.ajax({
     url: `/api/campaigns`,
-    data: { num: number, category: category },
+    data: { num: number, category: category},
     method: 'GET'
   });
 };

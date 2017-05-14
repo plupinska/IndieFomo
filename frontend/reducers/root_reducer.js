@@ -6,6 +6,7 @@ import TileSliderReducer from './tile_slider_reducer';
 import ContributionReducer from './contribution_reducer';
 import RewardsReducer from './rewards_reducer';
 import categoryReducer from './category_reducer';
+import SearchReducer from './search_reducer';
 
 
 const RootReducer = combineReducers({
@@ -15,7 +16,8 @@ const RootReducer = combineReducers({
   slider: TileSliderReducer,
   contribution: ContributionReducer,
   rewards: RewardsReducer,
-  categories: categoryReducer
+  categories: categoryReducer,
+  searchResults: SearchReducer
 });
 
 export default RootReducer;

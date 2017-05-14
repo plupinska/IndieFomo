@@ -1,0 +1,31 @@
+.searchResults-true {
+  background: white;
+  position: fixed;
+  width: 273px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchResults-false {
+  position: fixed;
+  width: 273px;
+  height: 5px;
+}
+
+.s-result {
+  background: white;
+  border: 1px solid #dad7d7;
+  padding: 10px;
+  color: black;
+  height: 20px;
+}
+
+.s-result:hover {
+  cursor: pointer;
+  color: #FC3468;
+}
+
+.explore-dropdown {
+  width: 100px;
+}

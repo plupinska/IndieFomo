@@ -9,7 +9,6 @@ class ProgressBlock extends React.Component {
 
   componentWillReceiveProps() {
     if (this.props.campaign.num_contributions !== this.props.campaign.num_contributions) {
-
     }
   }
 

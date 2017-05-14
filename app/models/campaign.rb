@@ -4,7 +4,10 @@ class Campaign < ActiveRecord::Base
   pg_search_scope :search_by_title, :against => {
     :title => 'A',
     :tagline => 'B',
+  }, :using => {
+    :tsearch => {:prefix => true}
   }
+
   has_many :rewards
   validates :title, presence: true
   has_one :category
