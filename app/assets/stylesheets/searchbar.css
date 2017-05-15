@@ -1,6 +1,7 @@
 .searchResults-true {
   background: white;
   position: fixed;
+  margin-top: 35px;
   width: 273px;
   z-index: 10;
   display: flex;
@@ -29,15 +30,14 @@
 .explore-dropdown {
   width: 100px;
 }
+
 .search {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 30px;
+  height: 34px;
   width: 200px;
 }
-.searchBar  {
-  color: black;
+
+.searchBar {
   width: 200px;
-  font-size: 14px;
 }
