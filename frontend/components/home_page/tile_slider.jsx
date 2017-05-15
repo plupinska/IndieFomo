@@ -22,34 +22,30 @@ class TileSlider extends React.Component {
       let campaigns = Object.keys(camps.campaigns).map(key => camps.campaigns[key])
       this.setState({tiles: campaigns});
     });
-    window.addEventListener('animationend', this.movement);
   }
 
+  slideLeft(e){
 
-  componentWillUnmount () {
-    window.removeEventListener('animationend', this.movement);
-  }
-
-  slideLeft(){
-     this.setState({dir:'right', move:'true'});
+     this.movement(e);
    }
 
-   slideRight(){
-     this.setState({dir:'left', move:'true'});
+   slideRight(e){
+     
+     this.movement(e);
    }
 
    movement(e){
     const campaignTiles = this.state.tiles;
 
-    if (e.animationName === 'slidermoveleft') {
+    if (e.currentTarget.className === 'slider-left-button') {
       campaignTiles.push(campaignTiles.shift());
-    } else if (e.animationName === 'slidermoveright') {
+    } else if (e.currentTarget.className === 'slider-right-button') {
       campaignTiles.unshift(campaignTiles.pop());
     }
     else {
       return;
     }
-    
+
     this.setState({move:false, tiles: campaignTiles});
   }
 
@@ -66,7 +62,7 @@ class TileSlider extends React.Component {
       return(
         <div className="discover-slider">
           <div onClick={this.slideLeft.bind(this)} className="slider-left-button"><img className="arrows" src={window.back}/></div>
-            <div className={"tile-slider" + slidercname}>
+            <div className="tile-slider">
               <div key={camps[0].id} className="discover-tile">
                 <CampaignIndexItem  fetchCampaign={this.props.fetchCampaign} campaign={camps[0]}/>
               </div>
