@@ -1,4 +1,4 @@
-[IndieFomo](www.indiefomo.com)
+[IndieFomo](http://www.indiefomo.com/#/)
 
 # IndieFomo
 Indie Fomo is a web aplication inspired by Indiegogo built using Ruby on Rails on the backend, a PostgresQL database, and React/Redux front end framework.
