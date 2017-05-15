@@ -167,7 +167,7 @@ class Header extends React.Component {
 
         <div className="header-right">
           <div className="search">
-            <input type="text" value={this.state.searchQuery} placeholder="Search.." onChange={this.handleChange}/>
+            <input className="searchBar" type="text" value={this.state.searchQuery} placeholder="Search.." onChange={this.handleChange}/>
               <div className={`searchResults-${this.state.searchActive}`} onClick={this.clearResults}>{results}</div>
            </div>
           <div className="createCampaign">
