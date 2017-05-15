@@ -5,6 +5,10 @@
   display: flex;
   margin-top: 150px;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .contact {
@@ -29,4 +33,10 @@
 .github {
   width: 120%;
   height: 120%;
+}
+
+.patrycja {
+  width: 75%;
+  font-size: 14px;
+  text-align: left;
 }
