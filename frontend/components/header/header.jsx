@@ -134,7 +134,7 @@ class Header extends React.Component {
     let cats;
     cats = this.state.categories.categories.map((cat, idx) => {
       return(
-        <Link className="cat-nav" key={idx} to={`categories/cat.id`} onMouseOver={this.setExploreDropDown}>{cat.cat}</Link>
+        <Link className="cat-nav" key={idx} to={`/categories/cat.id`} onMouseOver={this.setExploreDropDown}>{cat.cat}</Link>
       );
     });
 
@@ -148,28 +148,20 @@ class Header extends React.Component {
     if (this.state.searchActive) {
       results = this.returnSearchResults();
     }
-    // let showExplore = null;
-    // if (this.state.exploreDropDown) {
-    //    showExplore = this.getExploreLinks();
-    // }
 
     return(
       <div className="header">
         <div className="header-left">
           <Link className="logo" to="/">INDIE FOMO</Link>
-          <div className="explore-dropdown">
-            <div className="explore-dropdown">
-
-            </div>
-          </div>
-           <a href="https://github.com/plupinska" target="_blank" className="t-link-container">Github</a>
-        </div>
-
-        <div className="header-right">
           <div className="search">
+            <img className="magnifying-glass" src={window.search_i} />
             <input className="searchBar" type="text" value={this.state.searchQuery} placeholder="Search.." onChange={this.handleChange}/>
               <div className={`searchResults-${this.state.searchActive}`} onClick={this.clearResults}>{results}</div>
            </div>
+        </div>
+
+        <div className="header-right">
+
           <div className="createCampaign">
             <Link to="campaign/new">CREATE A CAMPAIGN</Link>
           </div>
