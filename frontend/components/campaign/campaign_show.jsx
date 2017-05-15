@@ -14,6 +14,15 @@ class CampaignShow extends React.Component {
     this.props.getAllRewards(this.props.campaignId);
   }
 
+  componentWillReceiveProps(newProps) {
+
+    if (this.props.campaignId !== newProps.params.id) {
+
+      this.props.fetchCampaign(newProps.params.id);
+      this.props.getAllRewards(newProps.params.id);
+    }
+  }
+
   render() {
 
     if (this.props.campaign) {
