@@ -24,7 +24,7 @@ class RewardsShowPage extends React.Component {
 
         return(
         <Reward key={idx} reward={rew} onShow={this.props.onShow} campaignId={this.props.campaignId}
-          makeContribution={this.props.makeContribution} user={this.props.user} deleteReward={this.props.deleteReward}/>
+          makeContribution={this.props.makeContribution} user={this.props.user} deleteReward={this.props.removeReward}/>
       );
     });
 
