@@ -10,13 +10,14 @@ import { getAllRewards } from '../../actions/reward_actions';
 const mapStateToProps = (state, ownProps) => {
   let campaignId = ownProps.params.id;
   let usr = state.session.currentUser;
-
+   
 
   return {
     rewards: selectRewards(state),
     campaignId,
     campaign: state.campaigns.campaign,
     currentUser: usr,
+    contributionErrors: state.contribution.errors
   };
 };
 

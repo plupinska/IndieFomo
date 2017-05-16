@@ -10,7 +10,8 @@ class CampaignOverview extends React.Component {
       amount: 0,
       user_id: null,
       campaign_id: this.props.campaignId,
-      isOpen: false
+      isOpen: false,
+      errors: ""
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -21,6 +22,28 @@ class CampaignOverview extends React.Component {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
+  }
+
+  componentWillMount() {
+    this.setState({
+      errors: ""
+    });
+  }
+
+  componentWillUnmount() {
+
+    this.setState({
+      errors: ""
+    });
+  }
+
+  componentWillReceiveProps(newProps) {
+
+    if (this.props.campaignId === newProps.campaignId) {
+      this.setState({
+        errors: newProps.contributionErrors
+      });
+    }
   }
 
   toggleOpen() {
@@ -50,7 +73,10 @@ class CampaignOverview extends React.Component {
     let date = this.getThisDate();
 
     this.props.makeContribution({amount: this.state.amount, user_id: this.props.currentUser.id,
-      campaign_id: this.state.campaign_id, date: date});
+      campaign_id: this.state.campaign_id, date: date})
+      this.setState({
+        amount: 0
+      });
     this.toggleOpen();
   }
 
@@ -80,10 +106,19 @@ class CampaignOverview extends React.Component {
             <div></div>
         );
     }
+  }
 
+  getErrors() {
+
+    return(
+      <div className="contribution-errors">
+        {this.state.errors}
+      </div>
+    );
   }
 
   render() {
+    let errors = this.getErrors();
 
     return (
       <div className="campaign-overview">
@@ -103,6 +138,9 @@ class CampaignOverview extends React.Component {
           </div>
           <div className="contribute-button">
             {this.handleButtonType()}
+
+            {errors}
+
           </div>
         </div>
       </div>

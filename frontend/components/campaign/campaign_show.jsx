@@ -36,7 +36,9 @@ class CampaignShow extends React.Component {
               campaignId={this.props.campaignId}
               user={this.props.campaign.user_id}
               currentUser={this.props.currentUser}
-              makeContribution={this.props.makeContribution} />
+              makeContribution={this.props.makeContribution}
+              contributionErrors={this.props.contributionErrors}
+              />
           </div>
 
           <div  className="more-details">
