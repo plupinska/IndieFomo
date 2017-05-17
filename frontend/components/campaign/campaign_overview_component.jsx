@@ -119,7 +119,7 @@ class CampaignOverview extends React.Component {
 
   render() {
     let errors = this.getErrors();
-
+    debugger
     return (
       <div className="campaign-overview">
         <div className="photo">
@@ -130,7 +130,7 @@ class CampaignOverview extends React.Component {
           <h1>{this.props.campaign.title}</h1>
           <h2>{this.props.campaign.tagline}</h2>
           <div className="user-profile">
-            <UserProfileBlock getUser={this.props.getUser} userId={this.props.user}/>
+            <UserProfileBlock getUser={this.props.getUser} userId={this.props.campaign.user_id}/>
           </div>
 
           <div className="progress-bar">
