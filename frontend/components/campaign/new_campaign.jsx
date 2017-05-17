@@ -4,27 +4,25 @@ import { Link, withRouter } from 'react-router';
 
 class NewCampaign extends React.Component {
   constructor(props) {
-
     super(props);
     this.state = {
       user_id: null,
       title: "My campaign title...",
       target_amount: 0,
-      descriptions: ""
+      descriptions: "",
+      errors: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
-
     e.preventDefault();
-    const newCamp = this.state
-    this.props.createCampaign(newCamp).then((camp) => {
-      const url = `campaign/${camp.campaign.id}/edit`;
-
-      this.props.router.push(url);
-    });
+    const newCamp = this.state;
+      this.props.createCampaign(newCamp).then((camp) => {
+        const url = `campaign/${camp.campaign.id}/edit`;
+        this.props.router.push(url);
+      });
   }
 
   componentWillMount() {
@@ -41,9 +39,8 @@ class NewCampaign extends React.Component {
     });
   }
 
-  render() {
-    // let errors = this.props.errors.responseText;
 
+  render() {
       return(
         <div className="create-campaign">
           <h1>Start a Campaign</h1>

@@ -7,15 +7,12 @@ const ContributionReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_CONTRIBUTION:
-
       let old = merge({}, state);
       if (old.errors) {
-
         old.errors = "";
       }
       return merge(old, action.contribution);
     case RECEIVE_CONTRIBUTION_ERRORS:
-
       let old1 = merge({}, state);
       return merge(old1, { errors: action.errors.responseText});
     case RECEIVE_CAMPAIGN:
