@@ -42,7 +42,7 @@ class CampaignIndexItem extends React.Component {
             <div className="funds-tile">
               {percentage}% of ${this.props.campaign.target_amount} goal
             </div>
-            <div className="moment-tile">12 days left</div>
+            <div className="moment-tile">30 days left</div>
           </div>
         </div>
 

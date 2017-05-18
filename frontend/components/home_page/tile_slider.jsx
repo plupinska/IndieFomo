@@ -25,12 +25,10 @@ class TileSlider extends React.Component {
   }
 
   slideLeft(e){
-
      this.movement(e);
    }
 
    slideRight(e){
-     
      this.movement(e);
    }
 
@@ -41,9 +39,6 @@ class TileSlider extends React.Component {
       campaignTiles.push(campaignTiles.shift());
     } else if (e.currentTarget.className === 'slider-right-button') {
       campaignTiles.unshift(campaignTiles.pop());
-    }
-    else {
-      return;
     }
 
     this.setState({move:false, tiles: campaignTiles});

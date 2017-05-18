@@ -154,7 +154,6 @@ class Header extends React.Component {
         <div className="header-left">
           <Link className="logo" to="/">INDIE FOMO</Link>
           <div className="search">
-            <img className="magnifying-glass" src={window.search_i} />
             <input className="searchBar" type="text" value={this.state.searchQuery} placeholder="Search.." onChange={this.handleChange}/>
               <div className={`searchResults-${this.state.searchActive}`} onClick={this.clearResults}>{results}</div>
            </div>

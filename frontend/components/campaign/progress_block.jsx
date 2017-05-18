@@ -21,15 +21,13 @@ class ProgressBlock extends React.Component {
         <div className="funds-1">
           <span className="dollars">${this.props.campaign.total_contributions}</span> USD raised by {this.props.campaign.num_contributions} backers
         </div>
-
         <div className="bar">
           <div className="percentage" style={{width: `${percentage}%`}}></div>
         </div>
-
         <div className="funds-2">
           {percentage}% of ${this.props.campaign.target_amount} goal
         </div>
-        <div className="moment">12 Days left</div>
+        <div className="moment">30 Days left</div>
       </div>
     );
   }

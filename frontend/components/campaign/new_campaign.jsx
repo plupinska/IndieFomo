@@ -85,7 +85,7 @@ class NewCampaign extends React.Component {
       return(
         <div className="create-campaign">
           <h1>Start a Campaign</h1>
-          <h2>Crowdsource your Fomo</h2>
+          <h2>Crowdfund your Fomo</h2>
 
           <div className="campaign-form">
             <form className="c-form"  onSubmit={this.handleSubmit}>
