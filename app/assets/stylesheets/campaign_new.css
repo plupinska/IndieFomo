@@ -29,7 +29,12 @@
   padding-left: 50px;
   padding-top: 50px;
   padding-bottom: 50px;
-  width: 600px;
+  width: 300px;
+}
+
+.target-amount > input {
+  width: 50px;
+  height: 20px;
 }
 
 span {
