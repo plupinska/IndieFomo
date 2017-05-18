@@ -54,6 +54,7 @@ export const updateCampaign = (campaign) => (dispatch) => {
 };
 
 export const updateCampaignForm = (campaign) => (dispatch) => {
+   
   return CampaignApiUtil.updateCampaignForm(campaign)
     .then((camp) => dispatch(receiveCampaign(camp)),
     (err) => dispatch(receiveErrors(err)));

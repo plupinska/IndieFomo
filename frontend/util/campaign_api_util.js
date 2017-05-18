@@ -23,7 +23,6 @@ export const updateCampaignForm = (campaign) => {
       processData: false,
       data: campaign
     });
-
 };
 
 export const updateCampaign = (campaign) => {
@@ -35,6 +34,7 @@ export const updateCampaign = (campaign) => {
 };
 
 export const createCampaign = (campaign) => {
+
   return $.ajax({
     url: `api/campaigns`,
     method: `POST`,
