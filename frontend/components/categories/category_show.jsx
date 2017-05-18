@@ -7,10 +7,19 @@ class CategoryShow extends React.Component {
     super(props);
     this.makeCampaignTiles = this.makeCampaignTiles.bind(this);
     this.allOfCategory = this.allOfCategory.bind(this);
+    this.state = {
+      category: null,
+    };
   }
 
   componentWillMount() {
-    this.props.fetchCampaigns("all", this.props.categoryId);
+    this.props.fetchCampaigns("all", this.props.categoryId).then((cats) => {
+
+      cats = Object.keys(cats.campaigns).map(camp => cats.campaigns[camp])
+      this.setState({
+        category: cats[0].cat
+      })
+    });
   }
 
   makeCampaignTiles() {
@@ -49,7 +58,7 @@ class CategoryShow extends React.Component {
     if (tiles.length > 0) {
       return(
         <div className="category-show-wrapper">
-          <h1>{this.props.campaigns[0].cat}</h1>
+          <h1>{this.state.category}</h1>
           <div className="category-campaign-tile">
             {tiles}
           </div>

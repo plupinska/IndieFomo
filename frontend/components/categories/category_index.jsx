@@ -36,6 +36,7 @@ class CategoryIndex extends React.Component {
         <div className="cat-wrap">
           <h1>Explore categories</h1>
           <div className="category-container">
+
             {catTiles}
           </div>
         </div>

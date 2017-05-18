@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { fetchCampaigns, fetchCampaign } from '../../actions/campaign_actions';
 import CategoryShow from './category_show';
 import { selectCampaigns } from '../../reducers/selectors';
+import { getCategories } from '../../actions/category_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let camps;
@@ -25,7 +26,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchCampaigns: (number, category) => dispatch(fetchCampaigns(number, category)),
-    fetchCampaign: (id) => dispatch(fetchCampaign(id))
+    fetchCampaign: (id) => dispatch(fetchCampaign(id)),
+    getCategories: () => dispatch(getCategories())
   };
 };
 
