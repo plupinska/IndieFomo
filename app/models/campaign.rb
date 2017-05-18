@@ -1,5 +1,7 @@
 class Campaign < ActiveRecord::Base
   include PgSearch
+   validates_numericality_of :target_amount, {greater_than_or_equal_to: 1, allow_nil: false, message: "Please enter an amount greater than zero!"}
+   validates :title, length: { minimum: 1, allow_nil: false, message: "Please enter a title!"}
 
   pg_search_scope :search_by_title, :against => {
     :title => 'A',
@@ -9,9 +11,7 @@ class Campaign < ActiveRecord::Base
   }
 
   has_many :rewards
-  validates :title, presence: true
-  has_one :category
-
+  belongs_to :category
   has_many :contributions,
     primary_key: :id,
     foreign_key: :campaign_id,

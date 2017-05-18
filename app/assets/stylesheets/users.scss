@@ -26,8 +26,8 @@
 }
 
 .profile-photo {
-  padding-top: 5px;
-  padding-bottom: 5px;
+  width: 330px;
+  height: 230px;
 }
 
 .profile-greeting > h1 {
@@ -38,12 +38,11 @@
 .main-content {
   display: flex;
   flex-direction: row-reverse;
-  width: 100%;
+  // width: 100%;
   height: 600px;
   margin-bottom: 40px;
   justify-content: space-around;
   font-size: 24px;
-  padding-bottom: 5px;
 }
 
 .left {
@@ -174,9 +173,10 @@
   font-size: 24px;
 }
 
-.right {
+.right-photo {
   margin-top: 40px;
-  width: 40%;
+  width: 35%;
+  align-items: center;
 }
 
 .user-overview {

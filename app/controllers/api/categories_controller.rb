@@ -6,7 +6,7 @@ class Api::CategoriesController < ApplicationController
       render :index
     else
       render json: @categories.errors.full_messages
-    end 
+    end
   end
 
 
