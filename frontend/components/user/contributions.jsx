@@ -3,6 +3,7 @@ import {Link} from 'react-router';
 class UserContributions extends React.Component {
   constructor(props) {
     super(props);
+     
   }
 
   formatDate(str) {
