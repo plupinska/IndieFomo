@@ -73,14 +73,6 @@ a magnetic shelf to solve all of the problems. Simply glue a large magnet to you
   end_date: "September-18-1991", target_amount: 400, image: minimalistic_shelf, category_id: Category.find_by(cat: "Home").id)
 
 users = [pl, l, marty, tom, petty]
-Contribution.create!(user_id: pl.id, campaign_id: Campaign.find_by(title: "DeLorean time machine").id , amount: 4000, date: "May 10 2017")
-Contribution.create!(user_id: pl.id, campaign_id: Campaign.find_by(title: "Plant Bot").id , amount: 100, date: "May 10 2017")
-Contribution.create!(user_id: pl.id, campaign_id: Campaign.find_by(title: "Williamsburg Loft Party").id , amount: 5, date: "May 10 2017")
-Contribution.create!(user_id: petty.id, campaign_id: Campaign.find_by(title: "Taco Stand").id , amount: 257, date: "May 10 2017")
-Contribution.create!(user_id: petty.id, campaign_id: Campaign.find_by(title: "Cochella Funds").id , amount: 98, date: "May 10 2017")
-Contribution.create!(user_id: l.id, campaign_id: Campaign.find_by(title: "Minimalistic magnetic shelf").id , amount: 40, date: "May 10 2017")
-Contribution.create!(user_id: l.id, campaign_id: Campaign.find_by(title: "Plant Bot").id , amount: 87, date: "May 10 2017")
-
 
 taco_campaign2 = Campaign.find_by(title: "Taco Stand").rewards.create!(title: "Assortment of 5 Tacos", description: "This assortment of tacos is guaranteed to be the best assortment of tacos you'll ever have. Pork, chicken, avocado and the like. Your tastebuds will be tantilized and your heart will experience deep satisfaction.", price: 100)
 taco_campaign3 = Campaign.find_by(title: "Taco Stand").rewards.create!(title: "Chips and Guac", description: "The silkiest and smoothest guacamole you've ever had awaits with only a small donation.", price: 20)
