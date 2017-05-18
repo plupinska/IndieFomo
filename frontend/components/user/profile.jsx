@@ -66,7 +66,7 @@ class UserProfile extends React.Component {
             </div>
           </div>
         </div>
-        <div className="right">
+        <div className="right-photo">
           <div className="profile-photo">
             <img className="profile-photo-img" src={this.props.user.image_url} />
           </div>
