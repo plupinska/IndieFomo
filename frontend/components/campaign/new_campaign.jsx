@@ -7,7 +7,7 @@ class NewCampaign extends React.Component {
     super(props);
     this.state = {
       user_id: null,
-      title: "My campaign title...",
+      title: null,
       target_amount: 0,
       descriptions: "",
       errors: ""
@@ -18,11 +18,23 @@ class NewCampaign extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const newCamp = this.state;
-      this.props.createCampaign(newCamp).then((camp) => {
-        const url = `campaign/${camp.campaign.id}/edit`;
-        this.props.router.push(url);
-      });
+    let newCamp = this.state;
+      delete newCamp["errors"];
+
+    return this.props.createCampaign(newCamp)
+      .then((camp) => this.success(camp),
+      (err) => this.fail(err));
+  }
+
+  success(camp) {
+
+    const url = `campaign/${camp.campaign.id}/edit`;
+    this.props.router.push(url);
+  }
+
+  fail(err) {
+
+    this.setState({errors: err});
   }
 
   componentWillMount() {
@@ -39,8 +51,37 @@ class NewCampaign extends React.Component {
     });
   }
 
+  getErrors() {
+
+    if (this.props.errors.includes("Target") && this.props.errors.includes("Title")) {
+      return (
+        <div className="new-campaign-errors">
+          <div>Please enter a valid Amount and Title!</div>
+        </div>
+      );
+    } else if (this.props.errors.includes("Title")) {
+      return (
+        <div className="new-campaign-errors">
+          <div>Please enter a valid Title!</div>
+        </div>
+      );
+    } else if (this.props.errors.includes("Target")) {
+      return (
+        <div className="new-campaign-errors">
+          <div>Please enter a valid Amount!</div>
+        </div>
+      );
+    }
+
+  }
 
   render() {
+    let  errs = null;
+
+    if (this.props.errors) {
+      errs = this.getErrors();
+    }
+
       return(
         <div className="create-campaign">
           <h1>Start a Campaign</h1>
@@ -73,6 +114,8 @@ class NewCampaign extends React.Component {
                 </input>
               </div>
             </form>
+
+            {errs}
           </div>
         </div>
       );

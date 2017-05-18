@@ -119,7 +119,7 @@ class CampaignOverview extends React.Component {
 
   render() {
     let errors = this.getErrors();
-    debugger
+
     return (
       <div className="campaign-overview">
         <div className="photo">

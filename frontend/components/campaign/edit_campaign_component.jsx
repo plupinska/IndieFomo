@@ -20,9 +20,7 @@ class EditCampaign extends React.Component {
       err: this.props.errors
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.handleFileSubmit = this.handleFileSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
-
   }
 
   updateFile(e) {
@@ -51,11 +49,13 @@ class EditCampaign extends React.Component {
       formData.append("campaign[id]", this.state.id);
       formData.append("campaign[tagline]", this.state.tagline);
       formData.append("campaign[descriptions]", this.state.descriptions);
+      formData.append("campaign[category_name]", this.state.category_name);
 
       this.props.updateCampaignForm(formData).then((camp) => {
-
+          
         const url = `campaign/${camp.campaign.id}/addrewards`;
         this.props.router.push(url);
+
       });
     } else {
 
@@ -73,10 +73,9 @@ class EditCampaign extends React.Component {
   renderErrors() {
 
     if (this.props.errors) {
-
       return(
         <div className="campaign-errors">
-          {this.state.err}
+          {this.props.errors}
         </div>
       );
     }
