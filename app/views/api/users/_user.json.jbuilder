@@ -26,7 +26,7 @@
         json.campaign_title Campaign.find(contribution.campaign_id).title
       end
     end
-    
+
     if (@user.campaigns)
       json.campaigns @user.campaigns.each do |campaign|
           json.num_contributions  Contribution.where(campaign_id: campaign.id).count

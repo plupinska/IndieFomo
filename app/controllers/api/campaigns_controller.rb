@@ -7,8 +7,7 @@ class Api::CampaignsController < ApplicationController
         @campaigns = Campaign.includes(:user, :contributions).all
       elsif params["category"] != "none"
         if params["category"].to_i > 0
-          @campaigns = Campaign.where(category_id: params["category"].to_i)
-          @category = Category.find(params["category"].to_i).cat
+          @campaigns = Campaign.includes(:category).where(category_id: params["category"].to_i)
         else
           category_id = Category.find(cat: params["category"])
           @campaigns = Campaign.where(category_id: category_id)
@@ -34,8 +33,9 @@ class Api::CampaignsController < ApplicationController
 
   def show
     @campaign = Campaign.find(params[:id])
-    @num_contributions = Contribution.includes(:campaign_id, :id).where(campaign_id: params[:id]).count
-    @total_contributions = Contribution.where(campaign_id: params[:id]).sum(:amount)
+    contribution = Contribution.includes(:campaign).where(campaign_id: params[:id])
+    @num_contributions = contribution.count
+    @total_contributions = contribution.sum(:amount)
     render :show
   end
 
@@ -45,7 +45,7 @@ class Api::CampaignsController < ApplicationController
 
     begin
     if @campaign.update(campaign_params)
-      category = Category.find_by(cat: category_title_param[:category_name]).id
+      category = Campaign.includes(:category).where(cat: category_title_param[:category_name]).id
       @campaign.update(category_id: category)
 
       render :show

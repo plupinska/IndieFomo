@@ -14,8 +14,8 @@
     json.end_date  campaign.end_date
     json.target_amount  campaign.target_amount
     json.image_url asset_path(campaign.image.url)
-    if @category
-      json.cat @category
+    if campaign.category
+      json.cat campaign.category.cat
     end
   end
 end
