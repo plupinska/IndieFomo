@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :contributions, only: [:create, :show]
     resources :search, only: [:index]
+    resources :charges
 
     resources :campaigns do
       resources :rewards, only: [:create, :destroy, :update, :index, :show]
