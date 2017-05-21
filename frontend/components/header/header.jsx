@@ -97,9 +97,19 @@ class Header extends React.Component {
 
   returnSearchResults() {
     let results = null;
+
     if (this.state.searchResults.length > 0) {
       results = this.state.searchResults.map((result, idx) => {
-          return (<Link className="s-result" key={idx} to={`campaigns/${result.id}`}>{result.title}</Link>);
+        let resultTitle;
+
+        if (result.title.length > 27) {
+          resultTitle = result.title.slice(0, 26) + "...";
+        } else {
+          resultTitle = result.title;
+
+        }
+        debugger
+          return (<Link className="s-result" key={idx} to={`campaigns/${result.id}`}>{resultTitle}</Link>);
       });
     } else {
       return;

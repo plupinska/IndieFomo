@@ -2,9 +2,11 @@
   background: white;
   position: fixed;
   margin-top: 35px;
-  width: 273px;
+  width: 300px;
   z-index: 10;
   display: flex;
+  overflow: hidden;
+  overflow-y: hidden;
   flex-direction: column;
 }
 
@@ -20,6 +22,7 @@
   padding: 10px;
   color: black;
   height: 20px;
+
 }
 
 .s-result:hover {
