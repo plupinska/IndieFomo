@@ -1,6 +1,6 @@
 var path = require('path');
-const webpack = require('webpack');
-const prod = process.argv.indexOf('-p') !== -1;
+// const webpack = require('webpack');
+// const prod = process.argv.indexOf('-p') !== -1;
 
 module.exports = {
   entry: "./frontend/indie_fomo.jsx",
@@ -24,12 +24,12 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '*']
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production')
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin()
-  ],
+  // plugins: [
+  //   new webpack.DefinePlugin({
+  //     'process.env': {
+  //       NODE_ENV: JSON.stringify('production')
+  //     }
+  //   }),
+  //   new webpack.optimize.UglifyJsPlugin()
+  // ],
 };

@@ -65,7 +65,7 @@ class Reward extends React.Component {
 
   contribute() {
     let date = this.getThisDate();
-    
+
     this.props.makeContribution({user_id: this.props.user.id, reward_id: this.props.reward.id,
       amount: this.props.reward.price, campaign_id: this.props.campaignId, date: date }).then((contribution) => {
         this.setState({madeContribution: true});
