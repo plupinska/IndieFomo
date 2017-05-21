@@ -31,6 +31,7 @@ gem "figaro"
 gem 'momentjs-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'stripe'
 gem 'faker'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a   console
