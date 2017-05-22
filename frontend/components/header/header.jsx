@@ -108,7 +108,7 @@ class Header extends React.Component {
           resultTitle = result.title;
 
         }
-        debugger
+
           return (<Link className="s-result" key={idx} to={`campaigns/${result.id}`}>{resultTitle}</Link>);
       });
     } else {
