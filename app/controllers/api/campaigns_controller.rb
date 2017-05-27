@@ -1,7 +1,7 @@
 class Api::CampaignsController < ApplicationController
 
   def index
-
+    #look into services(Service Objects)
     if params["num"] == "all";
       if params["category"] === "none"
         @campaigns = Campaign.includes(:user, :contributions).all
@@ -40,20 +40,14 @@ class Api::CampaignsController < ApplicationController
   end
 
   def update
-
     @campaign = Campaign.find(params[:id])
 
-    begin
     if @campaign.update(campaign_params)
-      category = Campaign.includes(:category).where(cat: category_title_param[:category_name]).id
+      category = Category.find_by(cat: category_title_param[:category_name]).id
       @campaign.update(category_id: category)
-
       render :show
     else
       render json: @campaign.errors.full_messages, status: 422
-    end
-    rescue
-      render json: 'Please upload an image!'
     end
   end
 
