@@ -52,23 +52,17 @@ class EditCampaign extends React.Component {
       formData.append("campaign[category_name]", this.state.category_name);
 
       this.props.updateCampaignForm(formData).then((camp) => {
-          
         const url = `campaign/${camp.campaign.id}/addrewards`;
         this.props.router.push(url);
-
       });
     } else {
-
       let type;
       this.props.updateCampaign(this.state).then((camp) => {
         const url = `campaigns/${camp.campaign.id}`;
-
         this.props.router.push(url);
       });
     }
-
   }
-
 
   renderErrors() {
 
@@ -82,6 +76,7 @@ class EditCampaign extends React.Component {
   }
 
   update(field) {
+
     return e => this.setState({
       [field]: e.currentTarget.value
     });
