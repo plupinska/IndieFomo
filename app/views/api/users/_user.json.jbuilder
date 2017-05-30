@@ -1,5 +1,3 @@
-# json.extract! user, :first_name, :last_name, :email,
-# :id, asset_path(:image[:url])
 
   if (@user)
     json.id @user.id
@@ -13,16 +11,13 @@
       json.contributions @contributions.each do |contribution|
         json.user_id contribution.user_id
         json.reward_id contribution.reward_id
-        begin
-          if (contribution.reward.id)
+
+          if (contribution.reward)
             json.reward Reward.find(contribution.reward_id)
           end
-        rescue
-        end
         json.amount contribution.amount
         json.campaign_id contribution.campaign_id
         json.date contribution.date
-
         json.campaign_title Campaign.find(contribution.campaign_id).title
       end
     end

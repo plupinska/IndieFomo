@@ -18,6 +18,7 @@ class Api::ContributionsController < ApplicationController
     render :show
   end
 
+  private
   def contribution_params
     params.permit(:user_id, :reward_id, :amount, :campaign_id, :date)
   end

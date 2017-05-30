@@ -14,7 +14,6 @@ class Api::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @contributions = Contribution.where(user_id: params[:id])
-    @contrubutions ||= 0
 
     if @user.update(user_params)
       @user.save
@@ -29,7 +28,6 @@ class Api::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @contributions = Contribution.where(user_id: params[:id])
-    @contrubutions ||= 0
     render :show
   end
 
